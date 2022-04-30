@@ -3,6 +3,9 @@
 #include <iostream>
 #include <map>
 #include <utility>
+#include <string>
+#include <algorithm>
+#include <vector>
 
 #include "Archive.h"
 #include "Environment.h"
@@ -53,6 +56,21 @@ namespace SohImGui {
     Console* console = new Console;
     bool p_open = false;
     bool needs_save = false;
+    float kokiri_col[3] = { 0.118f, 0.41f, 0.106f };
+    float goron_col[3] = { 0.392f, 0.078f, 0.0f };
+    float zora_col[3] = { 0.0f, 0.235f, 0.392f };
+
+    float navi_idle_i_col[3] = { 0.0f, 0.0f, 0.0f };
+    float navi_idle_o_col[3] = { 0.0f, 0.0f, 0.0f };
+
+    float navi_npc_i_col[3] = { 0.0f, 0.0f, 0.0f };
+    float navi_npc_o_col[3] = { 0.0f, 0.0f, 0.0f };
+
+    float navi_enemy_i_col[3] = { 0.0f, 0.0f, 0.0f };
+    float navi_enemy_o_col[3] = { 0.0f, 0.0f, 0.0f };
+
+    float navi_prop_i_col[3] = { 0.0f, 0.0f, 0.0f };
+    float navi_prop_o_col[3] = { 0.0f, 0.0f, 0.0f };
 
     std::map<std::string, std::vector<std::string>> windowCategories;
     std::map<std::string, CustomWindow> customWindows;
@@ -66,6 +84,51 @@ namespace SohImGui {
             ImGui_ImplWin32_Init(impl.dx11.window);
             break;
         }
+        
+        // OTRTODO: This gameplay specific stuff should not be in libultraship. This needs to be moved to soh and use sTunicColors
+        kokiri_col[0] = 30 / 255.0f;
+        kokiri_col[1] = 105 / 255.0f;
+        kokiri_col[2] = 27 / 255.0f;
+
+        goron_col[0] = 100 / 255.0f;
+        goron_col[1] = 20 / 255.0f;
+        goron_col[2] = 0;
+        
+        zora_col[0] = 0;
+        zora_col[1] = 60 / 255.0f;
+        zora_col[2] = 100 / 255.0f;
+
+        navi_idle_i_col[0] = 0;
+        navi_idle_i_col[1] = 0;
+        navi_idle_i_col[2] = 0;
+
+        navi_idle_o_col[0] = 0;
+        navi_idle_o_col[1] = 0;
+        navi_idle_o_col[2] = 0;
+
+        navi_npc_i_col[0] = 0;
+        navi_npc_i_col[1] = 0;
+        navi_npc_i_col[2] = 0;
+
+        navi_npc_o_col[0] = 0;
+        navi_npc_o_col[1] = 0;
+        navi_npc_o_col[2] = 0;
+
+        navi_enemy_i_col[0] = 0;
+        navi_enemy_i_col[1] = 0;
+        navi_enemy_i_col[2] = 0;
+
+        navi_enemy_o_col[0] = 0;
+        navi_enemy_o_col[1] = 0;
+        navi_enemy_o_col[2] = 0;
+
+        navi_prop_i_col[0] = 0;
+        navi_prop_i_col[1] = 0;
+        navi_prop_i_col[2] = 0;
+
+        navi_prop_o_col[0] = 0;
+        navi_prop_o_col[1] = 0;
+        navi_prop_o_col[2] = 0;
     }
 
     void ImGuiBackendInit() {
@@ -263,13 +326,104 @@ namespace SohImGui {
 
 #define BindButton(btn, status) ImGui::Image(GetTextureByID(DefaultAssets[btn]->textureId), ImVec2(16.0f * scale, 16.0f * scale), ImVec2(0, 0), ImVec2(1.0f, 1.0f), ImVec4(255, 255, 255, (status) ? 255 : 0));
 
-    void BindAudioSlider(const char* name, const char* key, float* value, SeqPlayers playerId) {
-        ImGui::Text(name, static_cast<int>(100 * *(value)));
-        if (ImGui::SliderFloat((std::string("##") + key).c_str(), value, 0.0f, 1.0f, "")) {
-            const float volume = floorf(*(value) * 100) / 100;
+    void BindAudioSlider(const char* name, const char* key, float defaultValue, SeqPlayers playerId) 
+    {
+        float value = CVar_GetFloat(key, defaultValue);
+
+        ImGui::Text(name, static_cast<int>(100 * value));
+        if (ImGui::SliderFloat((std::string("##") + key).c_str(), &value, 0.0f, 1.0f, "")) {
+            const float volume = floorf(value * 100) / 100;
             CVar_SetFloat(key, volume);
             needs_save = true;
             Game::SetSeqPlayerVolume(playerId, volume);
+        }
+    }
+
+    void EnhancementCheckbox(std::string text, std::string cvarName)
+    {
+        bool val = (bool)CVar_GetS32(cvarName.c_str(), 0);
+        if (ImGui::Checkbox(text.c_str(), &val)) {
+            CVar_SetS32(cvarName.c_str(), val);
+            needs_save = true;
+        }
+    }
+
+    void EnhancementSliderInt(std::string text, std::string id, std::string cvarName, int min, int max, std::string format)
+    {
+        int val = CVar_GetS32(cvarName.c_str(), 0);
+
+        ImGui::Text(text.c_str(), val);
+
+        if (ImGui::SliderInt(id.c_str(), &val, min, max, format.c_str())) 
+        {
+            CVar_SetS32(cvarName.c_str(), val);
+            needs_save = true;
+        }
+
+        if (val < min)
+        {
+            val = min;
+            CVar_SetS32(cvarName.c_str(), val);
+            needs_save = true;
+        }
+
+        if (val > max)
+        {
+            val = max;
+            CVar_SetS32(cvarName.c_str(), val);
+            needs_save = true;
+        }
+    }
+
+    void EnhancementSliderFloat(std::string text, std::string id, std::string cvarName, float min, float max, std::string format, float defaultValue, bool isPercentage)
+    {
+        float val = CVar_GetFloat(cvarName.c_str(), defaultValue);
+
+        if (!isPercentage)
+            ImGui::Text(text.c_str(), val);
+        else
+            ImGui::Text(text.c_str(), static_cast<int>(100 * val));
+
+        if (ImGui::SliderFloat(id.c_str(), &val, min, max, format.c_str()))
+        {
+            CVar_SetFloat(cvarName.c_str(), val);
+            needs_save = true;
+        }
+
+        if (val < min)
+        {
+            val = min;
+            CVar_SetFloat(cvarName.c_str(), val);
+            needs_save = true;
+        }
+
+        if (val > max)
+        {
+            val = max;
+            CVar_SetFloat(cvarName.c_str(), val);
+            needs_save = true;
+        }
+    }
+
+    void EnhancementColor3(std::string text, std::string cvarName, float defaultColors[3])
+    {
+        int r = CVar_GetS32((cvarName + "_Red").c_str(), (defaultColors[0] * 255.0f));
+        int g = CVar_GetS32((cvarName + "_Green").c_str(), (defaultColors[1] * 255.0f));
+        int b = CVar_GetS32((cvarName + "_Blue").c_str(), (defaultColors[2] * 255.0f));
+
+        float colors[3];
+        colors[0] = r / 255.0f;
+        colors[1] = g / 255.0f;
+        colors[2] = b / 255.0f;
+
+        {
+            if (ImGui::ColorEdit3(text.c_str(), colors)) 
+            {
+                CVar_SetS32((cvarName + "_Red").c_str(), (int)(colors[0] * 255));
+                CVar_SetS32((cvarName + "_Green").c_str(), (int)(colors[1] * 255));
+                CVar_SetS32((cvarName + "_Blue").c_str(), (int)(colors[2] * 255));
+                needs_save = true;
+            }
         }
     }
 
@@ -328,212 +482,149 @@ namespace SohImGui {
             ImGui::Separator();
 
             if (ImGui::BeginMenu("Audio")) {
-                const float volume = Game::Settings.audio.master;
-                ImGui::Text("Master Volume: %d %%", static_cast<int>(100 * volume));
-                if (ImGui::SliderFloat("##Master_Vol", &Game::Settings.audio.master, 0.0f, 1.0f, "")) {
-                    CVar_SetFloat("gGameMasterVolume", volume);
-                    needs_save = true;
-                }
+                EnhancementSliderFloat("Master Volume: %d %%", "##Master_Vol", "gGameMasterVolume", 0.0f, 1.0f, "", 1.0f, true);
 
-                BindAudioSlider("Main Music Volume: %d %%", "gMainMusicVolume", &Game::Settings.audio.music_main, SEQ_BGM_MAIN);
-                BindAudioSlider("Sub Music Volume: %d %%", "gSubMusicVolume", &Game::Settings.audio.music_sub, SEQ_BGM_SUB);
-                BindAudioSlider("Sound Effects Volume: %d %%", "gSFXMusicVolume", &Game::Settings.audio.sfx, SEQ_SFX);
-                BindAudioSlider("Fanfare Volume: %d %%", "gFanfareVolume", &Game::Settings.audio.fanfare, SEQ_FANFARE);
+                BindAudioSlider("Main Music Volume: %d %%", "gMainMusicVolume", 1.0f, SEQ_BGM_MAIN);
+                BindAudioSlider("Sub Music Volume: %d %%", "gSubMusicVolume", 1.0f, SEQ_BGM_SUB);
+                BindAudioSlider("Sound Effects Volume: %d %%", "gSFXMusicVolume", 1.0f, SEQ_SFX);
+                BindAudioSlider("Fanfare Volume: %d %%", "gFanfareVolume", 1.0f, SEQ_FANFARE);
 
                 ImGui::EndMenu();
             }
 
-            if (ImGui::BeginMenu("Controller")) {
-                ImGui::Text("Gyro Sensitivity: %d %%", static_cast<int>(100 * Game::Settings.controller.gyro_sensitivity));
-                if (ImGui::SliderFloat("##GYROSCOPE", &Game::Settings.controller.gyro_sensitivity, 0.0f, 1.0f, "")) {
-                    needs_save = true;
+            if (ImGui::BeginMenu("Controller"))
+            {
+                for (const auto& [i, controllers] : Ship::Window::Controllers)
+                {
+                    bool hasPad = std::find_if(controllers.begin(), controllers.end(), [](const auto& c) {
+                        return c->HasPadConf() && c->Connected();
+                        }) != controllers.end();
+
+                        if (!hasPad) continue;
+
+                        auto menuLabel = "Controller " + std::to_string(i + 1);
+                        if (ImGui::BeginMenu(menuLabel.c_str()))
+                        {
+                            EnhancementSliderFloat("Gyro Sensitivity: %d %%", "##GYROSCOPE", StringHelper::Sprintf("gCont%i_GyroSensitivity", i), 0.0f, 1.0f, "", 1.0f, true);
+
+                            if (ImGui::Button("Recalibrate Gyro"))
+                            {
+                                CVar_SetFloat(StringHelper::Sprintf("gCont%i_GyroDriftX").c_str(), 0);
+                                CVar_SetFloat(StringHelper::Sprintf("gCont%i_GyroDriftY").c_str(), 0);
+                                needs_save = true;
+                            }
+
+                            ImGui::Separator();
+
+                            EnhancementSliderFloat("Rumble Strength: %d %%", "##RUMBLE", StringHelper::Sprintf("gCont%i_RumbleStrength", i), 0.0f, 1.0f, "", 1.0f, true);
+
+                            ImGui::EndMenu();
+                        }
+                        ImGui::Separator();
                 }
 
-                if (ImGui::Button("Recalibrate Gyro")) {
-                    Game::Settings.controller.gyroDriftX = 0;
-                    Game::Settings.controller.gyroDriftY = 0;
-                }
+                EnhancementCheckbox("Show Inputs", "gInputEnabled");
+                EnhancementCheckbox("Rumble Enabled", "gRumbleEnabled");
+
+                EnhancementSliderFloat("Input Scale: %.1f", "##Input", "gInputScale", 1.0f, 3.0f, "", 1.0f, false);
 
                 ImGui::Separator();
 
-                ImGui::Text("Rumble Strength: %d %%", static_cast<int>(100 * Game::Settings.controller.rumble_strength));
-                if (ImGui::SliderFloat("##RUMBLE", &Game::Settings.controller.rumble_strength, 0.0f, 1.0f, "")) {
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("Show Inputs", &Game::Settings.controller.input_enabled)) {
-                    needs_save = true;
-                }
-
-                ImGui::Text("Input Scale: %.1f", Game::Settings.controller.input_scale);
-                if (ImGui::SliderFloat("##Input", &Game::Settings.controller.input_scale, 1.0f, 3.0f, "")) {
-                    needs_save = true;
-                }
-
-                ImGui::Separator();
-
-                if (ImGui::Checkbox("Dpad Support on Pause and File Select", &Game::Settings.controller.dpad_pause_name)) {
-                    CVar_SetS32("gDpadPauseName", Game::Settings.controller.dpad_pause_name);
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("DPad Support in Ocarina and Text Choice", &Game::Settings.controller.dpad_ocarina_text)) {
-                    CVar_SetS32("gDpadOcarinaText", Game::Settings.controller.dpad_ocarina_text);
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("DPad Support for Browsing Shop Items", &Game::Settings.controller.dpad_shop)) {
-                    CVar_SetS32("gDpadShop", Game::Settings.controller.dpad_shop);
-                    needs_save = true;
-                }
+                EnhancementCheckbox("Dpad Support on Pause and File Select", "gDpadPauseName");
+                EnhancementCheckbox("DPad Support in Ocarina and Text Choice", "gDpadOcarinaText");
+                EnhancementCheckbox("DPad Support for Browsing Shop Items", "gDpadShop");
 
                 ImGui::EndMenu();
             }
 
-            if (ImGui::BeginMenu("Enhancements")) {
+            if (ImGui::BeginMenu("Enhancements"))
+            {
 
                 ImGui::Text("Gameplay");
                 ImGui::Separator();
 
-                ImGui::Text("Text Speed: %dx", Game::Settings.enhancements.text_speed);
-                if (ImGui::SliderInt("##TEXTSPEED", &Game::Settings.enhancements.text_speed, 1, 5, "")) {
-                    CVar_SetS32("gTextSpeed", Game::Settings.enhancements.text_speed);
-                    needs_save = true;
-                }
+                EnhancementSliderInt("Text Speed: %dx", "##TEXTSPEED", "gTextSpeed", 1, 5, "");
 
-                if (ImGui::Checkbox("Skip Text", &Game::Settings.enhancements.skip_text)) {
-                    CVar_SetS32("gSkipText", Game::Settings.enhancements.skip_text);
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("Minimal UI", &Game::Settings.enhancements.minimal_ui)) {
-                    CVar_SetS32("gMinimalUI", Game::Settings.enhancements.minimal_ui);
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("MM Bunny Hood", &Game::Settings.enhancements.mm_bunny_hood)) {
-                    CVar_SetS32("gMMBunnyHood", Game::Settings.enhancements.mm_bunny_hood);
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("Visual Stone of Agony", &Game::Settings.enhancements.visualagony)) {
-                    CVar_SetS32("gVisualAgony", Game::Settings.enhancements.visualagony);
-                    needs_save = true;
-                }
+                EnhancementCheckbox("Skip Text", "gSkipText");
+                EnhancementCheckbox("Minimal UI", "gMinimalUI");
+                EnhancementCheckbox("MM Bunny Hood", "gMMBunnyHood");
+                EnhancementCheckbox("Visual Stone of Agony", "gVisualAgony");
 
                 ImGui::Text("Graphics");
                 ImGui::Separator();
 
-                HOOK(ImGui::Checkbox("N64 Mode", &Game::Settings.debug.n64mode));
+                EnhancementCheckbox("N64 Mode", "gN64Mode");
 
-                if (ImGui::Checkbox("Animated Link in Pause Menu", &Game::Settings.enhancements.animated_pause_menu)) {
-                    CVar_SetS32("gPauseLiveLink", Game::Settings.enhancements.animated_pause_menu);
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("Disable LOD", &Game::Settings.enhancements.disable_lod)) {
-                    CVar_SetS32("gDisableLOD", Game::Settings.enhancements.disable_lod);
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("Enable 3D Dropped items", &Game::Settings.enhancements.newdrops)) {
-                    CVar_SetS32("gNewDrops", Game::Settings.enhancements.newdrops);
-                    needs_save = true;
-                }
-              
-                if (ImGui::Checkbox("Dynamic Wallet Icon", &Game::Settings.enhancements.dynamic_wallet_icon)) {
-                    CVar_SetS32(const_cast<char*>("gDynamicWalletIcon"), Game::Settings.enhancements.dynamic_wallet_icon);
-
-                    needs_save = true;
-                }
+                EnhancementCheckbox("Animated Link in Pause Menu", "gPauseLiveLink");
+                EnhancementCheckbox("Disable LOD", "gDisableLOD");
+                EnhancementCheckbox("Enable 3D Dropped items", "gNewDrops");
+                EnhancementCheckbox("Dynamic Wallet Icon", "gDynamicWalletIcon");
 
                 ImGui::EndMenu();
             }
 
-            if (ImGui::BeginMenu("Developer Tools")) {
+            if (ImGui::BeginMenu("Developer Tools"))
+            {
                 HOOK(ImGui::MenuItem("Stats", nullptr, &Game::Settings.debug.soh));
                 HOOK(ImGui::MenuItem("Console", nullptr, &console->opened));
 
                 ImGui::Text("Debug");
                 ImGui::Separator();
 
-                if (ImGui::Checkbox("Debug Mode", &Game::Settings.cheats.debug_mode)) {
-                    CVar_SetS32("gDebugEnabled", Game::Settings.cheats.debug_mode);
-                    needs_save = true;
-                }
+                EnhancementCheckbox("Debug Mode", "gDebugEnabled");
 
                 ImGui::EndMenu();
             }
 
-            if (ImGui::BeginMenu("Graphics")) {
+            if (ImGui::BeginMenu("Graphics"))
+            {
                 HOOK(ImGui::MenuItem("Anti-aliasing", nullptr, &Game::Settings.graphics.show));
                 ImGui::EndMenu();
             }
 
-            if (ImGui::BeginMenu("Cheats")) {
+            if (ImGui::BeginMenu("Cheats"))
+            {
                 if (ImGui::BeginMenu("Infinite...")) {
-                    if (ImGui::Checkbox("Money", &Game::Settings.cheats.infinite_money)) {
-                        CVar_SetS32("gInfiniteMoney", Game::Settings.cheats.infinite_money);
-                        needs_save = true;
-                    }
+                    EnhancementCheckbox("Money", "gInfiniteMoney");
+                    EnhancementCheckbox("Health", "gInfiniteHealth");
+                    EnhancementCheckbox("Ammo", "gInfiniteAmmo");
+                    EnhancementCheckbox("Magic", "gInfiniteMagic");
+                    EnhancementCheckbox("Nayru's Love", "gInfiniteNayru");
 
-                    if (ImGui::Checkbox("Health", &Game::Settings.cheats.infinite_health)) {
-                        CVar_SetS32("gInfiniteHealth", Game::Settings.cheats.infinite_health);
-                        needs_save = true;
-                    }
+                    ImGui::EndMenu();
+                }
 
-                    if (ImGui::Checkbox("Ammo", &Game::Settings.cheats.infinite_ammo)) {
-                        CVar_SetS32("gInfiniteAmmo", Game::Settings.cheats.infinite_ammo);
-                        needs_save = true;
-                    }
-
-                    if (ImGui::Checkbox("Magic", &Game::Settings.cheats.infinite_magic)) {
-                        CVar_SetS32("gInfiniteMagic", Game::Settings.cheats.infinite_magic);
-                        needs_save = true;
-                    }
-
-                    if (ImGui::Checkbox("Nayru's Love", &Game::Settings.cheats.infinite_nayru)) {
-                        CVar_SetS32("gInfiniteNayru", Game::Settings.cheats.infinite_nayru);
-                        needs_save = true;
-                    }
+                EnhancementCheckbox("No Clip", "gNoClip");
+                EnhancementCheckbox("Climb Everything", "gClimbEverything");
+                EnhancementCheckbox("Moon Jump on L", "gMoonJumpOnL");
+                EnhancementCheckbox("Super Tunic", "gSuperTunic");
+                EnhancementCheckbox("Easy ISG", "gEzISG");
+                EnhancementCheckbox("Unrestricted Items", "gNoRestrictItems");
+                EnhancementCheckbox("Freeze Time", "gFreezeTime");
 
                 ImGui::EndMenu();
-                }
+            }
 
-                if (ImGui::Checkbox("No Clip", &Game::Settings.cheats.no_clip)) {
-                    CVar_SetS32("gNoClip", Game::Settings.cheats.no_clip);
-                    needs_save = true;
-                }
+            if (ImGui::BeginMenu("Cosmetics"))
+            {
+                ImGui::Text("Tunics");
+                ImGui::Separator();
 
-                if (ImGui::Checkbox("Climb Everything", &Game::Settings.cheats.climb_everything)) {
-                    CVar_SetS32("gClimbEverything", Game::Settings.cheats.climb_everything);
-                    needs_save = true;
-                }
+                EnhancementColor3("Kokiri Tunic", "gTunic_Kokiri", kokiri_col);
+                EnhancementColor3("Goron Tunic", "gTunic_Goron", goron_col);
+                EnhancementColor3("Zora Tunic", "gTunic_Zora", zora_col);
 
-                if (ImGui::Checkbox("Moon Jump on L", &Game::Settings.cheats.moon_jump_on_l)) {
-                    CVar_SetS32("gMoonJumpOnL", Game::Settings.cheats.moon_jump_on_l);
-                    needs_save = true;
-                }
+                ImGui::Text("Navi");
+                ImGui::Separator();
 
-                if (ImGui::Checkbox("Super Tunic", &Game::Settings.cheats.super_tunic)) {
-                    CVar_SetS32("gSuperTunic", Game::Settings.cheats.super_tunic);
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("Easy ISG", &Game::Settings.cheats.ez_isg)) {
-                    CVar_SetS32("gEzISG", Game::Settings.cheats.ez_isg);
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("Unrestricted Items", &Game::Settings.cheats.no_restrict_item)) {
-                    CVar_SetS32("gNoRestrictItems", Game::Settings.cheats.no_restrict_item);
-                    needs_save = true;
-                }
-
-                if (ImGui::Checkbox("Freeze Time", &Game::Settings.cheats.freeze_time)) {
-                    CVar_SetS32("gFreezeTime", Game::Settings.cheats.freeze_time);
-                    needs_save = true;
-                }
+                EnhancementColor3("Navi Idle Inner", "gNavi_Idle_Inner", navi_idle_i_col);
+                EnhancementColor3("Navi Idle Outer", "gNavi_Idle_Outer", navi_idle_o_col);
+                EnhancementColor3("Navi NPC Inner", "gNavi_NPC_Inner", navi_npc_i_col);
+                EnhancementColor3("Navi NPC Outer", "gNavi_NPC_Outer", navi_npc_o_col);
+                EnhancementColor3("Navi Enemy Inner", "gNavi_Enemy_Inner", navi_enemy_i_col);
+                EnhancementColor3("Navi Enemy Outer", "gNavi_Enemy_Outer", navi_enemy_o_col);
+                EnhancementColor3("Navi Prop Inner", "gNavi_Prop_Inner", navi_prop_i_col);
+                EnhancementColor3("Navi Prop Outer", "gNavi_Prop_Outer", navi_prop_o_col);
 
                 ImGui::EndMenu();
             }
@@ -603,7 +694,9 @@ namespace SohImGui {
         gfx_current_game_window_viewport.y = main_pos.y;
         gfx_current_game_window_viewport.width = size.x;
         gfx_current_game_window_viewport.height = size.y;
-        if (Game::Settings.debug.n64mode) {
+
+        if (CVar_GetS32("gN64Mode", 0))
+        {
             gfx_current_dimensions.width = 320;
             gfx_current_dimensions.height = 240;
             const int sw = size.y * 320 / 240;
@@ -618,7 +711,7 @@ namespace SohImGui {
         ImVec2 main_pos = ImGui::GetWindowPos();
         ImVec2 size = ImGui::GetContentRegionAvail();
         ImVec2 pos = ImVec2(0, 0);
-        if (Game::Settings.debug.n64mode) {
+        if (CVar_GetS32("gN64Mode", 0)) {
             const int sw = size.y * 320 / 240;
             pos = ImVec2(size.x / 2 - sw / 2, 0);
             size = ImVec2(sw, size.y);
@@ -633,10 +726,10 @@ namespace SohImGui {
 
         ImGui::End();
 
-        const float scale = Game::Settings.controller.input_scale;
+        const float scale = CVar_GetFloat("gInputScale", 1.0f);
         ImVec2 BtnPos = ImVec2(160 * scale, 85 * scale);
 
-        if (Game::Settings.controller.input_enabled) {
+        if (CVar_GetS32("gInputEnabled", 0)) {
             ImGui::SetNextWindowSize(BtnPos);
             ImGui::SetNextWindowPos(ImVec2(main_pos.x + size.x - BtnPos.x - 20, main_pos.y + size.y - BtnPos.y - 20));
 
