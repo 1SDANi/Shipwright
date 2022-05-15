@@ -5,6 +5,7 @@
 #include <string.h>
 
 #include "soh/Enhancements/gameconsole.h"
+#include "soh/Enhancements/debugger/debugger.h"
 
 #define GFXPOOL_HEAD_MAGIC 0x1234
 #define GFXPOOL_TAIL_MAGIC 0x5678
@@ -95,12 +96,14 @@ void Graph_InitTHGA(GraphicsContext* gfxCtx) {
     pool->tailMagic = GFXPOOL_TAIL_MAGIC;
     THGA_Ct(&gfxCtx->polyOpa, pool->polyOpaBuffer, sizeof(pool->polyOpaBuffer));
     THGA_Ct(&gfxCtx->polyXlu, pool->polyXluBuffer, sizeof(pool->polyXluBuffer));
+    THGA_Ct(&gfxCtx->worldOverlay, pool->worldOverlayBuffer, sizeof(pool->worldOverlayBuffer));
     THGA_Ct(&gfxCtx->polyKal, pool->polyKalBuffer, sizeof(pool->polyKalBuffer));
     THGA_Ct(&gfxCtx->overlay, pool->overlayBuffer, sizeof(pool->overlayBuffer));
     THGA_Ct(&gfxCtx->work, pool->workBuffer, sizeof(pool->workBuffer));
 
     gfxCtx->polyOpaBuffer = pool->polyOpaBuffer;
     gfxCtx->polyXluBuffer = pool->polyXluBuffer;
+    gfxCtx->worldOverlayBuffer = pool->worldOverlayBuffer;
     gfxCtx->polyKalBuffer = pool->polyKalBuffer;
     gfxCtx->overlayBuffer = pool->overlayBuffer;
     gfxCtx->workBuffer = pool->workBuffer;
@@ -280,6 +283,7 @@ void Graph_Update(GraphicsContext* gfxCtx, GameState* gameState) {
 
     GameState_ReqPadData(gameState);
     GameState_Update(gameState);
+    Debug_Draw();
 
     OPEN_DISPS(gfxCtx, "../graph.c", 987);
 
@@ -294,7 +298,8 @@ void Graph_Update(GraphicsContext* gfxCtx, GameState* gameState) {
 
     gSPBranchList(WORK_DISP++, gfxCtx->polyOpaBuffer);
     gSPBranchList(POLY_OPA_DISP++, gfxCtx->polyXluBuffer);
-    gSPBranchList(POLY_XLU_DISP++, gfxCtx->polyKalBuffer);
+    gSPBranchList(POLY_XLU_DISP++, gfxCtx->worldOverlayBuffer);
+    gSPBranchList(WORLD_OVERLAY_DISP++, gfxCtx->polyKalBuffer);
     gSPBranchList(POLY_KAL_DISP++, gfxCtx->overlayBuffer);
     gDPPipeSync(OVERLAY_DISP++);
     gDPFullSync(OVERLAY_DISP++);
@@ -426,6 +431,8 @@ static struct RunFrameContext {
 
 extern AudioMgr gAudioMgr;
 
+extern void ProcessSaveStateRequests(void);
+
 static void RunFrame()
 {
     u32 size;
@@ -469,8 +476,12 @@ static void RunFrame()
             uint64_t ticksA, ticksB;
             ticksA = GetPerfCounter();
             
+            Graph_StartFrame();
 
-            PadMgr_ThreadEntry(&gPadMgr);
+            // TODO: Workaround for rumble being too long. Implement os thread functions.
+            for (int i = 0; i < 3; i++) {
+                PadMgr_ThreadEntry(&gPadMgr);
+            }
             
             Graph_Update(&runFrameContext.gfxCtx, runFrameContext.gameState);
             ticksB = GetPerfCounter();
@@ -481,6 +492,7 @@ static void RunFrame()
             //uint64_t diff = (ticksB - ticksA) / (freq / 1000);
             //printf("Frame simulated in %ims\n", diff);
             runFrameContext.state = 1;
+            ProcessSaveStateRequests();
             return;
             nextFrame:;
         }
