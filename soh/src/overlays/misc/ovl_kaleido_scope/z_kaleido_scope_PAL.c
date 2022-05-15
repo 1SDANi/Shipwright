@@ -14,6 +14,8 @@
 #include "vt.h"
 #include "SohHooks.h"
 
+#include "soh/frame_interpolation.h"
+
 static void* sEquipmentFRATexs[] = {
     gPauseEquipment00FRATex, gPauseEquipment01Tex, gPauseEquipment02Tex, gPauseEquipment03Tex, gPauseEquipment04Tex,
     gPauseEquipment10FRATex, gPauseEquipment11Tex, gPauseEquipment12Tex, gPauseEquipment13Tex, gPauseEquipment14Tex,
@@ -915,6 +917,13 @@ void KaleidoScope_SwitchPage(PauseContext* pauseCtx, u8 pt) {
     gSaveContext.buttonStatus[4] = D_8082AB6C[pauseCtx->pageIndex + pt][4];
     gSaveContext.buttonStatus[5] = D_8082AB6C[pauseCtx->pageIndex + pt][5];
 
+    if ((CVar_GetS32("gAssignableTunicsAndBoots", 0) != 0) && (D_8082ABEC[pauseCtx->mode] == PAUSE_EQUIP)) {
+        gSaveContext.buttonStatus[1] = BTN_ENABLED;
+        gSaveContext.buttonStatus[2] = BTN_ENABLED;
+        gSaveContext.buttonStatus[3] = BTN_ENABLED;
+        gSaveContext.buttonStatus[4] = BTN_ENABLED;
+    }
+
     osSyncPrintf("kscope->kscp_pos+pt = %d\n", pauseCtx->pageIndex + pt);
 
     gSaveContext.unk_13EA = 0;
@@ -1048,6 +1057,7 @@ void KaleidoScope_DrawPages(GlobalContext* globalCtx, GraphicsContext* gfxCtx) {
     s16 stepG;
     s16 stepB;
 
+    FrameInterpolation_RecordOpenChild(NULL, pauseCtx->state + pauseCtx->pageIndex * 100);
     OPEN_DISPS(gfxCtx, "../z_kaleido_scope_PAL.c", 1100);
 
     if ((pauseCtx->state < 8) || (pauseCtx->state > 0x11)) {
@@ -1419,6 +1429,7 @@ void KaleidoScope_DrawPages(GlobalContext* globalCtx, GraphicsContext* gfxCtx) {
     }
 
     CLOSE_DISPS(gfxCtx, "../z_kaleido_scope_PAL.c", 1577);
+    FrameInterpolation_RecordCloseChild();
 }
 
 void KaleidoScope_DrawInfoPanel(GlobalContext* globalCtx) {
@@ -1615,14 +1626,24 @@ void KaleidoScope_DrawInfoPanel(GlobalContext* globalCtx) {
 
     if ((pauseCtx->cursorSpecialPos == PAUSE_CURSOR_PAGE_LEFT) && (pauseCtx->unk_1E4 == 0)) {
         gDPSetPrimColor(POLY_KAL_DISP++, 0, 0, D_808321A0, D_808321A2, D_808321A4, D_808321A6);
+    } else {
+      if (CVar_GetS32("gUniformLR", 0) != 0) {
+        gDPSetPrimColor(POLY_KAL_DISP++, 0, 0, 180, 210, 255, 255);
+      }
     }
 
     gSPDisplayList(POLY_KAL_DISP++, gLButtonIconDL);
 
-    gDPSetPrimColor(POLY_KAL_DISP++, 0, 0, 180, 210, 255, 220);
+    if (CVar_GetS32("gUniformLR", 0) == 0) { //Restore the misplace gDPSetPrimColor
+      gDPSetPrimColor(POLY_KAL_DISP++, 0, 0, 180, 210, 255, 255);
+    }
 
     if ((pauseCtx->cursorSpecialPos == PAUSE_CURSOR_PAGE_RIGHT) && (pauseCtx->unk_1E4 == 0)) {
         gDPSetPrimColor(POLY_KAL_DISP++, 0, 0, D_808321A0, D_808321A2, D_808321A4, D_808321A6);
+    } else {
+      if (CVar_GetS32("gUniformLR", 0) != 0) {
+        gDPSetPrimColor(POLY_KAL_DISP++, 0, 0, 180, 210, 255, 255);
+      }
     }
 
     gSPDisplayList(POLY_KAL_DISP++, gRButtonIconDL);
@@ -2890,7 +2911,16 @@ void func_808265BC(GlobalContext* globalCtx) {
         gSaveContext.buttonStatus[3] = D_8082AB6C[pauseCtx->pageIndex][3];
         gSaveContext.buttonStatus[4] = D_8082AB6C[pauseCtx->pageIndex][4];
         gSaveContext.buttonStatus[5] = D_8082AB6C[pauseCtx->pageIndex][5];
+
         pauseCtx->pageIndex = D_8082ABEC[pauseCtx->mode];
+
+        if ((CVar_GetS32("gAssignableTunicsAndBoots", 0) != 0) && (pauseCtx->pageIndex == PAUSE_EQUIP)) {
+            gSaveContext.buttonStatus[1] = BTN_ENABLED;
+            gSaveContext.buttonStatus[2] = BTN_ENABLED;
+            gSaveContext.buttonStatus[3] = BTN_ENABLED;
+            gSaveContext.buttonStatus[4] = BTN_ENABLED;
+        }
+
         pauseCtx->unk_1E4 = 0;
         pauseCtx->state++;
         pauseCtx->alpha = 255;
@@ -3084,14 +3114,6 @@ void KaleidoScope_Update(GlobalContext* globalCtx)
 
             gSegments[8] = VIRTUAL_TO_PHYSICAL(pauseCtx->iconItemSegment);
 
-            for (i = 0; i < ARRAY_COUNTU(gItemAgeReqs); i++) {
-                if ((gItemAgeReqs[i] != 9) && (gItemAgeReqs[i] != ((void)0, gSaveContext.linkAge)))
-                {
-                    gSPInvalidateTexCache(globalCtx->state.gfxCtx->polyKal.p++, ResourceMgr_LoadTexByName(gItemIcons[i]));
-                    KaleidoScope_GrayOutTextureRGBA32(SEGMENTED_TO_VIRTUAL(gItemIcons[i]), 0x400);
-                }
-            }
-
             pauseCtx->iconItem24Segment = (void*)(((uintptr_t)pauseCtx->iconItemSegment + size0 + 0xF) & ~0xF);
 
 #if 1
@@ -3180,15 +3202,9 @@ void KaleidoScope_Update(GlobalContext* globalCtx)
                 if (gSaveContext.language == LANGUAGE_ENG) {
                     memcpy(pauseCtx->nameSegment + 0x400, ResourceMgr_LoadTexByName(mapNameTextures[36 + gSaveContext.worldMapArea]), 0xA00);
                 } else if (gSaveContext.language == LANGUAGE_GER) {
-                    DmaMgr_SendRequest1(pauseCtx->nameSegment + 0x400,
-                                        (uintptr_t)_map_name_staticSegmentRomStart +
-                                            (((void)0, gSaveContext.worldMapArea) * 0xA00) + 0x16C00,
-                                        0xA00, "../z_kaleido_scope_PAL.c", 3780);
+                    memcpy(pauseCtx->nameSegment + 0x400, ResourceMgr_LoadTexByName(mapNameTextures[58 + gSaveContext.worldMapArea]), 0xA00);
                 } else {
-                    DmaMgr_SendRequest1(pauseCtx->nameSegment + 0x400,
-                                        (uintptr_t)_map_name_staticSegmentRomStart +
-                                            (((void)0, gSaveContext.worldMapArea) * 0xA00) + 0x24800,
-                                        0xA00, "../z_kaleido_scope_PAL.c", 3784);
+                    memcpy(pauseCtx->nameSegment + 0x400, ResourceMgr_LoadTexByName(mapNameTextures[80 + gSaveContext.worldMapArea]), 0xA00);
                 }
             }
             // OTRTODO - player on pause
@@ -3997,8 +4013,6 @@ void KaleidoScope_Update(GlobalContext* globalCtx)
             R_UPDATE_RATE = 3;
             R_PAUSE_MENU_MODE = 0;
 
-            ResourceMgr_DirtyDirectory("textures/icon_item_24_static*");
-            ResourceMgr_DirtyDirectory("textures/icon_item_static*");
             CVar_SetS32("gPauseTriforce", 0);
 
             func_800981B8(&globalCtx->objectCtx);

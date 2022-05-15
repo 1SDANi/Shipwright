@@ -17,6 +17,14 @@ void KaleidoScope_DrawDungeonMap(GlobalContext* globalCtx, GraphicsContext* gfxC
         gPauseDekuTitleENGTex, gPauseDodongoTitleENGTex,   gPauseJabuTitleENGTex,   gPauseForestTitleENGTex,
         gPauseFireTitleENGTex, gPauseWaterTitleENGTex,     gPauseSpiritTitleENGTex, gPauseShadowTitleENGTex,
         gPauseBotWTitleENGTex, gPauseIceCavernTitleENGTex,
+
+        gPauseDekuTitleGERTex, gPauseDodongoTitleGERTex,   gPauseJabuTitleGERTex,   gPauseForestTitleGERTex,
+        gPauseFireTitleGERTex, gPauseWaterTitleGERTex,     gPauseSpiritTitleGERTex, gPauseShadowTitleGERTex,
+        gPauseBotWTitleGERTex, gPauseIceCavernTitleGERTex,
+
+        gPauseDekuTitleFRATex, gPauseDodongoTitleFRATex,   gPauseJabuTitleFRATex,   gPauseForestTitleFRATex,
+        gPauseFireTitleFRATex, gPauseWaterTitleFRATex,     gPauseSpiritTitleFRATex, gPauseShadowTitleFRATex,
+        gPauseBotWTitleFRATex, gPauseIceCavernTitleFRATex,
     };
     static void* floorIconTexs[] = {
         gDungeonMapBlankFloorButtonTex, gDungeonMap8FButtonTex, gDungeonMap7FButtonTex, gDungeonMap6FButtonTex,
@@ -216,7 +224,7 @@ void KaleidoScope_DrawDungeonMap(GlobalContext* globalCtx, GraphicsContext* gfxC
 
     gSPVertex(POLY_KAL_DISP++, &pauseCtx->mapPageVtx[68], 16, 0);
 
-    gDPLoadTextureBlock(POLY_KAL_DISP++, dungeonTitleTexs[gSaveContext.mapIndex], G_IM_FMT_IA, G_IM_SIZ_8b, 96, 16, 0,
+    gDPLoadTextureBlock(POLY_KAL_DISP++, dungeonTitleTexs[gSaveContext.mapIndex+(10*gSaveContext.language)], G_IM_FMT_IA, G_IM_SIZ_8b, 96, 16, 0,
                         G_TX_WRAP | G_TX_NOMIRROR, G_TX_WRAP | G_TX_NOMIRROR, G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD,
                         G_TX_NOLOD);
 
@@ -331,6 +339,10 @@ void KaleidoScope_DrawDungeonMap(GlobalContext* globalCtx, GraphicsContext* gfxC
     gDPSetTextureLUT(POLY_KAL_DISP++, G_TT_RGBA16);
 
     gSPVertex(POLY_KAL_DISP++, &pauseCtx->mapPageVtx[60], 8, 0);
+
+    // The dungeon map textures are recreated each frame, so always invalidate them
+    gSPInvalidateTexCache(POLY_KAL_DISP++, interfaceCtx->mapSegment);
+    gSPInvalidateTexCache(POLY_KAL_DISP++, interfaceCtx->mapSegment + 0x800);
 
     gDPLoadTextureBlock_4b(POLY_KAL_DISP++, interfaceCtx->mapSegment, G_IM_FMT_CI, 48, 85, 0, G_TX_WRAP | G_TX_NOMIRROR,
                            G_TX_WRAP | G_TX_NOMIRROR, G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
