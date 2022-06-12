@@ -19,8 +19,11 @@
 #define C_RIGHT_BUTTON_X 271
 #define C_RIGHT_BUTTON_Y 18
 
-#define C_UP_BUTTON_X 254
-#define C_UP_BUTTON_Y 16
+#define C_UP_BUTTON_X 249
+#define C_UP_BUTTON_Y 2
+
+#define L_BUTTON_X 225
+#define L_BUTTON_Y 2
 
 /**
  * These are the colors for the hearts in the interface. The prim color is the red color of the heart

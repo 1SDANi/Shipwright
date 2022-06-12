@@ -117,13 +117,13 @@ static SavePlayerData sNewSavePlayerData = {
     0,                                                  // bgsFlag
     0,                                                  // ocarinaGameRoundNum
     {
-        { ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE }, // buttonItems
-        { SLOT_NONE, SLOT_NONE, SLOT_NONE },            // cButtonSlots
+        { ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE }, // buttonItems
+        { SLOT_NONE, SLOT_NONE, SLOT_NONE, SLOT_NONE },            // cButtonSlots
         0,                                              // equipment
     },                                                  // childEquips
     {
-        { ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE }, // buttonItems
-        { SLOT_NONE, SLOT_NONE, SLOT_NONE },            // cButtonSlots
+        { ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE }, // buttonItems
+        { SLOT_NONE, SLOT_NONE, SLOT_NONE, SLOT_NONE },            // cButtonSlots
         0,                                              // equipment
     },                                                  // adultEquips
     0,                                                  // unk_38
@@ -132,8 +132,8 @@ static SavePlayerData sNewSavePlayerData = {
 };
 
 static ItemEquips sNewSaveEquips = {
-    { ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE }, // buttonItems
-    { SLOT_NONE, SLOT_NONE, SLOT_NONE },            // cButtonSlots
+    { ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE }, // buttonItems
+    { SLOT_NONE, SLOT_NONE, SLOT_NONE, SLOT_NONE },            // cButtonSlots
     0x1100,                                         // equipment
 };
 
@@ -200,13 +200,13 @@ static SavePlayerData sDebugSavePlayerData = {
     0,                                                  // bgsFlag
     0,                                                  // ocarinaGameRoundNum
     {
-        { ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE }, // buttonItems
-        { SLOT_NONE, SLOT_NONE, SLOT_NONE },            // cButtonSlots
+        { ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE }, // buttonItems
+        { SLOT_NONE, SLOT_NONE, SLOT_NONE, SLOT_NONE },            // cButtonSlots
         0,                                              // equipment
     },                                                  // childEquips
     {
-        { ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE }, // buttonItems
-        { SLOT_NONE, SLOT_NONE, SLOT_NONE },            // cButtonSlots
+        { ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE }, // buttonItems
+        { SLOT_NONE, SLOT_NONE, SLOT_NONE, SLOT_NONE },            // cButtonSlots
         0,                                              // equipment
     },                                                  // adultEquips
     0,                                                  // unk_38
@@ -215,8 +215,8 @@ static SavePlayerData sDebugSavePlayerData = {
 };
 
 static ItemEquips sDebugSaveEquips = {
-    { ITEM_SWORD_MASTER, ITEM_BOW, ITEM_BOMB, ITEM_OCARINA_FAIRY }, // buttonItems
-    { SLOT_BOW, SLOT_BOMB, SLOT_OCARINA },                          // cButtonSlots
+    { ITEM_SWORD_MASTER, ITEM_BOW, ITEM_BOMB, ITEM_OCARINA_FAIRY, ITEM_BOTTLE }, // buttonItems
+    { SLOT_BOW, SLOT_BOMB, SLOT_OCARINA, SLOT_BOTTLE_1 },                          // cButtonSlots
     0x1122,                                                         // equipment
 };
 
@@ -416,7 +416,7 @@ void Sram_OpenSave(SramContext* sramCtx) {
 
         INV_CONTENT(ITEM_LETTER_ZELDA) = ITEM_CHICKEN;
 
-        for (j = 1; j < 4; j++) {
+        for (j = 1; j < 5; j++) {
             if (gSaveContext.equips.buttonItems[j] == ITEM_LETTER_ZELDA) {
                 gSaveContext.equips.buttonItems[j] = ITEM_CHICKEN;
             }
@@ -435,7 +435,7 @@ void Sram_OpenSave(SramContext* sramCtx) {
         if (INV_CONTENT(ITEM_TRADE_ADULT) == gSpoilingItems[i]) {
             INV_CONTENT(gSpoilingItemReverts[i]) = gSpoilingItemReverts[i];
 
-            for (j = 1; j < 4; j++) {
+            for (j = 1; j < 5; j++) {
                 if (gSaveContext.equips.buttonItems[j] == gSpoilingItems[i]) {
                     gSaveContext.equips.buttonItems[j] = gSpoilingItemReverts[i];
                 }

@@ -1056,7 +1056,7 @@ static LinkAnimationHeader* D_80854378[] = {
 static u8 D_80854380[2] = { 0x18, 0x19 };
 static u8 D_80854384[2] = { 0x1A, 0x1B };
 
-static u16 D_80854388[] = { BTN_B, BTN_CLEFT, BTN_CDOWN, BTN_CRIGHT };
+static u16 D_80854388[] = { BTN_B, BTN_CLEFT, BTN_CDOWN, BTN_CRIGHT, BTN_CUP };
 
 static u8 sMagicSpellCosts[] = { 12, 24, 24, 12, 24, 12 };
 
@@ -1861,7 +1861,7 @@ s32 func_80833C98(s32 item1, s32 actionParam) {
 }
 
 s32 func_80833CDC(GlobalContext* globalCtx, s32 index) {
-    if (index >= 4) {
+    if (index >= 5) {
         return ITEM_NONE;
     }
     else if (globalCtx->bombchuBowlingStatus != 0) {
@@ -1876,8 +1876,11 @@ s32 func_80833CDC(GlobalContext* globalCtx, s32 index) {
     else if (index == 2) {
         return C_BTN_ITEM(1);
     }
-    else {
+    else if (index == 3) {
         return C_BTN_ITEM(2);
+    }
+    else {
+        return C_BTN_ITEM(3);
     }
 }
 
@@ -1898,7 +1901,7 @@ void func_80833DF8(Player* this, GlobalContext* globalCtx) {
         } else {
             maskActionParam = this->currentMask - 1 + PLAYER_AP_MASK_KEATON;
             if (!func_80833C98(C_BTN_ITEM(0), maskActionParam) && !func_80833C98(C_BTN_ITEM(1), maskActionParam) &&
-                !func_80833C98(C_BTN_ITEM(2), maskActionParam)) {
+                !func_80833C98(C_BTN_ITEM(2), maskActionParam) && !func_80833C98(C_BTN_ITEM(3), maskActionParam)) {
                 this->currentMask = PLAYER_MASK_NONE;
             }
         }
@@ -1907,7 +1910,8 @@ void func_80833DF8(Player* this, GlobalContext* globalCtx) {
     if (!(this->stateFlags1 & (PLAYER_STATE1_11 | PLAYER_STATE1_29)) && !func_8008F128(this)) {
         if (this->itemActionParam >= PLAYER_AP_FISHING_POLE) {
             if (!func_80833C50(this, B_BTN_ITEM) && !func_80833C50(this, C_BTN_ITEM(0)) &&
-                !func_80833C50(this, C_BTN_ITEM(1)) && !func_80833C50(this, C_BTN_ITEM(2))) {
+                !func_80833C50(this, C_BTN_ITEM(1)) && !func_80833C50(this, C_BTN_ITEM(2))
+                 && !func_80833C50(this, C_BTN_ITEM(3))) {
                 func_80835F44(globalCtx, this, ITEM_NONE);
                 return;
             }
@@ -5098,7 +5102,8 @@ s32 func_8083B644(Player* this, GlobalContext* globalCtx) {
                             this->stateFlags2 |= PLAYER_STATE2_21;
                         }
 
-                        if (!CHECK_BTN_ALL(sControlInput->press.button, BTN_CUP) && !sp28) {
+                        // Rebind talk to Navi to L
+                        if (!CHECK_BTN_ALL(sControlInput->press.button, BTN_L) && !sp28) {
                             return 0;
                         }
 
@@ -5150,11 +5155,12 @@ s32 func_8083B998(Player* this, GlobalContext* globalCtx) {
         return 1;
     }
 
+    // Rebind First Person toggle to L
     if ((this->unk_664 != NULL) &&
         (CHECK_FLAG_ALL(this->unk_664->flags, ACTOR_FLAG_0 | ACTOR_FLAG_18) || (this->unk_664->naviEnemyId != 0xFF))) {
         this->stateFlags2 |= PLAYER_STATE2_21;
     }
-    else if ((this->naviTextId == 0) && !func_8008E9C4(this) && CHECK_BTN_ALL(sControlInput->press.button, BTN_CUP) &&
+    else if ((this->naviTextId == 0) && !func_8008E9C4(this) && CHECK_BTN_ALL(sControlInput->press.button, BTN_L) &&
         (YREG(15) != 0x10) && (YREG(15) != 0x20) && !func_8083B8F4(this, globalCtx)) {
         func_80078884(NA_SE_SY_ERROR);
     }
@@ -6272,7 +6278,7 @@ s32 func_8083EAF0(Player* this, Actor* actor) {
 
 s32 func_8083EB44(Player* this, GlobalContext* globalCtx) {
     if ((this->stateFlags1 & PLAYER_STATE1_11) && (this->heldActor != NULL) &&
-        CHECK_BTN_ANY(sControlInput->press.button, BTN_A | BTN_B | BTN_CLEFT | BTN_CRIGHT | BTN_CDOWN)) {
+        CHECK_BTN_ANY(sControlInput->press.button, BTN_A | BTN_B | BTN_CLEFT | BTN_CRIGHT | BTN_CDOWN | BTN_CUP)) {
         if (!func_80835644(globalCtx, this, this->heldActor)) {
             if (!func_8083EAF0(this, this->heldActor)) {
                 func_80835C58(globalCtx, this, func_808464B0, 1);
@@ -8342,7 +8348,7 @@ void func_8084411C(Player* this, GlobalContext* globalCtx) {
             Actor* heldActor = this->heldActor;
 
             if (!func_80835644(globalCtx, this, heldActor) && (heldActor->id == ACTOR_EN_NIW) &&
-                CHECK_BTN_ANY(sControlInput->press.button, BTN_A | BTN_B | BTN_CLEFT | BTN_CRIGHT | BTN_CDOWN)) {
+                CHECK_BTN_ANY(sControlInput->press.button, BTN_A | BTN_B | BTN_CLEFT | BTN_CRIGHT | BTN_CDOWN | BTN_CUP)) {
                 func_8084409C(globalCtx, this, this->linearVelocity + 2.0f, this->actor.velocity.y + 2.0f);
             }
         }
@@ -9156,7 +9162,7 @@ void func_80846260(Player* this, GlobalContext* globalCtx) {
         }
 
     }
-    else if (CHECK_BTN_ANY(sControlInput->press.button, BTN_A | BTN_B | BTN_CLEFT | BTN_CRIGHT | BTN_CDOWN)) {
+    else if (CHECK_BTN_ANY(sControlInput->press.button, BTN_A | BTN_B | BTN_CLEFT | BTN_CRIGHT | BTN_CDOWN | BTN_CUP)) {
         func_80835C58(globalCtx, this, func_80846358, 1);
         func_80832264(globalCtx, this, &gPlayerAnim_0032B8);
     }
@@ -11238,13 +11244,14 @@ void func_8084B1D8(Player* this, GlobalContext* globalCtx) {
         func_80836670(this, globalCtx);
     }
 
+    // Include L Button in canceling first person mode
     if ((this->csMode != 0) || (this->unk_6AD == 0) || (this->unk_6AD >= 4) || func_80833B54(this) ||
         (this->unk_664 != NULL) || !func_8083AD4C(globalCtx, this) ||
         (((this->unk_6AD == 2) && (CHECK_BTN_ANY(sControlInput->press.button, BTN_A | BTN_B | BTN_R) ||
             func_80833B2C(this) || (!func_8002DD78(this) && !func_808334B4(this)))) ||
             ((this->unk_6AD == 1) &&
                 CHECK_BTN_ANY(sControlInput->press.button,
-                    BTN_A | BTN_B | BTN_R | BTN_CUP | BTN_CLEFT | BTN_CRIGHT | BTN_CDOWN)))) {
+                    BTN_A | BTN_B | BTN_R | BTN_CUP | BTN_CLEFT | BTN_CRIGHT | BTN_CDOWN | BTN_L)))) {
         func_8083C148(this, globalCtx);
         func_80078884(NA_SE_SY_CAMERA_ZOOM_UP);
     }

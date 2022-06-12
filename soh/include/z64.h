@@ -724,6 +724,7 @@ typedef struct {
         /* 0x026C */ u8    dinsNayrus; // "m_magic"; din's fire and nayru's love
         /* 0x026D */ u8    all;        // "another"; enables all item restrictions
     }                   restrictions;
+                 u16    cUpAlpha;
 } InterfaceContext; // size = 0x270
 
 typedef struct {

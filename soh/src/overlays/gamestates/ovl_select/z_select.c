@@ -26,7 +26,7 @@ void Select_LoadGame(SelectContext* this, s32 entranceIndex) {
         gSaveContext.magicLevel = gSaveContext.magic;
     }
     gSaveContext.buttonStatus[0] = gSaveContext.buttonStatus[1] = gSaveContext.buttonStatus[2] =
-        gSaveContext.buttonStatus[3] = gSaveContext.buttonStatus[4] = BTN_ENABLED;
+        gSaveContext.buttonStatus[3] = gSaveContext.buttonStatus[4] = gSaveContext.buttonStatus[5] = BTN_ENABLED;
     gSaveContext.unk_13E7 = gSaveContext.unk_13E8 = gSaveContext.unk_13EA = gSaveContext.unk_13EC = 0;
     Audio_QueueSeqCmd(SEQ_PLAYER_BGM_MAIN << 24 | NA_BGM_STOP);
     gSaveContext.entranceIndex = entranceIndex;

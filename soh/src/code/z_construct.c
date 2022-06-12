@@ -25,8 +25,8 @@ void func_801109B0(GlobalContext* globalCtx) {
     interfaceCtx->minimapAlpha = 0;
     interfaceCtx->unk_260 = 0;
     interfaceCtx->unk_244 = interfaceCtx->aAlpha = interfaceCtx->bAlpha = interfaceCtx->cLeftAlpha =
-        interfaceCtx->cDownAlpha = interfaceCtx->cRightAlpha = interfaceCtx->healthAlpha = interfaceCtx->startAlpha =
-            interfaceCtx->magicAlpha = 0;
+        interfaceCtx->cDownAlpha = interfaceCtx->cRightAlpha = interfaceCtx->cUpAlpha = 
+        interfaceCtx->healthAlpha = interfaceCtx->startAlpha = interfaceCtx->magicAlpha = 0;
 
     parameterSize = (uintptr_t)_parameter_staticSegmentRomEnd - (uintptr_t)_parameter_staticSegmentRomStart;
 
@@ -73,17 +73,17 @@ void func_801109B0(GlobalContext* globalCtx) {
     //DmaMgr_SendRequest1(interfaceCtx->doActionSegment + 0x300, (uintptr_t)_do_action_staticSegmentRomStart + doActionOffset,
                         //0x180, "../z_construct.c", 178);
 
-    interfaceCtx->iconItemSegment = GameState_Alloc(&globalCtx->state, 0x4000, "../z_construct.c", 190);
+    interfaceCtx->iconItemSegment = GameState_Alloc(&globalCtx->state, 0x5000, "../z_construct.c", 190);
 
     // "Icon Item Texture Initialization = %x"
-    osSyncPrintf("アイコンアイテム テクスチャ初期=%x\n", 0x4000);
+    osSyncPrintf("アイコンアイテム テクスチャ初期=%x\n", 0x5000);
     osSyncPrintf("parameter->icon_itemSegment=%x\n", interfaceCtx->iconItemSegment);
 
     ASSERT(interfaceCtx->iconItemSegment != NULL, "parameter->icon_itemSegment != NULL", "../z_construct.c", 193);
 
     osSyncPrintf("Register_Item[%x, %x, %x, %x]\n", gSaveContext.equips.buttonItems[0],
                  gSaveContext.equips.buttonItems[1], gSaveContext.equips.buttonItems[2],
-                 gSaveContext.equips.buttonItems[3]);
+                 gSaveContext.equips.buttonItems[3], gSaveContext.equips.buttonItems[4]);
 
     if (gSaveContext.equips.buttonItems[0] < 0xF0) {
         DmaMgr_SendRequest1(interfaceCtx->iconItemSegment,
@@ -110,6 +110,12 @@ void func_801109B0(GlobalContext* globalCtx) {
     if (gSaveContext.equips.buttonItems[3] < 0xF0) {
         DmaMgr_SendRequest1(interfaceCtx->iconItemSegment + 0x3000,
                             _icon_item_staticSegmentRomStart + gSaveContext.equips.buttonItems[3] * 0x1000, 0x1000,
+                            "../z_construct.c", 219);
+    }
+
+    if (gSaveContext.equips.buttonItems[4] < 0xF0) {
+        DmaMgr_SendRequest1(interfaceCtx->iconItemSegment + 0x4000,
+                            _icon_item_staticSegmentRomStart + gSaveContext.equips.buttonItems[4] * 0x1000, 0x1000,
                             "../z_construct.c", 219);
     }
 
@@ -261,8 +267,8 @@ void func_80111070(void) {
     YREG(85) = 0;
     YREG(86) = -21;
     YREG(87) = 510;
-    R_C_UP_ICON_X = C_UP_BUTTON_X - 7;
-    R_C_UP_ICON_Y = C_UP_BUTTON_Y + 4;
+    R_L_ICON_X = L_BUTTON_X - 7;
+    R_L_ICON_Y = L_BUTTON_Y + 4;
     YREG(92) = 8;
     YREG(93) = 6;
     YREG(94) = 3;
@@ -314,8 +320,8 @@ void func_80111070(void) {
     R_START_LABEL_X(1) = 119;
     R_START_LABEL_X(2) = 119;
     ZREG(61) = 1;
-    R_C_UP_BTN_X = C_UP_BUTTON_X;
-    R_C_UP_BTN_Y = C_UP_BUTTON_Y;
+    R_L_BTN_X = L_BUTTON_X;
+    R_L_BTN_Y = L_BUTTON_Y;
     ZREG(64) = 20;
     ZREG(65) = 21;
     ZREG(66) = 122;

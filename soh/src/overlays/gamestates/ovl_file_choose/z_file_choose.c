@@ -1485,7 +1485,7 @@ void FileChoose_LoadGame(GameState* thisx) {
     gSaveContext.unk_13C3 = 0;
 
     gSaveContext.buttonStatus[0] = gSaveContext.buttonStatus[1] = gSaveContext.buttonStatus[2] =
-        gSaveContext.buttonStatus[3] = gSaveContext.buttonStatus[4] = BTN_ENABLED;
+        gSaveContext.buttonStatus[3] = gSaveContext.buttonStatus[4] = gSaveContext.buttonStatus[5] = BTN_ENABLED;
 
     gSaveContext.unk_13E7 = gSaveContext.unk_13E8 = gSaveContext.unk_13EA = gSaveContext.unk_13EC =
         gSaveContext.unk_13F4 = 0;
@@ -1858,7 +1858,7 @@ void FileChoose_InitContext(GameState* thisx) {
     Environment_UpdateSkybox(NULL, SKYBOX_NORMAL_SKY, &this->envCtx, &this->skyboxCtx);
 
     gSaveContext.buttonStatus[0] = gSaveContext.buttonStatus[1] = gSaveContext.buttonStatus[2] =
-        gSaveContext.buttonStatus[3] = gSaveContext.buttonStatus[4] = BTN_ENABLED;
+        gSaveContext.buttonStatus[3] = gSaveContext.buttonStatus[4] = gSaveContext.buttonStatus[5] = BTN_ENABLED;
 
     this->n64ddFlags[0] = this->n64ddFlags[1] = this->n64ddFlags[2] = this->defense[0] = this->defense[1] =
         this->defense[2] = 0;

@@ -496,7 +496,7 @@ void KaleidoScope_DrawEquipment(GlobalContext* globalCtx) {
 
         if ((pauseCtx->cursorSpecialPos == 0) && (cursorItem != PAUSE_ITEM_NONE) && (pauseCtx->state == 6) &&
             (pauseCtx->unk_1E4 == 0) &&
-            CHECK_BTN_ANY(input->press.button, BTN_A | BTN_CLEFT | BTN_CDOWN | BTN_CRIGHT) &&
+            CHECK_BTN_ANY(input->press.button, BTN_A | BTN_CLEFT | BTN_CDOWN | BTN_CUP | BTN_CRIGHT) &&
             (pauseCtx->cursorX[PAUSE_EQUIP] != 0)) {
 
             if ((gEquipAgeReqs[pauseCtx->cursorY[PAUSE_EQUIP]][pauseCtx->cursorX[PAUSE_EQUIP]] == 9) ||
