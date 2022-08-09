@@ -1891,7 +1891,7 @@ void Cutscene_ProcessCommands(GlobalContext* globalCtx, CutsceneContext* csCtx, 
                 cutscenePtr += 4;
                 for (j = 0; j < cmdEntries; j++) {
                     cmd = (CsCmdBase*)cutscenePtr;
-                    if (cmd->base != 0xFFFF) {
+                    if (cmd->base != 0xFFFF && ((CsCmdTextbox*)(cutscenePtr))->base != 0x7074) {
                         Cutscene_Command_Textbox(globalCtx, csCtx, (void*)cutscenePtr);
                     }
                     cutscenePtr += sizeof(CutsceneData) * 3;

@@ -284,6 +284,11 @@ void ObjSwitch_Init(Actor* thisx, GlobalContext* globalCtx) {
     s32 switchFlagSet;
     s32 type;
 
+    //Allow obtaining the snake tunnel chest in water temple without having the bow
+    if ((globalCtx->sceneNum == SCENE_MIZUSIN && globalCtx->roomCtx.curRoom.num == 21)) {
+        Actor_Kill(thisx);
+    }
+
     switchFlagSet = Flags_GetSwitch(globalCtx, (this->dyna.actor.params >> 8 & 0x3F));
     type = (this->dyna.actor.params & 7);
 

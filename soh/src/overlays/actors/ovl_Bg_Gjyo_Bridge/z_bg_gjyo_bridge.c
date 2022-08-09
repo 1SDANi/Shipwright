@@ -187,6 +187,8 @@ void BgGjyoBridge_TriggerCutscene(BgGjyoBridge* this, GlobalContext* globalCtx) 
             switch (bridge) {
                 case 1:
                     if (CHECK_QUEST_ITEM(QUEST_MEDALLION_SPIRIT) && CHECK_QUEST_ITEM(QUEST_MEDALLION_SHADOW) &&
+						CHECK_QUEST_ITEM(QUEST_MEDALLION_FIRE) && CHECK_QUEST_ITEM(QUEST_MEDALLION_WATER) &&
+						CHECK_QUEST_ITEM(QUEST_MEDALLION_FOREST) &&
                         (INV_CONTENT(ITEM_ARROW_LIGHT) == ITEM_ARROW_LIGHT)) {
                         LaunchBridgeCutscene(this, globalCtx);
                     }

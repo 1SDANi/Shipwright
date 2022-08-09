@@ -383,13 +383,10 @@ s32 func_80AF5DFC(EnSa* this, GlobalContext* globalCtx) {
         }
     }
     if (globalCtx->sceneNum == SCENE_KOKIRI_HOME5 && !LINK_IS_ADULT &&
-        INV_CONTENT(ITEM_OCARINA_FAIRY) == ITEM_OCARINA_FAIRY && !(gSaveContext.eventChkInf[4] & 1)) {
+        INV_CONTENT(ITEM_OCARINA_FAIRY) == ITEM_NONE && CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
         return 1;
     }
-    if (globalCtx->sceneNum == SCENE_SPOT05 && (gSaveContext.eventChkInf[4] & 1)) {
-        if (gSaveContext.n64ddFlag) {
-            return 5;
-        }
+    if (globalCtx->sceneNum == SCENE_SPOT05 && INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE) {
         return CHECK_QUEST_ITEM(QUEST_SONG_SARIA) ? 2 : 5;
     }
     if (globalCtx->sceneNum == SCENE_SPOT04 && !CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {

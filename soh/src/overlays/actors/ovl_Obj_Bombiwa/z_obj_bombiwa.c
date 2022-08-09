@@ -75,7 +75,9 @@ void ObjBombiwa_InitCollision(Actor* thisx, GlobalContext* globalCtx) {
 void ObjBombiwa_Init(Actor* thisx, GlobalContext* globalCtx) {
     Actor_ProcessInitChain(thisx, sInitChain);
     ObjBombiwa_InitCollision(thisx, globalCtx);
-    if ((Flags_GetSwitch(globalCtx, thisx->params & 0x3F) != 0)) {
+    //Allow entering Zora's Domain without visiting Goron City
+    if ((Flags_GetSwitch(globalCtx, thisx->params & 0x3F) != 0) ||
+        (globalCtx->sceneNum == 84 && thisx->world.pos.y < 200)) {
         Actor_Kill(thisx);
     } else {
         CollisionCheck_SetInfo(&thisx->colChkInfo, NULL, &sColChkInfoInit);

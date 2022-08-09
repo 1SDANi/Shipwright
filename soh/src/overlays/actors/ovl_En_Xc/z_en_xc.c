@@ -2195,10 +2195,7 @@ void EnXc_InitTempleOfTime(EnXc* this, GlobalContext* globalCtx) {
             globalCtx->csCtx.segment = SEGMENTED_TO_VIRTUAL(gTempleOfTimeFirstAdultCs);
             gSaveContext.cutsceneTrigger = 1;
             func_80B3EBF0(this, globalCtx);
-        } else if ((!(gSaveContext.eventChkInf[5] & 0x20) && (gSaveContext.eventChkInf[4] & 0x100) &&
-                    !gSaveContext.n64ddFlag) ||
-                   (!(gSaveContext.eventChkInf[5] & 0x20) && CHECK_QUEST_ITEM(QUEST_MEDALLION_FOREST) &&
-                    gSaveContext.n64ddFlag)) {
+        } else if (!(gSaveContext.eventChkInf[5] & 0x20)) {
             if (!gSaveContext.n64ddFlag) {
                 gSaveContext.eventChkInf[5] |= 0x20;
                 Item_Give(globalCtx, ITEM_SONG_PRELUDE);
@@ -2208,8 +2205,6 @@ void EnXc_InitTempleOfTime(EnXc* this, GlobalContext* globalCtx) {
             } else {
                 GivePlayerRandoRewardSheikSong(this, globalCtx, RC_SHEIK_AT_TEMPLE, 0x20, GI_PRELUDE_OF_LIGHT);
             }
-        } else if (!(gSaveContext.eventChkInf[5] & 0x20)) {
-            func_80B3C9EC(this);
         } else {
             Actor_Kill(&this->actor);
         }

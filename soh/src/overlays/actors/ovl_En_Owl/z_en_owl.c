@@ -111,6 +111,8 @@ void EnOwl_Init(Actor* thisx, GlobalContext* globalCtx) {
     s32 owlType;
     s32 switchFlag;
 
+
+
     Actor_ProcessInitChain(&this->actor, sInitChain);
     ActorShape_Init(&this->actor.shape, 0, ActorShadow_DrawCircle, 36.0f);
     SkelAnime_InitFlex(globalCtx, &this->skelAnime, &gOwlFlyingSkel, &gOwlFlyAnim, this->jointTable, this->morphTable,
@@ -184,6 +186,9 @@ void EnOwl_Init(Actor* thisx, GlobalContext* globalCtx) {
             this->actionFunc = EnOwl_WaitLakeHylia;
             break;
         case OWL_ZORA_RIVER:
+            // This one's pretty useless now that the falls are always open
+            Actor_Kill(&this->actor);
+            return;
             if ((gSaveContext.eventChkInf[3] & 0x200) || !(gSaveContext.eventChkInf[4] & 1)) {
                 // opened zora's domain or has zelda's letter
                 osSyncPrintf("フクロウ退避\n"); // "Owl evacuation"

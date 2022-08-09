@@ -75,6 +75,10 @@ static InitChainEntry sInitChain[] = {
 void BgHakaZou_Init(Actor* thisx, GlobalContext* globalCtx) {
     s32 pad;
     BgHakaZou* this = (BgHakaZou*)thisx;
+    bool bombBridge = thisx->params == STA_GIANT_BIRD_STATUE &&
+                        globalCtx->sceneNum == SCENE_HAKADAN &&
+                        globalCtx->roomCtx.curRoom.num == 21 &&
+                        thisx->world.pos.y < -1700;
 
     Actor_ProcessInitChain(thisx, sInitChain);
 
@@ -107,15 +111,17 @@ void BgHakaZou_Init(Actor* thisx, GlobalContext* globalCtx) {
                                      ? Object_GetIndex(&globalCtx->objectCtx, OBJECT_HAKACH_OBJECTS)
                                      : Object_GetIndex(&globalCtx->objectCtx, OBJECT_HAKA_OBJECTS);
 
-    if (this->requiredObjBankIndex < 0) {
-        Actor_Kill(thisx);
-    } else if ((thisx->params != STA_UNKNOWN) && Flags_GetSwitch(globalCtx, this->switchFlag)) {
-        if (thisx->params != STA_GIANT_BIRD_STATUE) {
+    if (!bombBridge) {
+        if (this->requiredObjBankIndex < 0) {
             Actor_Kill(thisx);
-        } else {
-            thisx->shape.rot.x = -0x4000;
-            thisx->world.pos.z -= 80.0f;
-            thisx->world.pos.y -= 54.0f;
+        } else if ((thisx->params != STA_UNKNOWN) && Flags_GetSwitch(globalCtx, this->switchFlag)) {
+            if (thisx->params != STA_GIANT_BIRD_STATUE) {
+                Actor_Kill(thisx);
+            } else {
+                thisx->shape.rot.x = -0x4000;
+                thisx->world.pos.z -= 80.0f;
+                thisx->world.pos.y -= 54.0f;
+            }
         }
     }
 
@@ -158,6 +164,10 @@ void func_808828F4(BgHakaZou* this, GlobalContext* globalCtx) {
 
 void BgHakaZou_Wait(BgHakaZou* this, GlobalContext* globalCtx) {
     CollisionHeader* colHeader;
+    bool bombBridge = this->dyna.actor.params == STA_GIANT_BIRD_STATUE &&
+                        globalCtx->sceneNum == SCENE_HAKADAN &&
+                        globalCtx->roomCtx.curRoom.num == 21 &&
+                        this->dyna.actor.world.pos.y < -1700;
 
     if (Object_IsLoaded(&globalCtx->objectCtx, this->requiredObjBankIndex)) {
         this->dyna.actor.objBankIndex = this->requiredObjBankIndex;
@@ -189,7 +199,8 @@ void BgHakaZou_Wait(BgHakaZou* this, GlobalContext* globalCtx) {
 
             this->dyna.bgId = DynaPoly_SetBgActor(globalCtx, &globalCtx->colCtx.dyna, &this->dyna.actor, colHeader);
 
-            if ((this->dyna.actor.params == STA_GIANT_BIRD_STATUE) && Flags_GetSwitch(globalCtx, this->switchFlag)) {
+            if ((this->dyna.actor.params == STA_GIANT_BIRD_STATUE) &&
+                (Flags_GetSwitch(globalCtx, this->switchFlag) || bombBridge)) {
                 this->actionFunc = BgHakaZou_DoNothing;
             } else {
                 this->actionFunc = func_80883000;

@@ -287,39 +287,35 @@ u16 func_80A96FD0(GlobalContext* globalCtx, Actor* thisx) {
     EnKo* this = (EnKo*)thisx;
     switch (ENKO_TYPE) {
         case ENKO_TYPE_CHILD_FADO:
-            if (gSaveContext.eventChkInf[4] & 1) {
-                return 0x10DA;
-            }
             if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
                 return 0x10D9;
             }
+            if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE &&
+                !CHECK_QUEST_ITEM(QUEST_SONG_SARIA)) {
+                return 0x10DA;
+            }
             return (gSaveContext.infTable[11] & 0x80) ? 0x10D8 : 0x10D7;
         case ENKO_TYPE_CHILD_0:
-            if (gSaveContext.eventChkInf[4] & 1) {
+            if (INV_CONTENT(ITEM_SLINGSHOT) != ITEM_NONE) {
                 return 0x1025;
-            }
-            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
-                return 0x1042;
             }
             return 0x1004;
         case ENKO_TYPE_CHILD_1:
-            if (gSaveContext.eventChkInf[4] & 1) {
+            if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE &&
+                !CHECK_QUEST_ITEM(QUEST_SONG_SARIA)) {
                 return 0x1023;
-            }
-            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
-                return 0x1043;
             }
             if (gSaveContext.infTable[1] & 0x4000) {
                 return 0x1006;
             }
             return 0x1005;
         case ENKO_TYPE_CHILD_2:
-            if (gSaveContext.eventChkInf[4] & 1) {
+            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
                 return 0x1022;
             }
             return 0x1007;
         case ENKO_TYPE_CHILD_3:
-            if (gSaveContext.eventChkInf[4] & 1) {
+            if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE) {
                 return 0x1021;
             }
             if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
@@ -330,7 +326,7 @@ u16 func_80A96FD0(GlobalContext* globalCtx, Actor* thisx) {
             }
             return 0x1008;
         case ENKO_TYPE_CHILD_4:
-            if (gSaveContext.eventChkInf[4] & 1) {
+            if (gSaveContext.eventChkInf[8] & 1) {
                 return 0x1097;
             }
             if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
@@ -341,10 +337,7 @@ u16 func_80A96FD0(GlobalContext* globalCtx, Actor* thisx) {
             }
             return 0x100A;
         case ENKO_TYPE_CHILD_5:
-            if (gSaveContext.eventChkInf[4] & 1) {
-                return 0x10B0;
-            }
-            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
+            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD) && !(gSaveContext.eventChkInf[4] & 1)) {
                 return 0x1043;
             }
             if (gSaveContext.infTable[2] & 0x40) {
@@ -352,12 +345,6 @@ u16 func_80A96FD0(GlobalContext* globalCtx, Actor* thisx) {
             }
             return 0x100C;
         case ENKO_TYPE_CHILD_6:
-            if (gSaveContext.eventChkInf[4] & 1) {
-                return 0x10B5;
-            }
-            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
-                return 0x1043;
-            }
             if (gSaveContext.infTable[2] & 0x100) {
                 return 0x1019;
             }
@@ -585,12 +572,11 @@ s32 EnKo_GetForestQuestState(EnKo* this) {
     s32 result;
 
     if (!LINK_IS_ADULT) {
-        // Obtained Zelda's Letter
-        if (gSaveContext.eventChkInf[4] & 1) {
-            return ENKO_FQS_CHILD_SARIA;
-        }
         if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
             return ENKO_FQS_CHILD_STONE;
+        }
+        if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE) {
+            return ENKO_FQS_CHILD_SARIA;
         }
         return ENKO_FQS_CHILD_START;
     }
@@ -1062,7 +1048,10 @@ s32 EnKo_GetForestQuestState2(EnKo* this) {
         return CHECK_QUEST_ITEM(QUEST_MEDALLION_FOREST) ? ENKO_FQS_ADULT_SAVED : ENKO_FQS_ADULT_ENEMY;
     }
     if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
-        return (gSaveContext.eventChkInf[4] & 1) ? ENKO_FQS_CHILD_SARIA : ENKO_FQS_CHILD_STONE;
+        return ENKO_FQS_CHILD_STONE;
+    }
+    if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE) {
+        return ENKO_FQS_CHILD_SARIA;
     }
     return ENKO_FQS_CHILD_START;
 }
@@ -1169,19 +1158,6 @@ void func_80A99048(EnKo* this, GlobalContext* globalCtx) {
         Actor_SpawnAsChild(&globalCtx->actorCtx, &this->actor, globalCtx, ACTOR_EN_ELF, this->actor.world.pos.x,
                            this->actor.world.pos.y, this->actor.world.pos.z, 0, 0, 0, 3);
         if (ENKO_TYPE == ENKO_TYPE_CHILD_3) {
-            if (!gSaveContext.n64ddFlag) {
-                if (!CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
-                    this->collider.dim.height += 200;
-                    this->actionFunc = func_80A995CC;
-                    return;
-                }
-            } else {
-                if (!Flags_GetEventChkInf(7)) {
-                    this->collider.dim.height += 200;
-                    this->actionFunc = func_80A995CC;
-                    return;
-                }
-            }
             Path_CopyLastPoint(this->path, &this->actor.world.pos);
         }
         this->actionFunc = func_80A99384;

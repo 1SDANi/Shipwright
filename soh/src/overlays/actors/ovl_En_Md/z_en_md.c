@@ -381,7 +381,7 @@ u16 EnMd_GetTextKokiriForest(GlobalContext* globalCtx, EnMd* this) {
         return 0x1034;
     }
 
-    if ((CUR_EQUIP_VALUE(EQUIP_SHIELD) == 1) && (CUR_EQUIP_VALUE(EQUIP_SWORD) == 1)) {
+    if ((CUR_EQUIP_VALUE(EQUIP_SHIELD) > 0) && (CUR_EQUIP_VALUE(EQUIP_SWORD) > 0)) {
         return 0x1033;
     }
 
@@ -396,7 +396,7 @@ u16 EnMd_GetTextKokiriHome(GlobalContext* globalCtx, EnMd* this) {
     this->unk_208 = 0;
     this->unk_209 = TEXT_STATE_NONE;
 
-    if (gSaveContext.eventChkInf[4] & 1) {
+    if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE && !CHECK_QUEST_ITEM(QUEST_SONG_SARIA)) {
         return 0x1028;
     }
 
@@ -494,13 +494,13 @@ u8 EnMd_ShouldSpawn(EnMd* this, GlobalContext* globalCtx) {
             return 1;
         }
 
-        if (!(gSaveContext.eventChkInf[1] & 0x1000) && !(gSaveContext.eventChkInf[4] & 1)) {
+        if (!(gSaveContext.eventChkInf[1] & 0x1000)) {
             return 1;
         }
     }
 
     if (globalCtx->sceneNum == SCENE_KOKIRI_HOME4) {
-        if (((gSaveContext.eventChkInf[1] & 0x1000) != 0) || ((gSaveContext.eventChkInf[4] & 1) != 0)) {
+        if ((gSaveContext.eventChkInf[1] & 0x1000)) {
             if (!LINK_IS_ADULT) {
                 return 1;
             }
