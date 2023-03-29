@@ -50,13 +50,16 @@ void BgSpot03Taki_Init(Actor* thisx, PlayState* play) {
     s16 pad;
     CollisionHeader* colHeader = NULL;
 
+    this->state = WATERFALL_OPENED;
+    func_8003EBF8(globalCtx, &globalCtx->colCtx.dyna, this->dyna.bgId);
+    this->openingAlpha = 0;
+
     this->switchFlag = (this->dyna.actor.params & 0x3F);
     DynaPolyActor_Init(&this->dyna, DPM_UNK);
     CollisionHeader_GetVirtual(&object_spot03_object_Col_000C98, &colHeader);
     this->dyna.bgId = DynaPoly_SetBgActor(play, &play->colCtx.dyna, &this->dyna.actor, colHeader);
     Actor_ProcessInitChain(&this->dyna.actor, sInitChain);
     this->bufferIndex = 0;
-    this->openingAlpha = 255.0f;
     BgSpot03Taki_ApplyOpeningAlpha(this, 0);
     BgSpot03Taki_ApplyOpeningAlpha(this, 1);
     this->actionFunc = func_808ADEF0;
@@ -91,8 +94,7 @@ void func_808ADEF0(BgSpot03Taki* this, PlayState* play) {
             }
         }
     } else if (this->state == WATERFALL_OPENED) {
-        this->timer--;
-        if (this->timer < 0) {
+        if (false) {
             this->state = WATERFALL_CLOSING;
         }
     } else if (this->state == WATERFALL_CLOSING) {

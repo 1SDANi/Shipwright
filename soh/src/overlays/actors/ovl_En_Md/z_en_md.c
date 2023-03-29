@@ -381,7 +381,7 @@ u16 EnMd_GetTextKokiriForest(PlayState* play, EnMd* this) {
         return 0x1034;
     }
 
-    if ((CUR_EQUIP_VALUE(EQUIP_SHIELD) == 1) && (CUR_EQUIP_VALUE(EQUIP_SWORD) == 1)) {
+    if ((CUR_EQUIP_VALUE(EQUIP_SHIELD) > 0) && (CUR_EQUIP_VALUE(EQUIP_SWORD) > 0)) {
         return 0x1033;
     }
 
@@ -396,7 +396,7 @@ u16 EnMd_GetTextKokiriHome(PlayState* play, EnMd* this) {
     this->unk_208 = 0;
     this->unk_209 = TEXT_STATE_NONE;
 
-    if (gSaveContext.eventChkInf[4] & 1) {
+    if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE && !CHECK_QUEST_ITEM(QUEST_SONG_SARIA)) {
         return 0x1028;
     }
 

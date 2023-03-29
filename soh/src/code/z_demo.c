@@ -1950,7 +1950,7 @@ void Cutscene_ProcessCommands(PlayState* play, CutsceneContext* csCtx, u8* cutsc
                 cutscenePtr += 4;
                 for (j = 0; j < cmdEntries; j++) {
                     cmd = (CsCmdBase*)cutscenePtr;
-                    if (cmd->base != 0xFFFF) {
+                    if (cmd->base != 0xFFFF && ((CsCmdTextbox*)(cutscenePtr))->base != 0x7074) {
                         Cutscene_Command_Textbox(play, csCtx, (void*)cutscenePtr);
                     }
                     cutscenePtr += sizeof(CutsceneData) * 3;

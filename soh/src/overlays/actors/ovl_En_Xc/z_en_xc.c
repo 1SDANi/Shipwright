@@ -2208,8 +2208,6 @@ void EnXc_InitTempleOfTime(EnXc* this, PlayState* play) {
             } else {
                 GivePlayerRandoRewardSheikSong(this, play, RC_SHEIK_AT_TEMPLE, 0x20, RG_PRELUDE_OF_LIGHT);
             }
-        } else if (!(gSaveContext.eventChkInf[5] & 0x20)) {
-            func_80B3C9EC(this);
         } else {
             Actor_Kill(&this->actor);
         }

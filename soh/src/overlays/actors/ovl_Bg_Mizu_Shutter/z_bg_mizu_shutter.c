@@ -55,6 +55,11 @@ void BgMizuShutter_Init(BgMizuShutter* thisx, PlayState* play) {
     CollisionHeader* sp30 = NULL;
     s32 pad3;
 
+    //Allow obtaining the snake tunnel chest in water temple without having the bow
+    if ((globalCtx->sceneNum == SCENE_MIZUSIN && globalCtx->roomCtx.curRoom.num == 21)) {
+        Actor_Kill(thisx);
+    }
+
     Actor_ProcessInitChain(&this->dyna.actor, sInitChain);
     this->displayList = sDisplayLists[SIZE_PARAM];
     DynaPolyActor_Init(&this->dyna, DPM_PLAYER);

@@ -44,6 +44,11 @@ void EnOkarinaTag_Destroy(Actor* thisx, PlayState* play) {
 void EnOkarinaTag_Init(Actor* thisx, PlayState* play) {
     EnOkarinaTag* this = (EnOkarinaTag*)thisx;
 
+    // remove the falls' ocarina tag
+    if (globalCtx->sceneNum == 84) {
+        Actor_Kill(thisx);
+    }
+
     osSyncPrintf("\n\n");
     // "Ocarina tag outbreak"
     osSyncPrintf(VT_FGCOL(GREEN) "☆☆☆☆☆ オカリナタグ発生 ☆☆☆☆☆ %x\n" VT_RST, this->actor.params);

@@ -75,6 +75,10 @@ static InitChainEntry sInitChain[] = {
 void BgHakaZou_Init(Actor* thisx, PlayState* play) {
     s32 pad;
     BgHakaZou* this = (BgHakaZou*)thisx;
+    bool bombBridge = thisx->params == STA_GIANT_BIRD_STATUE &&
+                        play->sceneNum == SCENE_HAKADAN &&
+                        play->roomCtx.curRoom.num == 21 &&
+                        thisx->world.pos.y < -1700;
 
     Actor_ProcessInitChain(thisx, sInitChain);
 
@@ -158,6 +162,8 @@ void func_808828F4(BgHakaZou* this, PlayState* play) {
 
 void BgHakaZou_Wait(BgHakaZou* this, PlayState* play) {
     CollisionHeader* colHeader;
+    bool bombBridge =   this->dyna.actor.params == STA_GIANT_BIRD_STATUE && play->sceneNum == SCENE_HAKADAN && 
+                        play->roomCtx.curRoom.num == 21 && this->dyna.actor.world.pos.y < -1700;
 
     if (Object_IsLoaded(&play->objectCtx, this->requiredObjBankIndex)) {
         this->dyna.actor.objBankIndex = this->requiredObjBankIndex;
@@ -189,7 +195,7 @@ void BgHakaZou_Wait(BgHakaZou* this, PlayState* play) {
 
             this->dyna.bgId = DynaPoly_SetBgActor(play, &play->colCtx.dyna, &this->dyna.actor, colHeader);
 
-            if ((this->dyna.actor.params == STA_GIANT_BIRD_STATUE) && Flags_GetSwitch(play, this->switchFlag)) {
+            if ((this->dyna.actor.params == STA_GIANT_BIRD_STATUE) && (Flags_GetSwitch(play, this->switchFlag) || bombBridge)) {
                 this->actionFunc = BgHakaZou_DoNothing;
             } else {
                 this->actionFunc = func_80883000;

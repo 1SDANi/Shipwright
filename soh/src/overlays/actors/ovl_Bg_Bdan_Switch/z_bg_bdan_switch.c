@@ -140,6 +140,11 @@ void BgBdanSwitch_Init(Actor* thisx, PlayState* play) {
     s16 type;
     s32 flag;
 
+    if (globalCtx->sceneNum == 2 && thisx->room == 0) {
+        thisx->world.pos.y = -155;
+        thisx->world.pos.z = -900;
+    }
+
     type = this->dyna.actor.params & 0xFF;
     Actor_ProcessInitChain(&this->dyna.actor, sInitChain);
     if (type == YELLOW_TALL_1 || type == YELLOW_TALL_2) {
