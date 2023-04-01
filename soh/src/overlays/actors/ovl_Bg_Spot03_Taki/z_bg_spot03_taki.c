@@ -51,7 +51,7 @@ void BgSpot03Taki_Init(Actor* thisx, PlayState* play) {
     CollisionHeader* colHeader = NULL;
 
     this->state = WATERFALL_OPENED;
-    func_8003EBF8(globalCtx, &globalCtx->colCtx.dyna, this->dyna.bgId);
+    func_8003EBF8(play, &play->colCtx.dyna, this->dyna.bgId);
     this->openingAlpha = 0;
 
     this->switchFlag = (this->dyna.actor.params & 0x3F);

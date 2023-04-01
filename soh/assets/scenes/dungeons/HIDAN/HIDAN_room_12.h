@@ -2,20 +2,20 @@
 
 #include "align_asset_macro.h"
 
-#define dHIDAN_room_12DL_000B70 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12DL_000B70"
-static const ALIGN_ASSET(2) char HIDAN_room_12DL_000B70[] = dHIDAN_room_12DL_000B70;
+#define dHIDAN_room_12DL_000B80 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12DL_000B80"
+static const ALIGN_ASSET(2) char HIDAN_room_12DL_000B80[] = dHIDAN_room_12DL_000B80;
 
-#define dHIDAN_room_12Tex_002768 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12Tex_002768"
-static const ALIGN_ASSET(2) char HIDAN_room_12Tex_002768[] = dHIDAN_room_12Tex_002768;
+#define dHIDAN_room_12Tex_002778 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12Tex_002778"
+static const ALIGN_ASSET(2) char HIDAN_room_12Tex_002778[] = dHIDAN_room_12Tex_002778;
 
-#define dHIDAN_room_12DL_001520 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12DL_001520"
-static const ALIGN_ASSET(2) char HIDAN_room_12DL_001520[] = dHIDAN_room_12DL_001520;
+#define dHIDAN_room_12DL_001530 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12DL_001530"
+static const ALIGN_ASSET(2) char HIDAN_room_12DL_001530[] = dHIDAN_room_12DL_001530;
 
-#define dHIDAN_room_12DL_001A58 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12DL_001A58"
-static const ALIGN_ASSET(2) char HIDAN_room_12DL_001A58[] = dHIDAN_room_12DL_001A58;
+#define dHIDAN_room_12DL_001A68 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12DL_001A68"
+static const ALIGN_ASSET(2) char HIDAN_room_12DL_001A68[] = dHIDAN_room_12DL_001A68;
 
-#define dHIDAN_room_12Tex_001D68 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12Tex_001D68"
-static const ALIGN_ASSET(2) char HIDAN_room_12Tex_001D68[] = dHIDAN_room_12Tex_001D68;
+#define dHIDAN_room_12Tex_001D78 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12Tex_001D78"
+static const ALIGN_ASSET(2) char HIDAN_room_12Tex_001D78[] = dHIDAN_room_12Tex_001D78;
 
-#define dHIDAN_room_12Tex_001F68 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12Tex_001F68"
-static const ALIGN_ASSET(2) char HIDAN_room_12Tex_001F68[] = dHIDAN_room_12Tex_001F68;
+#define dHIDAN_room_12Tex_001F78 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_12Tex_001F78"
+static const ALIGN_ASSET(2) char HIDAN_room_12Tex_001F78[] = dHIDAN_room_12Tex_001F78;

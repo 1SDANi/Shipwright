@@ -2,98 +2,98 @@
 
 #include "align_asset_macro.h"
 
-#define dydan_room_3DL_000F00 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_000F00"
-static const ALIGN_ASSET(2) char ydan_room_3DL_000F00[] = dydan_room_3DL_000F00;
+#define dydan_room_3DL_000EF0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_000EF0"
+static const ALIGN_ASSET(2) char ydan_room_3DL_000EF0[] = dydan_room_3DL_000EF0;
 
-#define dydan_room_3Tex_008CC0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_008CC0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_008CC0[] = dydan_room_3Tex_008CC0;
+#define dydan_room_3Tex_008CB0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_008CB0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_008CB0[] = dydan_room_3Tex_008CB0;
 
-#define dydan_room_3DL_005160 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_005160"
-static const ALIGN_ASSET(2) char ydan_room_3DL_005160[] = dydan_room_3DL_005160;
+#define dydan_room_3DL_005150 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_005150"
+static const ALIGN_ASSET(2) char ydan_room_3DL_005150[] = dydan_room_3DL_005150;
 
-#define dydan_room_3Tex_0084C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_0084C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_0084C0[] = dydan_room_3Tex_0084C0;
+#define dydan_room_3Tex_0084B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_0084B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_0084B0[] = dydan_room_3Tex_0084B0;
 
-#define dydan_room_3Tex_0094C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_0094C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_0094C0[] = dydan_room_3Tex_0094C0;
+#define dydan_room_3Tex_0094B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_0094B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_0094B0[] = dydan_room_3Tex_0094B0;
 
-#define dydan_room_3DL_0106E0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_0106E0"
-static const ALIGN_ASSET(2) char ydan_room_3DL_0106E0[] = dydan_room_3DL_0106E0;
+#define dydan_room_3DL_0106D0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_0106D0"
+static const ALIGN_ASSET(2) char ydan_room_3DL_0106D0[] = dydan_room_3DL_0106D0;
 
-#define dydan_room_3Tex_011DB0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_011DB0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_011DB0[] = dydan_room_3Tex_011DB0;
+#define dydan_room_3Tex_011DA0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_011DA0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_011DA0[] = dydan_room_3Tex_011DA0;
 
-#define dydan_room_3Tex_0131B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_0131B0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_0131B0[] = dydan_room_3Tex_0131B0;
+#define dydan_room_3Tex_0131A0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_0131A0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_0131A0[] = dydan_room_3Tex_0131A0;
 
-#define dydan_room_3DL_005EC0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_005EC0"
-static const ALIGN_ASSET(2) char ydan_room_3DL_005EC0[] = dydan_room_3DL_005EC0;
+#define dydan_room_3DL_005EB0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_005EB0"
+static const ALIGN_ASSET(2) char ydan_room_3DL_005EB0[] = dydan_room_3DL_005EB0;
 
-#define dydan_room_3Tex_00F8C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00F8C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00F8C0[] = dydan_room_3Tex_00F8C0;
+#define dydan_room_3Tex_00F8B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00F8B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00F8B0[] = dydan_room_3Tex_00F8B0;
 
-#define dydan_room_3Tex_00B8C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00B8C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00B8C0[] = dydan_room_3Tex_00B8C0;
+#define dydan_room_3Tex_00B8B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00B8B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00B8B0[] = dydan_room_3Tex_00B8B0;
 
-#define dydan_room_3Tex_00D8C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00D8C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00D8C0[] = dydan_room_3Tex_00D8C0;
+#define dydan_room_3Tex_00D8B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00D8B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00D8B0[] = dydan_room_3Tex_00D8B0;
 
-#define dydan_room_3DL_0116C8 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_0116C8"
-static const ALIGN_ASSET(2) char ydan_room_3DL_0116C8[] = dydan_room_3DL_0116C8;
+#define dydan_room_3DL_0116B8 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_0116B8"
+static const ALIGN_ASSET(2) char ydan_room_3DL_0116B8[] = dydan_room_3DL_0116B8;
 
-#define dydan_room_3DL_006B18 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_006B18"
-static const ALIGN_ASSET(2) char ydan_room_3DL_006B18[] = dydan_room_3DL_006B18;
+#define dydan_room_3DL_006B08 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_006B08"
+static const ALIGN_ASSET(2) char ydan_room_3DL_006B08[] = dydan_room_3DL_006B08;
 
-#define dydan_room_3Tex_0074C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_0074C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_0074C0[] = dydan_room_3Tex_0074C0;
+#define dydan_room_3Tex_0074B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_0074B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_0074B0[] = dydan_room_3Tex_0074B0;
 
-#define dydan_room_3Tex_00E8C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00E8C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00E8C0[] = dydan_room_3Tex_00E8C0;
+#define dydan_room_3Tex_00E8B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00E8B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00E8B0[] = dydan_room_3Tex_00E8B0;
 
-#define dydan_room_3DL_007208 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_007208"
-static const ALIGN_ASSET(2) char ydan_room_3DL_007208[] = dydan_room_3DL_007208;
+#define dydan_room_3DL_0071F8 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_0071F8"
+static const ALIGN_ASSET(2) char ydan_room_3DL_0071F8[] = dydan_room_3DL_0071F8;
 
-#define dydan_room_3Tex_00E0C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00E0C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00E0C0[] = dydan_room_3Tex_00E0C0;
+#define dydan_room_3Tex_00E0B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00E0B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00E0B0[] = dydan_room_3Tex_00E0B0;
 
-#define dydan_room_3DL_011AC0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_011AC0"
-static const ALIGN_ASSET(2) char ydan_room_3DL_011AC0[] = dydan_room_3DL_011AC0;
+#define dydan_room_3DL_011AB0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_011AB0"
+static const ALIGN_ASSET(2) char ydan_room_3DL_011AB0[] = dydan_room_3DL_011AB0;
 
-#define dydan_room_3DL_011C68 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_011C68"
-static const ALIGN_ASSET(2) char ydan_room_3DL_011C68[] = dydan_room_3DL_011C68;
+#define dydan_room_3DL_011C58 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_011C58"
+static const ALIGN_ASSET(2) char ydan_room_3DL_011C58[] = dydan_room_3DL_011C58;
 
-#define dydan_room_3Tex_012DB0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_012DB0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_012DB0[] = dydan_room_3Tex_012DB0;
+#define dydan_room_3Tex_012DA0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_012DA0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_012DA0[] = dydan_room_3Tex_012DA0;
 
-#define dydan_room_3DL_010B48 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_010B48"
-static const ALIGN_ASSET(2) char ydan_room_3DL_010B48[] = dydan_room_3DL_010B48;
+#define dydan_room_3DL_010B38 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_010B38"
+static const ALIGN_ASSET(2) char ydan_room_3DL_010B38[] = dydan_room_3DL_010B38;
 
-#define dydan_room_3DL_003408 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_003408"
-static const ALIGN_ASSET(2) char ydan_room_3DL_003408[] = dydan_room_3DL_003408;
+#define dydan_room_3DL_0033F8 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3DL_0033F8"
+static const ALIGN_ASSET(2) char ydan_room_3DL_0033F8[] = dydan_room_3DL_0033F8;
 
-#define dydan_room_3Tex_00A0C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00A0C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00A0C0[] = dydan_room_3Tex_00A0C0;
+#define dydan_room_3Tex_00A0B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00A0B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00A0B0[] = dydan_room_3Tex_00A0B0;
 
-#define dydan_room_3Tex_00D0C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00D0C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00D0C0[] = dydan_room_3Tex_00D0C0;
+#define dydan_room_3Tex_00D0B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00D0B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00D0B0[] = dydan_room_3Tex_00D0B0;
 
-#define dydan_room_3Tex_00D4C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00D4C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00D4C0[] = dydan_room_3Tex_00D4C0;
+#define dydan_room_3Tex_00D4B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00D4B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00D4B0[] = dydan_room_3Tex_00D4B0;
 
-#define dydan_room_3Tex_009CC0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_009CC0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_009CC0[] = dydan_room_3Tex_009CC0;
+#define dydan_room_3Tex_009CB0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_009CB0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_009CB0[] = dydan_room_3Tex_009CB0;
 
-#define dydan_room_3Tex_00B4C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00B4C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00B4C0[] = dydan_room_3Tex_00B4C0;
+#define dydan_room_3Tex_00B4B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00B4B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00B4B0[] = dydan_room_3Tex_00B4B0;
 
-#define dydan_room_3Tex_00A8C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00A8C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00A8C0[] = dydan_room_3Tex_00A8C0;
+#define dydan_room_3Tex_00A8B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00A8B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00A8B0[] = dydan_room_3Tex_00A8B0;
 
-#define dydan_room_3Tex_00C8C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00C8C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00C8C0[] = dydan_room_3Tex_00C8C0;
+#define dydan_room_3Tex_00C8B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00C8B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00C8B0[] = dydan_room_3Tex_00C8B0;
 
-#define dydan_room_3Tex_00C0C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00C0C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00C0C0[] = dydan_room_3Tex_00C0C0;
+#define dydan_room_3Tex_00C0B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00C0B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00C0B0[] = dydan_room_3Tex_00C0B0;
 
-#define dydan_room_3Tex_00B0C0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00B0C0"
-static const ALIGN_ASSET(2) char ydan_room_3Tex_00B0C0[] = dydan_room_3Tex_00B0C0;
+#define dydan_room_3Tex_00B0B0 "__OTR__scenes/nonmq/ydan_scene/ydan_room_3Tex_00B0B0"
+static const ALIGN_ASSET(2) char ydan_room_3Tex_00B0B0[] = dydan_room_3Tex_00B0B0;

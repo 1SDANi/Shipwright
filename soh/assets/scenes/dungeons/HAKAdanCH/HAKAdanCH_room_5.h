@@ -2,23 +2,23 @@
 
 #include "align_asset_macro.h"
 
-#define dHAKAdanCH_room_5DL_0010A0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5DL_0010A0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_5DL_0010A0[] = dHAKAdanCH_room_5DL_0010A0;
+#define dHAKAdanCH_room_5DL_001070 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5DL_001070"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_5DL_001070[] = dHAKAdanCH_room_5DL_001070;
 
-#define dHAKAdanCH_room_5Tex_001190 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5Tex_001190"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_5Tex_001190[] = dHAKAdanCH_room_5Tex_001190;
+#define dHAKAdanCH_room_5Tex_001160 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5Tex_001160"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_5Tex_001160[] = dHAKAdanCH_room_5Tex_001160;
 
-#define dHAKAdanCH_room_5DL_000F10 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5DL_000F10"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_5DL_000F10[] = dHAKAdanCH_room_5DL_000F10;
+#define dHAKAdanCH_room_5DL_000EE0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5DL_000EE0"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_5DL_000EE0[] = dHAKAdanCH_room_5DL_000EE0;
 
-#define dHAKAdanCH_room_5DL_000C18 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5DL_000C18"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_5DL_000C18[] = dHAKAdanCH_room_5DL_000C18;
+#define dHAKAdanCH_room_5DL_000BE8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5DL_000BE8"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_5DL_000BE8[] = dHAKAdanCH_room_5DL_000BE8;
 
-#define dHAKAdanCH_room_5Tex_002190 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5Tex_002190"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_5Tex_002190[] = dHAKAdanCH_room_5Tex_002190;
+#define dHAKAdanCH_room_5Tex_002160 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5Tex_002160"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_5Tex_002160[] = dHAKAdanCH_room_5Tex_002160;
 
-#define dHAKAdanCH_room_5DL_000420 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5DL_000420"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_5DL_000420[] = dHAKAdanCH_room_5DL_000420;
+#define dHAKAdanCH_room_5DL_0003F0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5DL_0003F0"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_5DL_0003F0[] = dHAKAdanCH_room_5DL_0003F0;
 
-#define dHAKAdanCH_room_5DL_000270 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5DL_000270"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_5DL_000270[] = dHAKAdanCH_room_5DL_000270;
+#define dHAKAdanCH_room_5DL_000240 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_5DL_000240"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_5DL_000240[] = dHAKAdanCH_room_5DL_000240;

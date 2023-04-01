@@ -92,132 +92,117 @@ bool Scene_CommandActorList(PlayState* play, Ship::SceneCommand* cmd) {
         play->numSetupActors = cmdActor->numActors;
     }
 
-    ActorEntry* entries;
+    ActorEntry* inputEntries = (ActorEntry*)cmdActor->GetPointer();
+    ActorEntry* outputEntries;
+
     // box in jabu mouth
     if (play->sceneNum == 2 && play->roomCtx.curRoom.num == 0) {
-        entries = (ActorEntry*)malloc((cmdActor->numActors + 1) * sizeof(ActorEntry));
+        outputEntries = (ActorEntry*)malloc((cmdActor->numActors + 1) * sizeof(ActorEntry));
     // torches in dodongo firecircle2
     } else if (play->sceneNum == 1 && play->roomCtx.curRoom.num == 12) {
-        entries = (ActorEntry*)malloc((cmdActor->numActors + 2) * sizeof(ActorEntry));
+        outputEntries = (ActorEntry*)malloc((cmdActor->numActors + 2) * sizeof(ActorEntry));
     } else if (play->sceneNum == SCENE_HAKADAN && play->roomCtx.curRoom.num == 21) {
-        entries = (ActorEntry*)malloc((cmdActor->numActors + 1) * sizeof(ActorEntry));
+        outputEntries = (ActorEntry*)malloc((cmdActor->numActors + 1) * sizeof(ActorEntry));
     } else if (play->sceneNum == SCENE_JYASINZOU && play->roomCtx.curRoom.num == 22) {
-        entries = (ActorEntry*)malloc(sizeof(ActorEntry));
+        outputEntries = (ActorEntry*)malloc(sizeof(ActorEntry));
     } else if (play->sceneNum == SCENE_SPOT13 && play->roomCtx.curRoom.num == 1) {
-        entries = (ActorEntry*)malloc((cmdActor->numActors + 2) * sizeof(ActorEntry));
+        outputEntries = (ActorEntry*)malloc((cmdActor->numActors + 2) * sizeof(ActorEntry));
     } else {
-        entries = (ActorEntry*)malloc(cmdActor->numActors * sizeof(ActorEntry));
+        outputEntries = (ActorEntry*)malloc(cmdActor->numActors * sizeof(ActorEntry));
     }
     
     int i;
     
-    for (i = 0; i < cmdActor->numActors; i++)
-    {
+    for (i = 0; i < cmdActor->numActors; i++) {
+        outputEntries[i].id = inputEntries[i].id;
+        outputEntries[i].pos.x = inputEntries[i].pos.x;
+        outputEntries[i].pos.y = inputEntries[i].pos.y;
+        outputEntries[i].pos.z = inputEntries[i].pos.z;
+        outputEntries[i].rot.x = inputEntries[i].rot.x;
+        outputEntries[i].rot.y = inputEntries[i].rot.y;
+        outputEntries[i].rot.z = inputEntries[i].rot.z;
+        outputEntries[i].params = inputEntries[i].params;
+
         // torch in dodongo firecircle1
-        if (play->sceneNum == 1 && play->roomCtx.curRoom.num == 10 &&
-            cmdActor->actorList[i].actorNum == ACTOR_EN_KUSA) {
-            entries[i].id = ACTOR_OBJ_SYOKUDAI;
-            entries[i].pos.x = cmdActor->actorList[i].pos.x;
-            entries[i].pos.y = cmdActor->actorList[i].pos.y;
-            entries[i].pos.z = cmdActor->actorList[i].pos.x;
-            entries[i].rot.x = cmdActor->actorList[i].rot.x;
-            entries[i].rot.y = cmdActor->actorList[i].rot.y;
-            entries[i].rot.z = cmdActor->actorList[i].rot.z;
-            entries[i].params = 0x1038;
+        if (play->sceneNum == 1 && play->roomCtx.curRoom.num == 10 && cmdActor->actorList[i].id == ACTOR_EN_KUSA) {
+            outputEntries[i].id = ACTOR_OBJ_SYOKUDAI;
+            outputEntries[i].params = 0x1038;
         // bombchu for bomb bridge in shadow temple
-        } else if (play->sceneNum == SCENE_HAKADAN && play->roomCtx.curRoom.num == 13 &&
-                cmdActor->entries[i].actorNum == ACTOR_EN_BOX && cmdActor->entries[i].initVar == 0x588A) {
-            entries[i].id = cmdActor->actorList[i].actorNum;
-            entries[i].pos.x = cmdActor->actorList[i].pos.x;
-            entries[i].pos.y = cmdActor->actorList[i].pos.y;
-            entries[i].pos.z = cmdActor->actorList[i].pos.x;
-            entries[i].rot.x = cmdActor->actorList[i].rot.x;
-            entries[i].rot.y = cmdActor->actorList[i].rot.y;
-            entries[i].rot.z = cmdActor->actorList[i].rot.z;
-            entries[i].params = 0x5D4A;
+        } else if (play->sceneNum == SCENE_HAKADAN && play->roomCtx.curRoom.num == 13 && cmdActor->actorList[i].id == ACTOR_EN_BOX && cmdActor->actorList[i].params == 0x588A) {
+            outputEntries[i].params = 0x5D4A;
         } else if (play->sceneNum == SCENE_JYASINZOU && play->roomCtx.curRoom.num == 22) {
             continue;
-        } else {
-            entries[i].id = cmdActor->entries[i].actorNum;
-            entries[i].pos.x = cmdActor->actorList[i].pos.x;
-            entries[i].pos.y = cmdActor->actorList[i].pos.y;
-            entries[i].pos.z = cmdActor->actorList[i].pos.x;
-            entries[i].rot.x = cmdActor->actorList[i].rot.x;
-            entries[i].rot.y = cmdActor->actorList[i].rot.y;
-            entries[i].rot.z = cmdActor->actorList[i].rot.z;
-            entries[i].params = cmdActor->actorList[i].params;
         }
     }
     
     // box in jabu mouth
     if (play->sceneNum == 2 && play->roomCtx.curRoom.num == 0) {
-        entries[i].id = ACTOR_OBJ_KIBAKO;
-        entries[i].pos.x = -4;
-        entries[i].pos.y = -300;
-        entries[i].pos.z = -729;
-        entries[i].rot.x = 0;
-        entries[i].rot.y = 4369;
-        entries[i].rot.z = 0;
-        entries[i].params = 0xFFFF;
-    }
-    else if (play->sceneNum == 1 && play->roomCtx.curRoom.num == 12) {
-        entries[i].id = ACTOR_OBJ_SYOKUDAI;
-        entries[i].pos.x = 2705;
-        entries[i].pos.y = 411;
-        entries[i].pos.z = -750;
-        entries[i].rot.x = 0;
-        entries[i].rot.y = 0;
-        entries[i].rot.z = 0;
-        entries[i].params = 0x1039;
+        outputEntries[i].id = ACTOR_OBJ_KIBAKO;
+        outputEntries[i].pos.x = -4;
+        outputEntries[i].pos.y = -300;
+        outputEntries[i].pos.z = -729;
+        outputEntries[i].rot.x = 0;
+        outputEntries[i].rot.y = 4369;
+        outputEntries[i].rot.z = 0;
+        outputEntries[i].params = 0xFFFF;
+    } else if (play->sceneNum == 1 && play->roomCtx.curRoom.num == 12) {
+        outputEntries[i].id = ACTOR_OBJ_SYOKUDAI;
+        outputEntries[i].pos.x = 2705;
+        outputEntries[i].pos.y = 411;
+        outputEntries[i].pos.z = -750;
+        outputEntries[i].rot.x = 0;
+        outputEntries[i].rot.y = 0;
+        outputEntries[i].rot.z = 0;
+        outputEntries[i].params = 0x1039;
         i++;
-        entries[i].id = ACTOR_OBJ_SYOKUDAI;
-        entries[i].pos.x = 3333;
-        entries[i].pos.y = 475;
-        entries[i].pos.z = -1090;
-        entries[i].rot.x = 0;
-        entries[i].rot.y = 0;
-        entries[i].rot.z = 0;
-        entries[i].params = 0x103A;
+        outputEntries[i].id = ACTOR_OBJ_SYOKUDAI;
+        outputEntries[i].pos.x = 3333;
+        outputEntries[i].pos.y = 475;
+        outputEntries[i].pos.z = -1090;
+        outputEntries[i].rot.x = 0;
+        outputEntries[i].rot.y = 0;
+        outputEntries[i].rot.z = 0;
+        outputEntries[i].params = 0x103A;
     // bomb bridge in shadow temple
     } else if (play->sceneNum == SCENE_HAKADAN && play->roomCtx.curRoom.num == 21) {
-        entries[i].id = ACTOR_BG_HAKA_ZOU;
-        entries[i].pos.x = -2258;
-        entries[i].pos.y = -1800;
-        entries[i].pos.z = -779;
-        entries[i].rot.x = -0x4000;
-        entries[i].rot.y = 0;
-        entries[i].rot.z = 0;
-        entries[i].params = 0x1000;
+        outputEntries[i].id = ACTOR_BG_HAKA_ZOU;
+        outputEntries[i].pos.x = -2258;
+        outputEntries[i].pos.y = -1800;
+        outputEntries[i].pos.z = -779;
+        outputEntries[i].rot.x = -0x4000;
+        outputEntries[i].rot.y = 0;
+        outputEntries[i].rot.z = 0;
+        outputEntries[i].params = 0x1000;
     } else if (play->sceneNum == SCENE_JYASINZOU && play->roomCtx.curRoom.num == 22) {
-        entries[0].id = ACTOR_EN_BOX;
-        entries[0].pos.x = 685;
-        entries[0].pos.y = 1633;
-        entries[0].pos.z = -1601;
-        entries[0].rot.x = 0;
-        entries[0].rot.y = -32768;
-        entries[0].rot.z = 0;
-        entries[0].params = 0x27EA;
+        outputEntries[0].id = ACTOR_EN_BOX;
+        outputEntries[0].pos.x = 685;
+        outputEntries[0].pos.y = 1633;
+        outputEntries[0].pos.z = -1601;
+        outputEntries[0].rot.x = 0;
+        outputEntries[0].rot.y = -32768;
+        outputEntries[0].rot.z = 0;
+        outputEntries[0].params = 0x27EA;
     } else if (play->sceneNum == SCENE_SPOT13 && play->roomCtx.curRoom.num == 1) {
-        entries[i].id = ACTOR_OBJ_KIBAKO2;
-        entries[i].pos.x = 3532;
-        entries[i].pos.y = -410;
-        entries[i].pos.z = 2840;
-        entries[i].rot.x = 0;
-        entries[i].rot.y = 0xB777;
-        entries[i].rot.z = 0;
-        entries[i].params = 0xFFFF;
+        outputEntries[i].id = ACTOR_OBJ_KIBAKO2;
+        outputEntries[i].pos.x = 3532;
+        outputEntries[i].pos.y = -410;
+        outputEntries[i].pos.z = 2840;
+        outputEntries[i].rot.x = 0;
+        outputEntries[i].rot.y = 0xB777;
+        outputEntries[i].rot.z = 0;
+        outputEntries[i].params = 0xFFFF;
         i++;
-        entries[i].id = ACTOR_OBJ_KIBAKO2;
-        entries[i].pos.x = 3300;
-        entries[i].pos.y = -380;
-        entries[i].pos.z = 2650;
-        entries[i].rot.x = 0;
-        entries[i].rot.y = 0xB777;
-        entries[i].rot.z = 0;
-        entries[i].params = 0xFFFF;
+        outputEntries[i].id = ACTOR_OBJ_KIBAKO2;
+        outputEntries[i].pos.x = 3300;
+        outputEntries[i].pos.y = -380;
+        outputEntries[i].pos.z = 2650;
+        outputEntries[i].rot.x = 0;
+        outputEntries[i].rot.y = 0xB777;
+        outputEntries[i].rot.z = 0;
+        outputEntries[i].params = 0xFFFF;
     }
 
-    play->setupActorList = entries;
+    play->setupActorList = outputEntries;
 
     return false;
 }
@@ -392,31 +377,21 @@ bool Scene_CommandTransitionActorList(PlayState* play, Ship::SceneCommand* cmd) 
     play->transiActorCtx.numActors = cmdActor->numTransitionActors;
     play->transiActorCtx.list = (TransitionActorEntry*)malloc(cmdActor->numTransitionActors * sizeof(TransitionActorEntry));
 
-    for (int i = 0; i < cmdActor->numTransitionActors; i++)
-    {
-        if (play->sceneNum == SCENE_MIZUSIN && cmdActor->entries[i].frontObjectRoom == 1 &&
-            cmdActor->entries[i].initVar == 0x86 && cmdActor->entries[i].backObjectRoom == 0) {
-            play->transiActorCtx.list[i].sides[0].room = cmdActor->entries[i].frontObjectRoom;
-            play->transiActorCtx.list[i].sides[0].effects = cmdActor->entries[i].frontTransitionReaction;
-            play->transiActorCtx.list[i].sides[1].room = cmdActor->entries[i].backObjectRoom;
-            play->transiActorCtx.list[i].sides[1].effects = cmdActor->entries[i].backTransitionReaction;
-            play->transiActorCtx.list[i].id = cmdActor->entries[i].actorNum;
-            play->transiActorCtx.list[i].pos.x = cmdActor->entries[i].pos.x;
-            play->transiActorCtx.list[i].pos.y = cmdActor->entries[i].pos.y;
-            play->transiActorCtx.list[i].pos.z = cmdActor->entries[i].pos.z;
-            play->transiActorCtx.list[i].rotY = cmdActor->entries[i].rotY;
+    for (int i = 0; i < cmdActor->numTransitionActors; i++) {
+        play->transiActorCtx.list[i].sides[0].room = cmdActor->transitionActorList[i].sides[0].room;
+        play->transiActorCtx.list[i].sides[0].effects = cmdActor->transitionActorList[i].sides[0].effects;
+        play->transiActorCtx.list[i].sides[1].room = cmdActor->transitionActorList[i].sides[1].room;
+        play->transiActorCtx.list[i].sides[1].effects = cmdActor->transitionActorList[i].sides[1].effects;
+        play->transiActorCtx.list[i].id = cmdActor->transitionActorList[i].id;
+        play->transiActorCtx.list[i].pos.x = cmdActor->transitionActorList[i].pos.x;
+        play->transiActorCtx.list[i].pos.y = cmdActor->transitionActorList[i].pos.y;
+        play->transiActorCtx.list[i].pos.z = cmdActor->transitionActorList[i].pos.z;
+        play->transiActorCtx.list[i].rotY = cmdActor->transitionActorList[i].rotY;
+        play->transiActorCtx.list[i].params = cmdActor->transitionActorList[i].params;
+
+        if (play->sceneNum == SCENE_MIZUSIN && cmdActor->transitionActorList[i].sides[0].room == 1 &&
+            cmdActor->transitionActorList[i].params == 0x86 && cmdActor->transitionActorList[i].sides[1].room == 0) {
             play->transiActorCtx.list[i].params = 0x06;
-        } else {
-            play->transiActorCtx.list[i].sides[0].room = cmdActor->entries[i].frontObjectRoom;
-            play->transiActorCtx.list[i].sides[0].effects = cmdActor->entries[i].frontTransitionReaction;
-            play->transiActorCtx.list[i].sides[1].room = cmdActor->entries[i].backObjectRoom;
-            play->transiActorCtx.list[i].sides[1].effects = cmdActor->entries[i].backTransitionReaction;
-            play->transiActorCtx.list[i].id = cmdActor->entries[i].actorNum;
-            play->transiActorCtx.list[i].pos.x = cmdActor->entries[i].pos.x;
-            play->transiActorCtx.list[i].pos.y = cmdActor->entries[i].pos.y;
-            play->transiActorCtx.list[i].pos.z = cmdActor->entries[i].pos.z;
-            play->transiActorCtx.list[i].rotY = cmdActor->entries[i].rotY;
-            play->transiActorCtx.list[i].params = cmdActor->entries[i].initVar;
         }
     }
 

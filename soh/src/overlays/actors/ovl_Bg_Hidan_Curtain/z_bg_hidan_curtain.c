@@ -206,11 +206,10 @@ void BgHidanCurtain_Update(Actor* thisx, PlayState* play2) {
     BgHidanCurtainParams* hcParams = &sHCParams[this->size];
     f32 riseProgress;
     Vec3f tipToFlame;
-    Player* player = GET_PLAYER(globalCtx);
+    Player* player = GET_PLAYER(play2);
     
-    if (player->heldItemActionParam == PLAYER_AP_STICK &&
-        !Flags_GetSwitch(globalCtx, this->actor.params)) {
-        Math_Vec3f_Diff(&player->swordInfo[0].tip, &this->actor.world.pos, &tipToFlame);
+    if (player->heldItemAction == PLAYER_IA_STICK && !Flags_GetSwitch(play2, this->actor.params)) {
+        Math_Vec3f_Diff(&player->meleeWeaponInfo[0].tip, &this->actor.world.pos, &tipToFlame);
         if ((SQ(tipToFlame.x) + SQ(tipToFlame.y) + SQ(tipToFlame.z)) < SQ(hcParams->radius*2)) {
             if (player->unk_860 == 0) {
                 player->unk_860 = 210;

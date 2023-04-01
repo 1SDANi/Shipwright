@@ -14,8 +14,8 @@ static const ALIGN_ASSET(2) char gTitleCopyright19982002Tex[] = dgTitleCopyright
 #define dgTitleCopyright19982003Tex "__OTR__objects/object_mag/gTitleCopyright19982003Tex"
 static const ALIGN_ASSET(2) char gTitleCopyright19982003Tex[] = dgTitleCopyright19982003Tex;
 
-#define dgTitleMasterQuestSubtitleTex "__OTR__objects/object_mag/gTitleMasterQuestSubtitleTex"
-static const ALIGN_ASSET(2) char gTitleMasterQuestSubtitleTex[] = dgTitleMasterQuestSubtitleTex;
+#define dgTitleDiskTex "__OTR__objects/object_mag/gTitleDiskTex"
+static const ALIGN_ASSET(2) char gTitleDiskTex[] = dgTitleDiskTex;
 
 #define dgTitleEffectMask00Tex "__OTR__objects/object_mag/gTitleEffectMask00Tex"
 static const ALIGN_ASSET(2) char gTitleEffectMask00Tex[] = dgTitleEffectMask00Tex;
@@ -52,12 +52,6 @@ static const ALIGN_ASSET(2) char gTitleTheLegendOfTextTex[] = dgTitleTheLegendOf
 
 #define dgTitleOcarinaOfTimeTMTextTex "__OTR__objects/object_mag/gTitleOcarinaOfTimeTMTextTex"
 static const ALIGN_ASSET(2) char gTitleOcarinaOfTimeTMTextTex[] = dgTitleOcarinaOfTimeTMTextTex;
-
-#define dgTitleUraLogoTex "__OTR__objects/object_mag/gTitleUraLogoTex"
-static const ALIGN_ASSET(2) char gTitleUraLogoTex[] = dgTitleUraLogoTex;
-
-#define dgTitleDiskTex "__OTR__objects/object_mag/gTitleDiskTex"
-static const ALIGN_ASSET(2) char gTitleDiskTex[] = dgTitleDiskTex;
 
 #define dgTitleTitleJPNTex "__OTR__objects/object_mag/gTitleTitleJPNTex"
 static const ALIGN_ASSET(2) char gTitleTitleJPNTex[] = dgTitleTitleJPNTex;

@@ -2,56 +2,56 @@
 
 #include "align_asset_macro.h"
 
-#define djyasinzou_room_8DL_0009F0 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_0009F0"
-static const ALIGN_ASSET(2) char jyasinzou_room_8DL_0009F0[] = djyasinzou_room_8DL_0009F0;
+#define djyasinzou_room_8DL_0009B0 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_0009B0"
+static const ALIGN_ASSET(2) char jyasinzou_room_8DL_0009B0[] = djyasinzou_room_8DL_0009B0;
 
-#define djyasinzou_room_8Tex_007250 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_007250"
-static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_007250[] = djyasinzou_room_8Tex_007250;
+#define djyasinzou_room_8Tex_007210 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_007210"
+static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_007210[] = djyasinzou_room_8Tex_007210;
 
-#define djyasinzou_room_8DL_0018D8 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_0018D8"
-static const ALIGN_ASSET(2) char jyasinzou_room_8DL_0018D8[] = djyasinzou_room_8DL_0018D8;
+#define djyasinzou_room_8DL_001898 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_001898"
+static const ALIGN_ASSET(2) char jyasinzou_room_8DL_001898[] = djyasinzou_room_8DL_001898;
 
-#define djyasinzou_room_8Tex_006A50 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_006A50"
-static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_006A50[] = djyasinzou_room_8Tex_006A50;
+#define djyasinzou_room_8Tex_006A10 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_006A10"
+static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_006A10[] = djyasinzou_room_8Tex_006A10;
 
-#define djyasinzou_room_8Tex_005650 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_005650"
-static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_005650[] = djyasinzou_room_8Tex_005650;
+#define djyasinzou_room_8Tex_005610 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_005610"
+static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_005610[] = djyasinzou_room_8Tex_005610;
 
-#define djyasinzou_room_8Tex_006250 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_006250"
-static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_006250[] = djyasinzou_room_8Tex_006250;
+#define djyasinzou_room_8Tex_006210 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_006210"
+static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_006210[] = djyasinzou_room_8Tex_006210;
 
-#define djyasinzou_room_8DL_0036E8 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_0036E8"
-static const ALIGN_ASSET(2) char jyasinzou_room_8DL_0036E8[] = djyasinzou_room_8DL_0036E8;
+#define djyasinzou_room_8DL_0036A8 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_0036A8"
+static const ALIGN_ASSET(2) char jyasinzou_room_8DL_0036A8[] = djyasinzou_room_8DL_0036A8;
 
-#define djyasinzou_room_8Tex_005E50 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_005E50"
-static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_005E50[] = djyasinzou_room_8Tex_005E50;
+#define djyasinzou_room_8Tex_005E10 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_005E10"
+static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_005E10[] = djyasinzou_room_8Tex_005E10;
 
-#define djyasinzou_room_8Tex_004A50 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_004A50"
-static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_004A50[] = djyasinzou_room_8Tex_004A50;
+#define djyasinzou_room_8Tex_004A10 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_004A10"
+static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_004A10[] = djyasinzou_room_8Tex_004A10;
 
-#define djyasinzou_room_8DL_002350 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_002350"
-static const ALIGN_ASSET(2) char jyasinzou_room_8DL_002350[] = djyasinzou_room_8DL_002350;
+#define djyasinzou_room_8DL_002310 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_002310"
+static const ALIGN_ASSET(2) char jyasinzou_room_8DL_002310[] = djyasinzou_room_8DL_002310;
 
-#define djyasinzou_room_8DL_002720 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_002720"
-static const ALIGN_ASSET(2) char jyasinzou_room_8DL_002720[] = djyasinzou_room_8DL_002720;
+#define djyasinzou_room_8DL_0026E0 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_0026E0"
+static const ALIGN_ASSET(2) char jyasinzou_room_8DL_0026E0[] = djyasinzou_room_8DL_0026E0;
 
-#define djyasinzou_room_8Tex_003A50 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_003A50"
-static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_003A50[] = djyasinzou_room_8Tex_003A50;
+#define djyasinzou_room_8Tex_003A10 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_003A10"
+static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_003A10[] = djyasinzou_room_8Tex_003A10;
 
-#define djyasinzou_room_8DL_0028E0 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_0028E0"
-static const ALIGN_ASSET(2) char jyasinzou_room_8DL_0028E0[] = djyasinzou_room_8DL_0028E0;
+#define djyasinzou_room_8DL_0028A0 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_0028A0"
+static const ALIGN_ASSET(2) char jyasinzou_room_8DL_0028A0[] = djyasinzou_room_8DL_0028A0;
 
-#define djyasinzou_room_8Tex_004E50 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_004E50"
-static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_004E50[] = djyasinzou_room_8Tex_004E50;
+#define djyasinzou_room_8Tex_004E10 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_004E10"
+static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_004E10[] = djyasinzou_room_8Tex_004E10;
 
-#define djyasinzou_room_8DL_002B90 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_002B90"
-static const ALIGN_ASSET(2) char jyasinzou_room_8DL_002B90[] = djyasinzou_room_8DL_002B90;
+#define djyasinzou_room_8DL_002B50 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_002B50"
+static const ALIGN_ASSET(2) char jyasinzou_room_8DL_002B50[] = djyasinzou_room_8DL_002B50;
 
-#define djyasinzou_room_8DL_002D70 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_002D70"
-static const ALIGN_ASSET(2) char jyasinzou_room_8DL_002D70[] = djyasinzou_room_8DL_002D70;
+#define djyasinzou_room_8DL_002D30 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_002D30"
+static const ALIGN_ASSET(2) char jyasinzou_room_8DL_002D30[] = djyasinzou_room_8DL_002D30;
 
-#define djyasinzou_room_8Tex_004250 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_004250"
-static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_004250[] = djyasinzou_room_8Tex_004250;
+#define djyasinzou_room_8Tex_004210 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8Tex_004210"
+static const ALIGN_ASSET(2) char jyasinzou_room_8Tex_004210[] = djyasinzou_room_8Tex_004210;
 
-#define djyasinzou_room_8DL_007ED0 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_007ED0"
-static const ALIGN_ASSET(2) char jyasinzou_room_8DL_007ED0[] = djyasinzou_room_8DL_007ED0;
+#define djyasinzou_room_8DL_007E90 "__OTR__scenes/nonmq/jyasinzou_scene/jyasinzou_room_8DL_007E90"
+static const ALIGN_ASSET(2) char jyasinzou_room_8DL_007E90[] = djyasinzou_room_8DL_007E90;

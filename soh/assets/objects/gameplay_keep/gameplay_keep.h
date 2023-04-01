@@ -2069,9 +2069,6 @@ static const ALIGN_ASSET(2) char gEffShockwaveDL[] = dgEffShockwaveDL;
 #define dgEffBubbleDL "__OTR__objects/gameplay_keep/gEffBubbleDL"
 static const ALIGN_ASSET(2) char gEffBubbleDL[] = dgEffBubbleDL;
 
-#define dgGameplayKeepVtx_01A120 "__OTR__objects/gameplay_keep/gGameplayKeepVtx_01A120"
-static const ALIGN_ASSET(2) char gGameplayKeepVtx_01A120[] = dgGameplayKeepVtx_01A120;
-
 #define dgEffFireFootprint1Tex "__OTR__objects/gameplay_keep/gEffFireFootprint1Tex"
 static const ALIGN_ASSET(2) char gEffFireFootprint1Tex[] = dgEffFireFootprint1Tex;
 

@@ -26,9 +26,6 @@ static const ALIGN_ASSET(2) char gSheikPlayingHarp4Anim[] = dgSheikPlayingHarp4A
 #define dgSheikIdleAnim "__OTR__objects/object_xc/gSheikIdleAnim"
 static const ALIGN_ASSET(2) char gSheikIdleAnim[] = dgSheikIdleAnim;
 
-#define dobject_xc_TLUT_004A40 "__OTR__objects/object_xc/object_xc_TLUT_004A40"
-static const ALIGN_ASSET(2) char object_xc_TLUT_004A40[] = dobject_xc_TLUT_004A40;
-
 #define dgSheikWalkingAnim "__OTR__objects/object_xc/gSheikWalkingAnim"
 static const ALIGN_ASSET(2) char gSheikWalkingAnim[] = dgSheikWalkingAnim;
 
@@ -199,6 +196,9 @@ static const ALIGN_ASSET(2) char object_xcTex_0060C0[] = dobject_xcTex_0060C0;
 
 #define dobject_xcTex_0064C0 "__OTR__objects/object_xc/object_xcTex_0064C0"
 static const ALIGN_ASSET(2) char object_xcTex_0064C0[] = dobject_xcTex_0064C0;
+
+#define dobject_xcTLUT_004A40 "__OTR__objects/object_xc/object_xcTLUT_004A40"
+static const ALIGN_ASSET(2) char object_xcTLUT_004A40[] = dobject_xcTLUT_004A40;
 
 #define dobject_xcTex_006E80 "__OTR__objects/object_xc/object_xcTex_006E80"
 static const ALIGN_ASSET(2) char object_xcTex_006E80[] = dobject_xcTex_006E80;

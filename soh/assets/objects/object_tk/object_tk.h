@@ -44,9 +44,6 @@ static const ALIGN_ASSET(2) char gDampeEff2DL[] = dgDampeEff2DL;
 #define dgDampeSkel "__OTR__objects/object_tk/gDampeSkel"
 static const ALIGN_ASSET(2) char gDampeSkel[] = dgDampeSkel;
 
-#define dobject_tkTLUT_003780 "__OTR__objects/object_tk/object_tkTLUT_003780"
-static const ALIGN_ASSET(2) char object_tkTLUT_003780[] = dobject_tkTLUT_003780;
-
 #define dobject_tkTex_009CC0 "__OTR__objects/object_tk/object_tkTex_009CC0"
 static const ALIGN_ASSET(2) char object_tkTex_009CC0[] = dobject_tkTex_009CC0;
 
@@ -115,6 +112,9 @@ static const ALIGN_ASSET(2) char gDampeSkelLimbsLimb_00BDE4DL_008410[] = dgDampe
 
 #define dgDampeSkelLimbsLimb_00BDF0DL_008958 "__OTR__objects/object_tk/gDampeSkelLimbsLimb_00BDF0DL_008958"
 static const ALIGN_ASSET(2) char gDampeSkelLimbsLimb_00BDF0DL_008958[] = dgDampeSkelLimbsLimb_00BDF0DL_008958;
+
+#define dobject_tkTLUT_003780 "__OTR__objects/object_tk/object_tkTLUT_003780"
+static const ALIGN_ASSET(2) char object_tkTLUT_003780[] = dobject_tkTLUT_003780;
 
 #define dobject_tkTex_005440 "__OTR__objects/object_tk/object_tkTex_005440"
 static const ALIGN_ASSET(2) char object_tkTex_005440[] = dobject_tkTex_005440;

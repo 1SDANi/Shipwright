@@ -2,38 +2,38 @@
 
 #include "align_asset_macro.h"
 
-#define dBmori1_room_2DL_00A328 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2DL_00A328"
-static const ALIGN_ASSET(2) char Bmori1_room_2DL_00A328[] = dBmori1_room_2DL_00A328;
+#define dBmori1_room_2DL_00A348 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2DL_00A348"
+static const ALIGN_ASSET(2) char Bmori1_room_2DL_00A348[] = dBmori1_room_2DL_00A348;
 
-#define dBmori1_room_2Tex_00A380 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00A380"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00A380[] = dBmori1_room_2Tex_00A380;
+#define dBmori1_room_2Tex_00A3A0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00A3A0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00A3A0[] = dBmori1_room_2Tex_00A3A0;
 
-#define dBmori1_room_2Tex_00F180 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00F180"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00F180[] = dBmori1_room_2Tex_00F180;
+#define dBmori1_room_2Tex_00F1A0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00F1A0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00F1A0[] = dBmori1_room_2Tex_00F1A0;
 
-#define dBmori1_room_2Tex_00DD80 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00DD80"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00DD80[] = dBmori1_room_2Tex_00DD80;
+#define dBmori1_room_2Tex_00DDA0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00DDA0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00DDA0[] = dBmori1_room_2Tex_00DDA0;
 
-#define dBmori1_room_2Tex_00AB80 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00AB80"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00AB80[] = dBmori1_room_2Tex_00AB80;
+#define dBmori1_room_2Tex_00ABA0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00ABA0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00ABA0[] = dBmori1_room_2Tex_00ABA0;
 
-#define dBmori1_room_2Tex_00DB80 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00DB80"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00DB80[] = dBmori1_room_2Tex_00DB80;
+#define dBmori1_room_2Tex_00DBA0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00DBA0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00DBA0[] = dBmori1_room_2Tex_00DBA0;
 
-#define dBmori1_room_2Tex_00E580 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00E580"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00E580[] = dBmori1_room_2Tex_00E580;
+#define dBmori1_room_2Tex_00E5A0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00E5A0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00E5A0[] = dBmori1_room_2Tex_00E5A0;
 
-#define dBmori1_room_2Tex_00D380 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00D380"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00D380[] = dBmori1_room_2Tex_00D380;
+#define dBmori1_room_2Tex_00D3A0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00D3A0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00D3A0[] = dBmori1_room_2Tex_00D3A0;
 
-#define dBmori1_room_2Tex_00CF80 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00CF80"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00CF80[] = dBmori1_room_2Tex_00CF80;
+#define dBmori1_room_2Tex_00CFA0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00CFA0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00CFA0[] = dBmori1_room_2Tex_00CFA0;
 
-#define dBmori1_room_2Tex_00BF80 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00BF80"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00BF80[] = dBmori1_room_2Tex_00BF80;
+#define dBmori1_room_2Tex_00BFA0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00BFA0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00BFA0[] = dBmori1_room_2Tex_00BFA0;
 
-#define dBmori1_room_2Tex_00AF80 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00AF80"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00AF80[] = dBmori1_room_2Tex_00AF80;
+#define dBmori1_room_2Tex_00AFA0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00AFA0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00AFA0[] = dBmori1_room_2Tex_00AFA0;
 
-#define dBmori1_room_2Tex_00E980 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00E980"
-static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00E980[] = dBmori1_room_2Tex_00E980;
+#define dBmori1_room_2Tex_00E9A0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_2Tex_00E9A0"
+static const ALIGN_ASSET(2) char Bmori1_room_2Tex_00E9A0[] = dBmori1_room_2Tex_00E9A0;

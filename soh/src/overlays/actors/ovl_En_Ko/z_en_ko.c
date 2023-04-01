@@ -338,7 +338,7 @@ u16 func_80A96FD0(PlayState* play, Actor* thisx) {
             }
             return 0x100A;
         case ENKO_TYPE_CHILD_5:
-            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD) && !(gSaveContext.eventChkInf[4] & 1)) {
+            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD) && !(gSaveContext.eventChkInf[8] & 1)) {
                 return 0x1043;
             }
             if (gSaveContext.infTable[2] & 0x40) {

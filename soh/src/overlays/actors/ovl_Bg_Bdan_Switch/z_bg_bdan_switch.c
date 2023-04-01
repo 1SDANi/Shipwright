@@ -140,7 +140,7 @@ void BgBdanSwitch_Init(Actor* thisx, PlayState* play) {
     s16 type;
     s32 flag;
 
-    if (globalCtx->sceneNum == 2 && thisx->room == 0) {
+    if (play->sceneNum == 2 && thisx->room == 0) {
         thisx->world.pos.y = -155;
         thisx->world.pos.z = -900;
     }

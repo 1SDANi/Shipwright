@@ -41,23 +41,23 @@ static const ALIGN_ASSET(2) char gWaterBarrierCs[] = dgWaterBarrierCs;
 #define dgShadowBarrierCs "__OTR__scenes/nonmq/ganontika_scene/gShadowBarrierCs"
 static const ALIGN_ASSET(2) char gShadowBarrierCs[] = dgShadowBarrierCs;
 
-#define dganontika_sceneCollisionHeader_019EAC "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneCollisionHeader_019EAC"
-static const ALIGN_ASSET(2) char ganontika_sceneCollisionHeader_019EAC[] = dganontika_sceneCollisionHeader_019EAC;
+#define dganontika_sceneCollisionHeader_019E9C "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneCollisionHeader_019E9C"
+static const ALIGN_ASSET(2) char ganontika_sceneCollisionHeader_019E9C[] = dganontika_sceneCollisionHeader_019E9C;
 
-#define dganontika_sceneTex_01F780 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTex_01F780"
-static const ALIGN_ASSET(2) char ganontika_sceneTex_01F780[] = dganontika_sceneTex_01F780;
+#define dganontika_sceneTex_01F770 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTex_01F770"
+static const ALIGN_ASSET(2) char ganontika_sceneTex_01F770[] = dganontika_sceneTex_01F770;
 
-#define dganontika_sceneTLUT_01F380 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTLUT_01F380"
-static const ALIGN_ASSET(2) char ganontika_sceneTLUT_01F380[] = dganontika_sceneTLUT_01F380;
+#define dganontika_sceneTLUT_01F370 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTLUT_01F370"
+static const ALIGN_ASSET(2) char ganontika_sceneTLUT_01F370[] = dganontika_sceneTLUT_01F370;
 
-#define dganontika_sceneTex_020380 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTex_020380"
-static const ALIGN_ASSET(2) char ganontika_sceneTex_020380[] = dganontika_sceneTex_020380;
+#define dganontika_sceneTex_020370 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTex_020370"
+static const ALIGN_ASSET(2) char ganontika_sceneTex_020370[] = dganontika_sceneTex_020370;
 
-#define dganontika_sceneTex_020B80 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTex_020B80"
-static const ALIGN_ASSET(2) char ganontika_sceneTex_020B80[] = dganontika_sceneTex_020B80;
+#define dganontika_sceneTex_020B70 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTex_020B70"
+static const ALIGN_ASSET(2) char ganontika_sceneTex_020B70[] = dganontika_sceneTex_020B70;
 
-#define dganontika_sceneTex_01F580 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTex_01F580"
-static const ALIGN_ASSET(2) char ganontika_sceneTex_01F580[] = dganontika_sceneTex_01F580;
+#define dganontika_sceneTex_01F570 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTex_01F570"
+static const ALIGN_ASSET(2) char ganontika_sceneTex_01F570[] = dganontika_sceneTex_01F570;
 
-#define dganontika_sceneTex_01FF80 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTex_01FF80"
-static const ALIGN_ASSET(2) char ganontika_sceneTex_01FF80[] = dganontika_sceneTex_01FF80;
+#define dganontika_sceneTex_01FF70 "__OTR__scenes/nonmq/ganontika_scene/ganontika_sceneTex_01FF70"
+static const ALIGN_ASSET(2) char ganontika_sceneTex_01FF70[] = dganontika_sceneTex_01FF70;

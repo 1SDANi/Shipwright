@@ -2,32 +2,32 @@
 
 #include "align_asset_macro.h"
 
-#define dBmori1_room_13DL_004CB8 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13DL_004CB8"
-static const ALIGN_ASSET(2) char Bmori1_room_13DL_004CB8[] = dBmori1_room_13DL_004CB8;
+#define dBmori1_room_13DL_004CA8 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13DL_004CA8"
+static const ALIGN_ASSET(2) char Bmori1_room_13DL_004CA8[] = dBmori1_room_13DL_004CA8;
 
-#define dBmori1_room_13Tex_006CD0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_006CD0"
-static const ALIGN_ASSET(2) char Bmori1_room_13Tex_006CD0[] = dBmori1_room_13Tex_006CD0;
+#define dBmori1_room_13Tex_006CC0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_006CC0"
+static const ALIGN_ASSET(2) char Bmori1_room_13Tex_006CC0[] = dBmori1_room_13Tex_006CC0;
 
-#define dBmori1_room_13Tex_0064D0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_0064D0"
-static const ALIGN_ASSET(2) char Bmori1_room_13Tex_0064D0[] = dBmori1_room_13Tex_0064D0;
+#define dBmori1_room_13Tex_0064C0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_0064C0"
+static const ALIGN_ASSET(2) char Bmori1_room_13Tex_0064C0[] = dBmori1_room_13Tex_0064C0;
 
-#define dBmori1_room_13Tex_005CD0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_005CD0"
-static const ALIGN_ASSET(2) char Bmori1_room_13Tex_005CD0[] = dBmori1_room_13Tex_005CD0;
+#define dBmori1_room_13Tex_005CC0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_005CC0"
+static const ALIGN_ASSET(2) char Bmori1_room_13Tex_005CC0[] = dBmori1_room_13Tex_005CC0;
 
-#define dBmori1_room_13Tex_0054D0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_0054D0"
-static const ALIGN_ASSET(2) char Bmori1_room_13Tex_0054D0[] = dBmori1_room_13Tex_0054D0;
+#define dBmori1_room_13Tex_0054C0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_0054C0"
+static const ALIGN_ASSET(2) char Bmori1_room_13Tex_0054C0[] = dBmori1_room_13Tex_0054C0;
 
-#define dBmori1_room_13Tex_0074D0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_0074D0"
-static const ALIGN_ASSET(2) char Bmori1_room_13Tex_0074D0[] = dBmori1_room_13Tex_0074D0;
+#define dBmori1_room_13Tex_0074C0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_0074C0"
+static const ALIGN_ASSET(2) char Bmori1_room_13Tex_0074C0[] = dBmori1_room_13Tex_0074C0;
 
-#define dBmori1_room_13Tex_004CD0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_004CD0"
-static const ALIGN_ASSET(2) char Bmori1_room_13Tex_004CD0[] = dBmori1_room_13Tex_004CD0;
+#define dBmori1_room_13Tex_004CC0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_004CC0"
+static const ALIGN_ASSET(2) char Bmori1_room_13Tex_004CC0[] = dBmori1_room_13Tex_004CC0;
 
-#define dBmori1_room_13Tex_0078D0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_0078D0"
-static const ALIGN_ASSET(2) char Bmori1_room_13Tex_0078D0[] = dBmori1_room_13Tex_0078D0;
+#define dBmori1_room_13Tex_0078C0 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_0078C0"
+static const ALIGN_ASSET(2) char Bmori1_room_13Tex_0078C0[] = dBmori1_room_13Tex_0078C0;
 
-#define dBmori1_room_13DL_008298 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13DL_008298"
-static const ALIGN_ASSET(2) char Bmori1_room_13DL_008298[] = dBmori1_room_13DL_008298;
+#define dBmori1_room_13DL_008288 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13DL_008288"
+static const ALIGN_ASSET(2) char Bmori1_room_13DL_008288[] = dBmori1_room_13DL_008288;
 
-#define dBmori1_room_13Tex_0082A8 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_0082A8"
-static const ALIGN_ASSET(2) char Bmori1_room_13Tex_0082A8[] = dBmori1_room_13Tex_0082A8;
+#define dBmori1_room_13Tex_008298 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_13Tex_008298"
+static const ALIGN_ASSET(2) char Bmori1_room_13Tex_008298[] = dBmori1_room_13Tex_008298;

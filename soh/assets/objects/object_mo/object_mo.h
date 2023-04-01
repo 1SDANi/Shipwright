@@ -5,6 +5,9 @@
 #define dgMorphaTitleCardTex "__OTR__objects/object_mo/gMorphaTitleCardTex"
 static const ALIGN_ASSET(2) char gMorphaTitleCardTex[] = dgMorphaTitleCardTex;
 
+#define dgMorphaWaterTex "__OTR__objects/object_mo/gMorphaWaterTex"
+static const ALIGN_ASSET(2) char gMorphaWaterTex[] = dgMorphaWaterTex;
+
 #define dgMorphaCoreMembraneDL "__OTR__objects/object_mo/gMorphaCoreMembraneDL"
 static const ALIGN_ASSET(2) char gMorphaCoreMembraneDL[] = dgMorphaCoreMembraneDL;
 
@@ -136,9 +139,6 @@ static const ALIGN_ASSET(2) char gMorphaTentaclePart39DL[] = dgMorphaTentaclePar
 
 #define dgMorphaTentaclePart40DL "__OTR__objects/object_mo/gMorphaTentaclePart40DL"
 static const ALIGN_ASSET(2) char gMorphaTentaclePart40DL[] = dgMorphaTentaclePart40DL;
-
-#define dgMorphaWaterTex "__OTR__objects/object_mo/gMorphaWaterTex"
-static const ALIGN_ASSET(2) char gMorphaWaterTex[] = dgMorphaWaterTex;
 
 #define dgMorphaBubbleDL "__OTR__objects/object_mo/gMorphaBubbleDL"
 static const ALIGN_ASSET(2) char gMorphaBubbleDL[] = dgMorphaBubbleDL;

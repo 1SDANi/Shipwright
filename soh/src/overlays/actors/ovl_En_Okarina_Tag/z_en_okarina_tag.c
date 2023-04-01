@@ -45,7 +45,7 @@ void EnOkarinaTag_Init(Actor* thisx, PlayState* play) {
     EnOkarinaTag* this = (EnOkarinaTag*)thisx;
 
     // remove the falls' ocarina tag
-    if (globalCtx->sceneNum == 84) {
+    if (play->sceneNum == 84) {
         Actor_Kill(thisx);
     }
 
