@@ -9,7 +9,7 @@
 #include "scenes/overworld/spot06/spot06_scene.h"
 #include "vt.h"
 
-#define FLAGS (ACTOR_FLAG_0 | ACTOR_FLAG_3)
+#define FLAGS (ACTOR_FLAG_TARGETABLE | ACTOR_FLAG_FRIENDLY)
 
 void ShotSun_Init(Actor* thisx, PlayState* play);
 void ShotSun_Destroy(Actor* thisx, PlayState* play);
@@ -62,15 +62,15 @@ void ShotSun_Init(Actor* thisx, PlayState* play) {
     params = this->actor.params & 0xFF;
     if (params == 0x40 || params == 0x41) {
         this->unk_1A4 = 0;
-        this->actor.flags |= ACTOR_FLAG_4;
-        this->actor.flags |= ACTOR_FLAG_25;
+        this->actor.flags |= ACTOR_FLAG_UPDATE_WHILE_CULLED;
+        this->actor.flags |= ACTOR_FLAG_NO_FREEZE_OCARINA;
         this->actionFunc = func_80BADF0C;
-        this->actor.flags |= ACTOR_FLAG_27;
+        this->actor.flags |= ACTOR_FLAG_NO_LOCKON;
     } else {
         Collider_InitCylinder(play, &this->collider);
         Collider_SetCylinder(play, &this->collider, &this->actor, &sCylinderInit);
         this->actionFunc = ShotSun_UpdateHyliaSun;
-        this->actor.flags &= ~ACTOR_FLAG_0;
+        this->actor.flags &= ~ACTOR_FLAG_TARGETABLE;
     }
 }
 
@@ -163,7 +163,7 @@ void ShotSun_UpdateHyliaSun(ShotSun* this, PlayState* play) {
         func_80078884(NA_SE_SY_CORRECT_CHIME);
         osSyncPrintf(VT_FGCOL(CYAN) "SHOT_SUN HIT!!!!!!!\n" VT_RST);
         if ((INV_CONTENT(ITEM_ARROW_FIRE) == ITEM_NONE && !gSaveContext.n64ddFlag) ||
-            !Flags_GetTreasure(play, 0x1F)) {
+            (!Flags_GetTreasure(play, 0x1F) && gSaveContext.n64ddFlag)) {
             Actor_Spawn(&play->actorCtx, play, ACTOR_ITEM_ETCETERA, 700.0f, -800.0f, 7261.0f, 0, 0, 0, 7, true);
             play->csCtx.segment = SEGMENTED_TO_VIRTUAL(gLakeHyliaFireArrowsCS);
             gSaveContext.cutsceneTrigger = 1;

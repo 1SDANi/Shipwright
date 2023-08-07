@@ -3,7 +3,7 @@
 #include "../ovl_En_Diving_Game/z_en_diving_game.h"
 #include "objects/gameplay_keep/gameplay_keep.h"
 
-#define FLAGS ACTOR_FLAG_4
+#define FLAGS ACTOR_FLAG_UPDATE_WHILE_CULLED
 
 void EnExRuppy_Init(Actor* thisx, PlayState* play);
 void EnExRuppy_Destroy(Actor* thisx, PlayState* play);
@@ -66,7 +66,7 @@ void EnExRuppy_Init(Actor* thisx, PlayState* play) {
             this->actor.gravity = 0.0f;
 
             // If you haven't won the diving game before, you will always get 5 rupees
-            if (!(gSaveContext.eventChkInf[3] & 0x100)) {
+            if (!Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_SILVER_SCALE)) {
                 this->rupeeValue = 5;
                 this->colorIdx = 1;
             } else {
@@ -115,7 +115,7 @@ void EnExRuppy_Init(Actor* thisx, PlayState* play) {
             this->unk_15A = this->actor.world.rot.z;
             this->actor.world.rot.z = 0;
             this->timer = 30;
-            this->actor.flags &= ~ACTOR_FLAG_0;
+            this->actor.flags &= ~ACTOR_FLAG_TARGETABLE;
             this->actionFunc = EnExRuppy_DropIntoWater;
             break;
 
@@ -146,7 +146,7 @@ void EnExRuppy_Init(Actor* thisx, PlayState* play) {
                 this->actor.shape.shadowScale = 6.0f;
                 this->actor.shape.yOffset = 700.0f;
             }
-            this->actor.flags &= ~ACTOR_FLAG_0;
+            this->actor.flags &= ~ACTOR_FLAG_TARGETABLE;
             this->actionFunc = EnExRuppy_WaitToBlowUp;
             break;
 
@@ -177,13 +177,13 @@ void EnExRuppy_Init(Actor* thisx, PlayState* play) {
                 this->actor.shape.yOffset = 700.0f;
                 this->actor.shape.shadowScale = 6.0f;
             }
-            this->actor.flags &= ~ACTOR_FLAG_0;
+            this->actor.flags &= ~ACTOR_FLAG_TARGETABLE;
             this->actionFunc = EnExRuppy_WaitAsCollectible;
             break;
 
         case 4: // Progress markers in the shooting gallery
             this->actor.gravity = -3.0f;
-            this->actor.flags &= ~ACTOR_FLAG_0;
+            this->actor.flags &= ~ACTOR_FLAG_TARGETABLE;
             if (CVarGetInteger("gNewDrops", 0) !=0) {
                 Actor_SetScale(&this->actor, 0.3f);
                 this->actor.shape.shadowScale = 0.3f;
@@ -271,7 +271,7 @@ void EnExRuppy_EnterWater(EnExRuppy* this, PlayState* play) {
         this->actor.world.pos.x = ((Rand_ZeroOne() - 0.5f) * 300.0f) + -260.0f;
         this->actor.world.pos.y = ((Rand_ZeroOne() - 0.5f) * 200.0f) + 370.0f;
         temp_f2 = this->unk_15A * -50.0f;
-        if (!(gSaveContext.eventChkInf[3] & 0x100)) {
+        if (!Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_SILVER_SCALE)) {
             temp_f2 += -500.0f;
             this->actor.world.pos.z = ((Rand_ZeroOne() - 0.5f) * 80.0f) + temp_f2;
         } else {

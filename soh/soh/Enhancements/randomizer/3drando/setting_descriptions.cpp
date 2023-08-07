@@ -125,6 +125,10 @@ string_view bridgeDungeonCountDesc    = "Set the number of completed dungeons re
                                         "spawn the Rainbow Bridge.";                       //
 string_view bridgeTokenCountDesc      = "Set the number of Gold Skulltula Tokens required\n"
                                         "to spawn the Rainbow Bridge.";                    //
+string_view bridgeRewardOptionsDesc         = "Set whether the rewards are standard, if Greg\n"
+                                        "counts as a reward and considered for logic\n"
+                                        "or if Greg becomes a wildcard, counting as a reward but\n"
+                                        "not considered in logic.";                        //
 /*------------------------------                                                           //
 |     RANDOM GANONS TRIALS     |                                                           //
 ------------------------------*/                                                           //
@@ -447,15 +451,16 @@ string_view magicBeansDesc            = "Enabling this adds a pack of 10 beans t
 /*------------------------------                                                           //
 |       SHUFFLE MERCHANTS      |                                                           //
 ------------------------------*/                                                           //
-string_view merchantsDesc             = "Enabling this adds a Giant's Knife and a pack\n"  //
-                                        "of Bombchus to the item pool and changes both\n"  //
-                                        "Medigoron and the Haunted Wasteland Carpet\n"     //
-                                        "Salesman to sell a random item once at the price\n"
-                                        "of 200 rupees.";                                  //
-string_view merchantsHintsDesc        = "These hints will make Medigoron and the Carpet\n" //
-                                        "Salesman tell you which item they're selling.\n"  //
+string_view merchantsDesc             = "Enabling this changes Medigoron, Granny and the\n"//
+                                        "Carpet Salesman to sell a random item once at a\n"//
+                                        "high price (100 for Granny, 200 for the others).\n\n"
+                                        "A Giant's Knife and a pack of Bombchus will be\n" //
+                                        "added to the item pool, and one of the bottles\n" //
+                                        "will contain a Blue Potion";                      //
+string_view merchantsHintsDesc        = "These hints will make the merchants tell you\n"   //
+                                        "which item they're selling.\n"                    //
                                         "\n"                                               //
-                                        "The Clearer Hints setting will affect how they\n" //
+                                        "The Hint Clarity setting will affect how they\n"  //
                                         "refer to the item.";                              //
 /*------------------------------                                                           //
 |   SHUFFLE FROG SONG RUPEES   |                                                           //
@@ -600,10 +605,10 @@ string_view ganonKey100GS             = "Ganon's Castle Boss Key is given to you
 /*------------------------------                                                           //
 |        LACS CONDITIONS       |                                                           //
 ------------------------------*/                                                           //
-string_view lacsMedallionCountDesc    = "Set the number of Medallions required to trigger\n"
-                                        "the Light Arrow Cutscene.";                       //
 string_view lacsStoneCountDesc        = "Set the number of Spiritual Stones required to\n" //
                                         "trigger the Light Arrow Cutscene.";               //
+string_view lacsMedallionCountDesc    = "Set the number of Medallions required to trigger\n"
+                                        "the Light Arrow Cutscene.";                       //
 string_view lacsRewardCountDesc       = "Set the number of Dungeon Rewards (Spiritual\n"   //
                                         "Stones and Medallions) required to trigger the\n" //
                                         "Light Arrow Cutscene.";                           //
@@ -614,6 +619,10 @@ string_view lacsDungeonCountDesc      = "Set the number of completed dungeons re
                                         "into the blue warp at the end of them.";          //
 string_view lacsTokenCountDesc        = "Set the number of Gold Skulltula Tokens required\n"
                                         "to trigger the Light Arrow Cutscene.";            //
+string_view lacsRewardOptionsDesc     = "Set whether the rewards are standard, if Greg\n"
+                                        "counts as a reward and considered for logic\n"
+                                        "or if Greg becomes a wildcard, counting as a reward but\n"
+                                        "not considered in logic.";                        //
 /*------------------------------                                                           //
 |      SKIP CHILD STEALTH      |                                                           //
 ------------------------------*/                                                           //
@@ -1103,6 +1112,7 @@ string_view ToggleLogicNoneDesc                       = "Disables all the Detail
 string_view ToggleLogicNoviceDesc                     = "Enables only the easier Detailed Logic tricks";   //
 string_view ToggleLogicIntermediateDesc               = "Enables all but the harder Detailed Logic tricks.";
 string_view ToggleLogicExpertDesc                     = "Enables all the Detailed Logic tricks.";          //
+string_view LogicTempDesc                             = "";                                                //
                                                                                                            //
 string_view LogicGrottosWithoutAgonyDesc              = "Difficulty: Novice\n"                             //
                                                         "Grottos can be accessed without Stone of Agony,\n"//
@@ -1435,6 +1445,12 @@ string_view LogicShadowStatueDesc                     = "Difficulty: Novice\n"  
                                                         "By sending a Bombchu around the edge of the gorge,"
                                                         "you can knock down the statue without needing a\n"//
                                                         "Bow. Applies in both vanilla and MQ Shadow.";     //
+string_view LogicShadowBongoDesc                      = "Difficulty Expert\n"                              //
+                                                        "Using precise sword slashes, Bongo Bongo can be\n"//
+                                                        "defeated without using projectiles.\n"            //
+                                                        "This trick is much more difficult when done with\n"
+                                                        "Kokiri Sword vs Master Sword or Biggorron Sword.\n"
+                                                        "Useful for Boss Entrance Randomizer.";            //
 string_view LogicChildDeadhandDesc                    = "Difficulty: Novice\n"                             //
                                                         "Requires 9 sticks or 5 jump slashes.";            //
 string_view LogicGtgWithoutHookshotDesc               = "Difficulty: Expert\n"                             //

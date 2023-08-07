@@ -5,7 +5,7 @@
 #include "vt.h"
 #include "soh/Enhancements/randomizer/adult_trade_shuffle.h"
 
-#define FLAGS (ACTOR_FLAG_0 | ACTOR_FLAG_3 | ACTOR_FLAG_4)
+#define FLAGS (ACTOR_FLAG_TARGETABLE | ACTOR_FLAG_FRIENDLY | ACTOR_FLAG_UPDATE_WHILE_CULLED)
 
 void EnNiwLady_Init(Actor* thisx, PlayState* play);
 void EnNiwLady_Destroy(Actor* thisx, PlayState* play);
@@ -96,6 +96,8 @@ void EnNiwLady_Destroy(Actor* thisx, PlayState* play) {
     EnNiwLady* this = (EnNiwLady*)thisx;
 
     Collider_DestroyCylinder(play, &this->collider);
+
+    ResourceMgr_UnregisterSkeleton(&this->skelAnime);
 }
 
 void EnNiwLady_ChoseAnimation(EnNiwLady* this, PlayState* play, s32 arg2) {
@@ -170,7 +172,7 @@ void func_80AB9F24(EnNiwLady* this, PlayState* play) {
         this->actor.draw = EnNiwLady_Draw;
         switch (this->unk_278) {
             case 0:
-                if (!(gSaveContext.itemGetInf[0] & 0x1000) && !LINK_IS_ADULT) {
+                if (!Flags_GetItemGetInf(ITEMGETINF_0C) && !LINK_IS_ADULT) {
                     frames = Animation_GetLastFrame(&gObjOsAnim_A630);
                     Animation_Change(&this->skelAnime, &gObjOsAnim_A630, 1.0f, 0.0f, (s16)frames, ANIMMODE_LOOP, 0.0f);
                 } else {
@@ -303,7 +305,7 @@ void func_80ABA654(EnNiwLady* this, PlayState* play) {
         osSyncPrintf(VT_FGCOL(YELLOW) "☆☆☆☆☆ 爆弾   ☆☆☆☆☆ %d\n" VT_RST, this->unk_272);
         osSyncPrintf("\n\n");
         this->unk_26E = 0xB;
-        if (!(gSaveContext.itemGetInf[0] & 0x1000)) {
+        if (!Flags_GetItemGetInf(ITEMGETINF_0C)) {
             this->actor.parent = NULL;
 
             if (!gSaveContext.n64ddFlag) {
@@ -334,7 +336,7 @@ void func_80ABA778(EnNiwLady* this, PlayState* play) {
     osSyncPrintf(VT_FGCOL(GREEN) "☆☆☆☆☆ アダルトメッセージチェック ☆☆☆☆☆ \n" VT_RST);
     this->unk_262 = TEXT_STATE_DONE;
     this->unk_273 = 0;
-    if (!(gSaveContext.itemGetInf[2] & 0x1000)) {
+    if (!Flags_GetItemGetInf(ITEMGETINF_2C)) {
         if (this->unk_274 != 0) {
             this->unk_27A = 1;
         } else {
@@ -344,9 +346,9 @@ void func_80ABA778(EnNiwLady* this, PlayState* play) {
         this->unk_262 = TEXT_STATE_CHOICE;
     } else {
         this->unk_27A = 2;
-        if (!(gSaveContext.itemGetInf[2] & 0x4000)) {
+        if (!Flags_GetItemGetInf(ITEMGETINF_2E)) {
             this->unk_27A = 3;
-            if (gSaveContext.eventChkInf[6] & 0x400) {
+            if (Flags_GetEventChkInf(EVENTCHKINF_TALON_WOKEN_IN_KAKARIKO)) {
                 this->unk_27A = 9;
                 if (this->unk_277 != 0) {
                     this->unk_27A = 10;
@@ -370,7 +372,7 @@ void func_80ABA878(EnNiwLady* this, PlayState* play) {
     }
     if (Actor_ProcessTalkRequest(&this->actor, play)) {
         playerExchangeItemId = func_8002F368(play);
-        if ((playerExchangeItemId == 6) && (gSaveContext.eventChkInf[6] & 0x400)) {
+        if ((playerExchangeItemId == 6) && (Flags_GetEventChkInf(EVENTCHKINF_TALON_WOKEN_IN_KAKARIKO))) {
             func_80078884(NA_SE_SY_TRE_BOX_APPEAR);
             player->actor.textId = sTradeItemTextIds[5];
             this->unk_26E = this->unk_27A + 21;
@@ -401,7 +403,7 @@ void func_80ABA9B8(EnNiwLady* this, PlayState* play) {
                 } else {
                     // TODO: get-item-rework Adult trade sequence
                     this->getItemEntry = Randomizer_GetItemFromKnownCheck(RC_KAK_ANJU_AS_ADULT, GI_POCKET_EGG);
-                    gSaveContext.itemGetInf[2] |= 0x1000;
+                    Flags_SetItemGetInf(ITEMGETINF_2C);
                 }
 
                 this->actionFunc = func_80ABAC00;
@@ -437,7 +439,7 @@ void func_80ABAB08(EnNiwLady* this, PlayState* play) {
                     // TODO: get-item-rework Adult trade sequence
                     this->getItemEntry = Randomizer_GetItemFromKnownCheck(RC_KAK_TRADE_POCKET_CUCCO, GI_COJIRO);
                     Randomizer_ConsumeAdultTradeItem(play, ITEM_POCKET_CUCCO);
-                    gSaveContext.itemGetInf[2] |= 0x4000;
+                    Flags_SetItemGetInf(ITEMGETINF_2E);
                 }
                 this->actionFunc = func_80ABAC00;
                 break;
@@ -463,7 +465,7 @@ void func_80ABAC00(EnNiwLady* this, PlayState* play) {
         getItemId = this->getItemId;
         if (LINK_IS_ADULT) {
             if (!gSaveContext.n64ddFlag) {
-                getItemId = !(gSaveContext.itemGetInf[2] & 0x1000) ? GI_POCKET_EGG : GI_COJIRO;
+                getItemId = !Flags_GetItemGetInf(ITEMGETINF_2C) ? GI_POCKET_EGG : GI_COJIRO;
             } else {
                 // TODO: get-item-rework Adult trade sequence
                 getItemId = this->getItemEntry.getItemId;
@@ -484,14 +486,14 @@ void func_80ABAC84(EnNiwLady* this, PlayState* play) {
     }
     osSyncPrintf(VT_FGCOL(GREEN) "☆☆☆☆☆ 正常終了 ☆☆☆☆☆ \n" VT_RST);
     if (LINK_IS_ADULT) {
-        if (!(gSaveContext.itemGetInf[2] & 0x1000)) {
-            gSaveContext.itemGetInf[2] |= 0x1000;
+        if (!Flags_GetItemGetInf(ITEMGETINF_2C)) {
+            Flags_SetItemGetInf(ITEMGETINF_2C);
         } else {
-            gSaveContext.itemGetInf[2] |= 0x4000;
+            Flags_SetItemGetInf(ITEMGETINF_2E);
         }
         this->actionFunc = func_80ABA778;
     } else {
-        gSaveContext.itemGetInf[0] |= 0x1000;
+        Flags_SetItemGetInf(ITEMGETINF_0C);
         this->unk_262 = TEXT_STATE_DONE;
         this->actionFunc = func_80ABA244;
     }

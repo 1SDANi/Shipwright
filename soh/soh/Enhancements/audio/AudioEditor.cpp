@@ -5,8 +5,7 @@
 #include <set>
 #include <string>
 #include <sstream>
-#include <libultraship/bridge.h>
-#include <ImGuiImpl.h>
+#include <libultraship/libultraship.h>
 #include <functions.h>
 #include "../randomizer/3drando/random.hpp"
 #include "../../OTRGlobals.h"
@@ -158,7 +157,7 @@ void Draw_SfxTab(const std::string& tabId, SeqType type) {
     const std::string randomizeAllButton = "Randomize All" + hiddenTabId;
     if (ImGui::Button(resetAllButton.c_str())) {
         ResetGroup(map, type);
-        SohImGui::RequestCvarSaveOnNextTick();
+        LUS::Context::GetInstance()->GetWindow()->GetGui()->SaveConsoleVariablesOnNextTick();
         if (type == SEQ_BGM_WORLD) {
             ReplayCurrentBGM();
         }
@@ -166,7 +165,7 @@ void Draw_SfxTab(const std::string& tabId, SeqType type) {
     ImGui::SameLine();
     if (ImGui::Button(randomizeAllButton.c_str())) {
         RandomizeGroup(type);
-        SohImGui::RequestCvarSaveOnNextTick();
+        LUS::Context::GetInstance()->GetWindow()->GetGui()->SaveConsoleVariablesOnNextTick();
         if (type == SEQ_BGM_WORLD) {
             ReplayCurrentBGM();
         }
@@ -205,7 +204,7 @@ void Draw_SfxTab(const std::string& tabId, SeqType type) {
 
                 if (ImGui::Selectable(seqData.label.c_str())) {
                     CVarSetInteger(cvarKey.c_str(), value);
-                    SohImGui::RequestCvarSaveOnNextTick();
+                    LUS::Context::GetInstance()->GetWindow()->GetGui()->SaveConsoleVariablesOnNextTick();
                     UpdateCurrentBGM(defaultValue, type);
                 }
             }
@@ -219,7 +218,7 @@ void Draw_SfxTab(const std::string& tabId, SeqType type) {
         ImGui::PushItemWidth(-FLT_MIN);
         if (ImGui::Button(resetButton.c_str())) {
             CVarSetInteger(cvarKey.c_str(), defaultValue);
-            SohImGui::RequestCvarSaveOnNextTick();
+            LUS::Context::GetInstance()->GetWindow()->GetGui()->SaveConsoleVariablesOnNextTick();
             UpdateCurrentBGM(defaultValue, seqData.category);
         }
         ImGui::SameLine();
@@ -236,7 +235,7 @@ void Draw_SfxTab(const std::string& tabId, SeqType type) {
                 auto it = validSequences.begin();
                 const auto& seqData = *std::next(it, rand() % validSequences.size());
                 CVarSetInteger(cvarKey.c_str(), seqData->sequenceId);
-                SohImGui::RequestCvarSaveOnNextTick();
+                LUS::Context::GetInstance()->GetWindow()->GetGui()->SaveConsoleVariablesOnNextTick();
                 UpdateCurrentBGM(seqData->sequenceId, type);
             } 
         }
@@ -306,16 +305,11 @@ void DrawTypeChip(SeqType type) {
     ImGui::EndDisabled();
 }
 
-void DrawSfxEditor(bool& open) {
-    if (!open) {
-        CVarSetInteger("gAudioEditor.WindowOpen", 0);
-        return;
-    }
-
+void AudioEditor::DrawElement() {
     AudioCollection::Instance->InitializeShufflePool();
 
     ImGui::SetNextWindowSize(ImVec2(820, 630), ImGuiCond_FirstUseEver);
-    if (!ImGui::Begin("Audio Editor", &open)) {
+    if (!ImGui::Begin("Audio Editor", &mIsVisible)) {
         ImGui::End();
         return;
     }
@@ -371,6 +365,18 @@ void DrawSfxEditor(bool& open) {
                                                 "gSeqNameOverlayDuration", 1, 10, "", 5);
                 ImGui::PopItemWidth();
                 ImGui::NewLine();
+                ImGui::PopItemWidth();
+                UIWidgets::EnhancementSliderFloat("Link's voice pitch multiplier: %f", "##linkVoiceFreqMultiplier",
+                        "gLinkVoiceFreqMultiplier", 0.4, 2.5, "", 1.0, false, false);
+                ImGui::SameLine();
+                const std::string resetButton = "Reset##linkVoiceFreqMultiplier";
+                if (ImGui::Button(resetButton.c_str())) {
+                    CVarSetFloat("gLinkVoiceFreqMultiplier", 1.0f);
+                    LUS::Context::GetInstance()->GetWindow()->GetGui()->SaveConsoleVariablesOnNextTick();
+                }
+
+                ImGui::NewLine();
+                ImGui::PushItemWidth(-FLT_MIN);
                 UIWidgets::PaddedSeparator();
                 UIWidgets::PaddedText("The following options are experimental and may cause music\nto sound odd or have other undesireable effects.");
                 UIWidgets::EnhancementCheckbox("Lower Octaves of Unplayable High Notes", "gExperimentalOctaveDrop");
@@ -538,11 +544,6 @@ void DrawSfxEditor(bool& open) {
     ImGui::End();
 }
 
-void InitAudioEditor() {
-    //Draw the bar in the menu.
-    SohImGui::AddWindow("Enhancements", "Audio Editor", DrawSfxEditor);
-}
-
 std::vector<SeqType> allTypes = { SEQ_BGM_WORLD, SEQ_BGM_EVENT, SEQ_BGM_BATTLE, SEQ_OCARINA, SEQ_FANFARE, SEQ_INSTRUMENT, SEQ_SFX };
 
 void AudioEditor_RandomizeAll() {
@@ -550,7 +551,7 @@ void AudioEditor_RandomizeAll() {
         RandomizeGroup(type);
     }
 
-    SohImGui::RequestCvarSaveOnNextTick();
+    LUS::Context::GetInstance()->GetWindow()->GetGui()->SaveConsoleVariablesOnNextTick();
     ReplayCurrentBGM();
 }
 
@@ -559,6 +560,6 @@ void AudioEditor_ResetAll() {
         ResetGroup(AudioCollection::Instance->GetAllSequences(), type);
     }
 
-    SohImGui::RequestCvarSaveOnNextTick();
+    LUS::Context::GetInstance()->GetWindow()->GetGui()->SaveConsoleVariablesOnNextTick();
     ReplayCurrentBGM();
 }

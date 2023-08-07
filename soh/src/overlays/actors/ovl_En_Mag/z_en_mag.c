@@ -6,8 +6,9 @@
 
 #include "z_en_mag.h"
 #include "objects/object_mag/object_mag.h"
+#include <GameVersions.h>
 
-#define FLAGS (ACTOR_FLAG_4 | ACTOR_FLAG_5)
+#define FLAGS (ACTOR_FLAG_UPDATE_WHILE_CULLED | ACTOR_FLAG_DRAW_WHILE_CULLED)
 
 void EnMag_Init(Actor* thisx, PlayState* play);
 void EnMag_InitMq(Actor* thisx, PlayState* play);
@@ -572,52 +573,22 @@ void EnMag_DrawImageRGBA32(Gfx** gfxp, s16 centerX, s16 centerY, const char* sou
     s32 pad;
     s32 i;
 
-    source = GetResourceDataByName(source, false);
-
     Gfx_SetupDL_56Ptr(&gfx);
-
-    curTexture = source;
+    
     rectLeft = centerX - (width / 2);
     rectTop = centerY - (height / 2);
-    textureHeight = 4096 / (width << 2);
-    remainingSize = (width * height) << 2;
-    textureSize = (width * textureHeight) << 2;
-    textureCount = remainingSize / textureSize;
-    if ((remainingSize % textureSize) != 0) {
-        textureCount += 1;
-    }
-
-    gDPSetTileCustom(gfx++, G_IM_FMT_RGBA, G_IM_SIZ_32b, width, textureHeight, 0, G_TX_NOMIRROR | G_TX_CLAMP,
+    
+    gDPSetTileCustom(gfx++, G_IM_FMT_RGBA, G_IM_SIZ_32b, width, height, 0, G_TX_NOMIRROR | G_TX_CLAMP,
                      G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
-
-    remainingSize -= textureSize;
-
-    for (i = 0; i < textureCount; i++) {
-        gDPSetTextureImage(gfx++, G_IM_FMT_RGBA, G_IM_SIZ_32b, width, curTexture);
-
-        gDPLoadSync(gfx++);
-        gDPLoadTile(gfx++, G_TX_LOADTILE, 0, 0, (width - 1) << 2, (textureHeight - 1) << 2);
-
-        gSPTextureRectangle(gfx++, rectLeft << 2, rectTop << 2, (rectLeft + (s32)width) << 2,
-                            (rectTop + textureHeight) << 2, G_TX_RENDERTILE, 0, 0, 1 << 10, 1 << 10);
-
-        curTexture += textureSize;
-        rectTop += textureHeight;
-
-        if ((remainingSize - textureSize) < 0) {
-            if (remainingSize > 0) {
-                textureHeight = remainingSize / (s32)(width << 2);
-                remainingSize -= textureSize;
-
-                gDPSetTileCustom(gfx++, G_IM_FMT_RGBA, G_IM_SIZ_32b, width, textureHeight, 0,
-                                 G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMASK, G_TX_NOMASK,
-                                 G_TX_NOLOD, G_TX_NOLOD);
-            }
-        } else {
-            remainingSize -= textureSize;
-        }
-    }
-
+    
+    gDPSetTextureImage(gfx++, G_IM_FMT_RGBA, G_IM_SIZ_32b, width, source);
+    
+    gDPLoadSync(gfx++);
+    gDPLoadTile(gfx++, G_TX_LOADTILE, 0, 0, (width - 1) << 2, (height - 1) << 2);
+    
+    gSPTextureRectangle(gfx++, rectLeft << 2, rectTop << 2, (rectLeft + (s32)width) << 2,
+                        (rectTop + height) << 2, G_TX_RENDERTILE, 0, 0, 1 << 10, 1 << 10);
+    
     *gfxp = gfx;
 }
 
@@ -648,6 +619,24 @@ s16 GetCharArraySize(const char* str) {
     return length;
 }
 
+static void EnMag_SetCopyValues(const char** copy_tex, u16* copy_width, u16* copy_xl, u16* copy_xh) {
+    u32 gameVersion = ResourceMgr_GetGameVersion(0);
+    switch (gameVersion) {
+        case OOT_PAL_11:
+            *copy_tex = gTitleCopyright1998Tex;
+            *copy_width = 128;
+            *copy_xl = 376;
+            *copy_xh = 888;
+            break;
+        default:
+            *copy_tex = gTitleCopyright19982003Tex;
+            *copy_width = 160;
+            *copy_xl = 312;
+            *copy_xh = 952;
+            break;
+    }
+}
+
 void EnMag_DrawInnerMq(Actor* thisx, PlayState* play, Gfx** gfxp) {
     static s16 textAlpha = 0;
     static s16 textFadeDirection = 0;
@@ -669,6 +658,12 @@ void EnMag_DrawInnerMq(Actor* thisx, PlayState* play, Gfx** gfxp) {
     if (CVarGetInteger("gTitleScreenTranslation", 0)) {
         lang = gSaveContext.language;
     }
+
+    const char* copy_tex = NULL;
+    u16 copy_width;
+    u16 copy_xl;
+    u16 copy_xh;
+    EnMag_SetCopyValues(&copy_tex, &copy_width, &copy_xl, &copy_xh);
 
     gSPSegment(gfx++, 0x06, play->objectCtx.status[this->actor.objBankIndex].segment);
 
@@ -731,7 +726,7 @@ void EnMag_DrawInnerMq(Actor* thisx, PlayState* play, Gfx** gfxp) {
 
         gDPPipeSync(gfx++);
         gDPSetPrimColor(gfx++, 0, 0, 255, 255, 255, (s16)this->subAlpha);
-        EnMag_DrawImageRGBA32(&gfx, 174, 145, "__OTR__objects/object_mag/gTitleMasterQuestSubtitleTex", 128, 32);
+        EnMag_DrawImageRGBA32(&gfx, 174, 145, gTitleMasterQuestSubtitleTex, 128, 32);
     }
 
     Gfx_SetupDL_39Ptr(&gfx);
@@ -743,11 +738,11 @@ void EnMag_DrawInnerMq(Actor* thisx, PlayState* play, Gfx** gfxp) {
                     (s16)this->copyrightAlpha);
 
     if ((s16)this->copyrightAlpha != 0) {
-        gDPLoadTextureBlock(gfx++, gTitleCopyright19982003Tex, G_IM_FMT_IA, G_IM_SIZ_8b, 160, 16, 0,
+        gDPLoadTextureBlock(gfx++, copy_tex, G_IM_FMT_IA, G_IM_SIZ_8b, copy_width, 16, 0,
                             G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMASK, G_TX_NOMASK,
                             G_TX_NOLOD, G_TX_NOLOD);
 
-        gSPTextureRectangle(gfx++, 312, 792, 952, 856, G_TX_RENDERTILE, 0, 0, 1 << 10, 1 << 10);
+        gSPTextureRectangle(gfx++, copy_xl, 792, copy_xh, 856, G_TX_RENDERTILE, 0, 0, 1 << 10, 1 << 10);
     }
 
     if (gSaveContext.fileNum == 0xFEDC) {
@@ -865,6 +860,12 @@ void EnMag_DrawInnerVanilla(Actor* thisx, PlayState* play, Gfx** gfxp) {
         lang = gSaveContext.language;
     }
 
+    const char* copy_tex = NULL;
+    u16 copy_width;
+    u16 copy_xl;
+    u16 copy_xh;
+    EnMag_SetCopyValues(&copy_tex, &copy_width, &copy_xl, &copy_xh);
+
     gSPSegment(gfx++, 0x06, play->objectCtx.status[this->actor.objBankIndex].segment);
 
     Gfx_SetupDL_39Ptr(&gfx);
@@ -935,11 +936,11 @@ void EnMag_DrawInnerVanilla(Actor* thisx, PlayState* play, Gfx** gfxp) {
                     (s16)this->copyrightAlpha);
 
     if ((s16)this->copyrightAlpha != 0) {
-        gDPLoadTextureBlock(gfx++, gTitleCopyright19982003Tex, G_IM_FMT_IA, G_IM_SIZ_8b, 160, 16, 0,
+        gDPLoadTextureBlock(gfx++, copy_tex, G_IM_FMT_IA, G_IM_SIZ_8b, copy_width, 16, 0,
                             G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMASK, G_TX_NOMASK,
                             G_TX_NOLOD, G_TX_NOLOD);
 
-        gSPTextureRectangle(gfx++, 312, 792, 952, 856, G_TX_RENDERTILE, 0, 0, 1 << 10, 1 << 10);
+        gSPTextureRectangle(gfx++, copy_xl, 792, copy_xh, 856, G_TX_RENDERTILE, 0, 0, 1 << 10, 1 << 10);
     }
 
     if (gSaveContext.fileNum == 0xFEDC) {

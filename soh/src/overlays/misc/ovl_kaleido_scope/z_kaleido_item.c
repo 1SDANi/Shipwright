@@ -2,6 +2,7 @@
 #include "textures/parameter_static/parameter_static.h"
 #include "soh/Enhancements/randomizer/adult_trade_shuffle.h"
 #include "soh/Enhancements/randomizer/randomizerTypes.h"
+#include "soh/Enhancements/enhancementTypes.h"
 
 u8 gAmmoItems[] = {
     ITEM_STICK,   ITEM_NUT,  ITEM_BOMB, ITEM_BOW,  ITEM_NONE, ITEM_NONE, ITEM_SLINGSHOT, ITEM_NONE,
@@ -344,12 +345,6 @@ void KaleidoScope_DrawItemSelect(PlayState* play) {
             pauseCtx->cursorItem[PAUSE_ITEM] = cursorItem;
             pauseCtx->cursorSlot[PAUSE_ITEM] = cursorSlot;
 
-            gSlotAgeReqs[SLOT_TRADE_CHILD] = gItemAgeReqs[ITEM_MASK_BUNNY] =
-                ((CVarGetInteger("gMMBunnyHood", 0) || CVarGetInteger("gTimelessEquipment", 0)) &&
-                 INV_CONTENT(ITEM_TRADE_CHILD) == ITEM_MASK_BUNNY)
-                    ? 9
-                    : 1;
-
             if (!CHECK_SLOT_AGE(cursorSlot)) {
                 pauseCtx->nameColorSet = 1;
             }
@@ -361,14 +356,14 @@ void KaleidoScope_DrawItemSelect(PlayState* play) {
                 if ((pauseCtx->debugState == 0) && (pauseCtx->state == 6) && (pauseCtx->unk_1E4 == 0)) {
                     // only allow mask select when:
                     // the shop is open:
-                    // * zelda's letter check: gSaveContext.eventChkInf[4] & 1
-                    // * kak gate check: gSaveContext.infTable[7] & 0x40
-                    // and the mask quest is complete: gSaveContext.eventChkInf[8] & 0x8000
+                    // * zelda's letter check: Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)
+                    // * kak gate check: Flags_GetInfTable(INFTABLE_SHOWED_ZELDAS_LETTER_TO_GATE_GUARD)
+                    // and the mask quest is complete: Flags_GetEventChkInf(EVENTCHKINF_PAID_BACK_BUNNY_HOOD_FEE)
                     if (CVarGetInteger("gMaskSelect", 0) &&
-                        (gSaveContext.eventChkInf[8] & 0x8000) &&
+                        (Flags_GetEventChkInf(EVENTCHKINF_PAID_BACK_BUNNY_HOOD_FEE)) &&
                         cursorSlot == SLOT_TRADE_CHILD && CHECK_BTN_ALL(input->press.button, BTN_A) &&
-                        (gSaveContext.eventChkInf[4] & 1) &&
-                        (gSaveContext.infTable[7] & 0x40)) {
+                        (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) &&
+                        (Flags_GetInfTable(INFTABLE_SHOWED_ZELDAS_LETTER_TO_GATE_GUARD))) {
                         Audio_PlaySoundGeneral(NA_SE_SY_DECIDE, &D_801333D4, 4, &D_801333E0, &D_801333E0, &D_801333E8);
                         gSelectingMask = !gSelectingMask;
                     }
@@ -405,6 +400,12 @@ void KaleidoScope_DrawItemSelect(PlayState* play) {
                             }
                         }
                         gSelectingMask = cursorSlot == SLOT_TRADE_CHILD;
+
+                        gSlotAgeReqs[SLOT_TRADE_CHILD] = gItemAgeReqs[ITEM_MASK_BUNNY] =
+                            ((CVarGetInteger("gMMBunnyHood", BUNNY_HOOD_VANILLA) != BUNNY_HOOD_VANILLA || CVarGetInteger("gTimelessEquipment", 0)) &&
+                             INV_CONTENT(ITEM_TRADE_CHILD) == ITEM_MASK_BUNNY)
+                                ? 9
+                                : 1;
                     }
                     if (gSaveContext.n64ddFlag && Randomizer_GetSettingValue(RSK_SHUFFLE_ADULT_TRADE) &&
                         cursorSlot == SLOT_TRADE_ADULT && CHECK_BTN_ALL(input->press.button, BTN_A)) {
@@ -921,4 +922,9 @@ void KaleidoScope_UpdateItemEquip(PlayState* play) {
             pauseCtx->equipAnimAlpha = 255;
         }
     }
+}
+
+void KaleidoScope_ResetTradeSelect() {
+    gSelectingMask = false;
+    gSelectingAdultTrade = false;
 }

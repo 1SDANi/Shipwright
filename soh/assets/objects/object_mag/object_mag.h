@@ -14,6 +14,9 @@ static const ALIGN_ASSET(2) char gTitleCopyright19982002Tex[] = dgTitleCopyright
 #define dgTitleCopyright19982003Tex "__OTR__objects/object_mag/gTitleCopyright19982003Tex"
 static const ALIGN_ASSET(2) char gTitleCopyright19982003Tex[] = dgTitleCopyright19982003Tex;
 
+#define dgTitleMasterQuestSubtitleTex "__OTR__objects/object_mag/gTitleMasterQuestSubtitleTex"
+static const ALIGN_ASSET(2) char gTitleMasterQuestSubtitleTex[] = dgTitleMasterQuestSubtitleTex;
+
 #define dgTitleDiskTex "__OTR__objects/object_mag/gTitleDiskTex"
 static const ALIGN_ASSET(2) char gTitleDiskTex[] = dgTitleDiskTex;
 
