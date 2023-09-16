@@ -42,12 +42,32 @@ void GameInteractor_ExecuteOnOcarinaSongAction() {
     GameInteractor::Instance->ExecuteHooks<GameInteractor::OnOcarinaSongAction>();
 }
 
+void GameInteractor_ExecuteOnActorInit(void* actor) {
+    GameInteractor::Instance->ExecuteHooks<GameInteractor::OnActorInit>(actor);
+}
+
 void GameInteractor_ExecuteOnActorUpdate(void* actor) {
     GameInteractor::Instance->ExecuteHooks<GameInteractor::OnActorUpdate>(actor);
 }
 
+void GameInteractor_ExecuteOnActorKill(void* actor) {
+    GameInteractor::Instance->ExecuteHooks<GameInteractor::OnActorKill>(actor);
+}
+
+void GameInteractor_ExecuteOnEnemyDefeat(void* actor) {
+    GameInteractor::Instance->ExecuteHooks<GameInteractor::OnEnemyDefeat>(actor);
+}
+
 void GameInteractor_ExecuteOnPlayerBonk() {
     GameInteractor::Instance->ExecuteHooks<GameInteractor::OnPlayerBonk>();
+}
+
+void GameInteractor_ExecuteOnPlayDestroy() {
+    GameInteractor::Instance->ExecuteHooks<GameInteractor::OnPlayDestroy>();
+}
+
+void GameInteractor_ExecuteOnPlayDrawEnd() {
+    GameInteractor::Instance->ExecuteHooks<GameInteractor::OnPlayDrawEnd>();
 }
 
 // MARK: -  Save Files
@@ -118,6 +138,10 @@ void GameInteractor_ExecuteOnUpdateFileAudioSelection(uint8_t optionIndex) {
 
 void GameInteractor_ExecuteOnUpdateFileTargetSelection(uint8_t optionIndex) {
     GameInteractor::Instance->ExecuteHooks<GameInteractor::OnUpdateFileTargetSelection>(optionIndex);
+}
+
+void GameInteractor_ExecuteOnUpdateFileLanguageSelection(uint8_t optionIndex) {
+    GameInteractor::Instance->ExecuteHooks<GameInteractor::OnUpdateFileLanguageSelection>(optionIndex);
 }
 
 void GameInteractor_ExecuteOnUpdateFileQuestSelection(uint8_t questIndex) {

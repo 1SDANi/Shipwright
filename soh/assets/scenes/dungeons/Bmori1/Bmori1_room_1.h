@@ -1,18 +1,22 @@
-#pragma once
+#ifndef DUNGEONS_BMORI1_ROOM_1_H
+#define DUNGEONS_BMORI1_ROOM_1_H 1
 
 #include "align_asset_macro.h"
 
-#define dBmori1_room_1DL_003330 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_1DL_003330"
-static const ALIGN_ASSET(2) char Bmori1_room_1DL_003330[] = dBmori1_room_1DL_003330;
+#define dBmori1_room_1DL_003350 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_1DL_003350"
+static const ALIGN_ASSET(2) char Bmori1_room_1DL_003350[] = dBmori1_room_1DL_003350;
 
-#define dBmori1_room_1Tex_003B48 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_1Tex_003B48"
-static const ALIGN_ASSET(2) char Bmori1_room_1Tex_003B48[] = dBmori1_room_1Tex_003B48;
+#define dBmori1_room_1Tex_003B68 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_1Tex_003B68"
+static const ALIGN_ASSET(2) char Bmori1_room_1Tex_003B68[] = dBmori1_room_1Tex_003B68;
 
-#define dBmori1_room_1Tex_003348 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_1Tex_003348"
-static const ALIGN_ASSET(2) char Bmori1_room_1Tex_003348[] = dBmori1_room_1Tex_003348;
+#define dBmori1_room_1Tex_003368 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_1Tex_003368"
+static const ALIGN_ASSET(2) char Bmori1_room_1Tex_003368[] = dBmori1_room_1Tex_003368;
 
-#define dBmori1_room_1Tex_005348 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_1Tex_005348"
-static const ALIGN_ASSET(2) char Bmori1_room_1Tex_005348[] = dBmori1_room_1Tex_005348;
+#define dBmori1_room_1Tex_005368 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_1Tex_005368"
+static const ALIGN_ASSET(2) char Bmori1_room_1Tex_005368[] = dBmori1_room_1Tex_005368;
 
-#define dBmori1_room_1Tex_004348 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_1Tex_004348"
-static const ALIGN_ASSET(2) char Bmori1_room_1Tex_004348[] = dBmori1_room_1Tex_004348;
+#define dBmori1_room_1Tex_004368 "__OTR__scenes/nonmq/Bmori1_scene/Bmori1_room_1Tex_004368"
+static const ALIGN_ASSET(2) char Bmori1_room_1Tex_004368[] = dBmori1_room_1Tex_004368;
+
+
+#endif // DUNGEONS_BMORI1_ROOM_1_H

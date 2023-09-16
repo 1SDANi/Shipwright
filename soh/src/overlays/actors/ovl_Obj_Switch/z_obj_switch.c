@@ -285,7 +285,7 @@ void ObjSwitch_Init(Actor* thisx, PlayState* play) {
     s32 type;
 
     //Allow obtaining the snake tunnel chest in water temple without having the bow
-    if ((play->sceneNum == SCENE_MIZUSIN && play->roomCtx.curRoom.num == 21)) {
+    if ((play->sceneNum == SCENE_WATER_TEMPLE && play->roomCtx.curRoom.num == 21)) {
         Actor_Kill(thisx);
     }
 

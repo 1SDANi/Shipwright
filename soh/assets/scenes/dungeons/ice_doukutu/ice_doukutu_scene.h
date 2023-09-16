@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DUNGEONS_ICE_DOUKUTU_SCENE_H
+#define DUNGEONS_ICE_DOUKUTU_SCENE_H 1
 
 #include "align_asset_macro.h"
 
@@ -11,25 +12,28 @@ static const ALIGN_ASSET(2) char gIceCavernNightEntranceTex[] = dgIceCavernNight
 #define dgIceCavernDayEntranceTex "__OTR__scenes/nonmq/ice_doukutu_scene/gIceCavernDayEntranceTex"
 static const ALIGN_ASSET(2) char gIceCavernDayEntranceTex[] = dgIceCavernDayEntranceTex;
 
-#define dice_doukutu_sceneCollisionHeader_00F598 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneCollisionHeader_00F598"
-static const ALIGN_ASSET(2) char ice_doukutu_sceneCollisionHeader_00F598[] = dice_doukutu_sceneCollisionHeader_00F598;
+#define dice_doukutu_sceneCollisionHeader_00F668 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneCollisionHeader_00F668"
+static const ALIGN_ASSET(2) char ice_doukutu_sceneCollisionHeader_00F668[] = dice_doukutu_sceneCollisionHeader_00F668;
 
-#define dice_doukutu_sceneTex_0109F0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTex_0109F0"
-static const ALIGN_ASSET(2) char ice_doukutu_sceneTex_0109F0[] = dice_doukutu_sceneTex_0109F0;
+#define dice_doukutu_sceneTex_010AC0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTex_010AC0"
+static const ALIGN_ASSET(2) char ice_doukutu_sceneTex_010AC0[] = dice_doukutu_sceneTex_010AC0;
 
-#define dice_doukutu_sceneTex_00FBF0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTex_00FBF0"
-static const ALIGN_ASSET(2) char ice_doukutu_sceneTex_00FBF0[] = dice_doukutu_sceneTex_00FBF0;
+#define dice_doukutu_sceneTex_00FCC0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTex_00FCC0"
+static const ALIGN_ASSET(2) char ice_doukutu_sceneTex_00FCC0[] = dice_doukutu_sceneTex_00FCC0;
 
-#define dice_doukutu_sceneTex_00FFF0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTex_00FFF0"
-static const ALIGN_ASSET(2) char ice_doukutu_sceneTex_00FFF0[] = dice_doukutu_sceneTex_00FFF0;
+#define dice_doukutu_sceneTex_0100C0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTex_0100C0"
+static const ALIGN_ASSET(2) char ice_doukutu_sceneTex_0100C0[] = dice_doukutu_sceneTex_0100C0;
 
-#define dice_doukutu_sceneTex_0107F0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTex_0107F0"
-static const ALIGN_ASSET(2) char ice_doukutu_sceneTex_0107F0[] = dice_doukutu_sceneTex_0107F0;
+#define dice_doukutu_sceneTex_0108C0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTex_0108C0"
+static const ALIGN_ASSET(2) char ice_doukutu_sceneTex_0108C0[] = dice_doukutu_sceneTex_0108C0;
 
-#define dice_doukutu_sceneTex_010DF0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTex_010DF0"
-static const ALIGN_ASSET(2) char ice_doukutu_sceneTex_010DF0[] = dice_doukutu_sceneTex_010DF0;
+#define dice_doukutu_sceneTex_010EC0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTex_010EC0"
+static const ALIGN_ASSET(2) char ice_doukutu_sceneTex_010EC0[] = dice_doukutu_sceneTex_010EC0;
 
-#define dice_doukutu_sceneTLUT_00F7D0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTLUT_00F7D0"
-static const ALIGN_ASSET(2) char ice_doukutu_sceneTLUT_00F7D0[] = dice_doukutu_sceneTLUT_00F7D0;
+#define dice_doukutu_sceneTLUT_00F8A0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneTLUT_00F8A0"
+static const ALIGN_ASSET(2) char ice_doukutu_sceneTLUT_00F8A0[] = dice_doukutu_sceneTLUT_00F8A0;
 
-#define dice_doukutu_sceneCollisionHeader_00F598 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneCollisionHeader_00F598"
+#define dice_doukutu_sceneCollisionHeader_00F668 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_sceneCollisionHeader_00F668"
+
+
+#endif // DUNGEONS_ICE_DOUKUTU_SCENE_H

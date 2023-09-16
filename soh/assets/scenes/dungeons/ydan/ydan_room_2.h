@@ -1,30 +1,34 @@
-#pragma once
+#ifndef DUNGEONS_YDAN_ROOM_2_H
+#define DUNGEONS_YDAN_ROOM_2_H 1
 
 #include "align_asset_macro.h"
 
-#define dydan_room_2DL_001060 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2DL_001060"
-static const ALIGN_ASSET(2) char ydan_room_2DL_001060[] = dydan_room_2DL_001060;
+#define dydan_room_2DL_001160 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2DL_001160"
+static const ALIGN_ASSET(2) char ydan_room_2DL_001160[] = dydan_room_2DL_001160;
 
-#define dydan_room_2Tex_001C08 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_001C08"
-static const ALIGN_ASSET(2) char ydan_room_2Tex_001C08[] = dydan_room_2Tex_001C08;
+#define dydan_room_2Tex_001D08 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_001D08"
+static const ALIGN_ASSET(2) char ydan_room_2Tex_001D08[] = dydan_room_2Tex_001D08;
 
-#define dydan_room_2Tex_002C08 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_002C08"
-static const ALIGN_ASSET(2) char ydan_room_2Tex_002C08[] = dydan_room_2Tex_002C08;
+#define dydan_room_2Tex_002D08 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_002D08"
+static const ALIGN_ASSET(2) char ydan_room_2Tex_002D08[] = dydan_room_2Tex_002D08;
 
-#define dydan_room_2Tex_004408 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_004408"
-static const ALIGN_ASSET(2) char ydan_room_2Tex_004408[] = dydan_room_2Tex_004408;
+#define dydan_room_2Tex_004508 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_004508"
+static const ALIGN_ASSET(2) char ydan_room_2Tex_004508[] = dydan_room_2Tex_004508;
 
-#define dydan_room_2Tex_002408 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_002408"
-static const ALIGN_ASSET(2) char ydan_room_2Tex_002408[] = dydan_room_2Tex_002408;
+#define dydan_room_2Tex_002508 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_002508"
+static const ALIGN_ASSET(2) char ydan_room_2Tex_002508[] = dydan_room_2Tex_002508;
 
-#define dydan_room_2Tex_003C08 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_003C08"
-static const ALIGN_ASSET(2) char ydan_room_2Tex_003C08[] = dydan_room_2Tex_003C08;
+#define dydan_room_2Tex_003D08 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_003D08"
+static const ALIGN_ASSET(2) char ydan_room_2Tex_003D08[] = dydan_room_2Tex_003D08;
 
-#define dydan_room_2Tex_003408 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_003408"
-static const ALIGN_ASSET(2) char ydan_room_2Tex_003408[] = dydan_room_2Tex_003408;
+#define dydan_room_2Tex_003508 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_003508"
+static const ALIGN_ASSET(2) char ydan_room_2Tex_003508[] = dydan_room_2Tex_003508;
 
-#define dydan_room_2DL_004D50 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2DL_004D50"
-static const ALIGN_ASSET(2) char ydan_room_2DL_004D50[] = dydan_room_2DL_004D50;
+#define dydan_room_2DL_004E50 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2DL_004E50"
+static const ALIGN_ASSET(2) char ydan_room_2DL_004E50[] = dydan_room_2DL_004E50;
 
-#define dydan_room_2Tex_004E28 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_004E28"
-static const ALIGN_ASSET(2) char ydan_room_2Tex_004E28[] = dydan_room_2Tex_004E28;
+#define dydan_room_2Tex_004F28 "__OTR__scenes/nonmq/ydan_scene/ydan_room_2Tex_004F28"
+static const ALIGN_ASSET(2) char ydan_room_2Tex_004F28[] = dydan_room_2Tex_004F28;
+
+
+#endif // DUNGEONS_YDAN_ROOM_2_H

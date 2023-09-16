@@ -1,33 +1,37 @@
-#pragma once
+#ifndef DUNGEONS_ICE_DOUKUTU_ROOM_9_H
+#define DUNGEONS_ICE_DOUKUTU_ROOM_9_H 1
 
 #include "align_asset_macro.h"
 
-#define dice_doukutu_room_9DL_004428 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9DL_004428"
-static const ALIGN_ASSET(2) char ice_doukutu_room_9DL_004428[] = dice_doukutu_room_9DL_004428;
+#define dice_doukutu_room_9DL_004468 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9DL_004468"
+static const ALIGN_ASSET(2) char ice_doukutu_room_9DL_004468[] = dice_doukutu_room_9DL_004468;
 
-#define dice_doukutu_room_9Tex_005C60 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_005C60"
-static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_005C60[] = dice_doukutu_room_9Tex_005C60;
+#define dice_doukutu_room_9Tex_005CA0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_005CA0"
+static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_005CA0[] = dice_doukutu_room_9Tex_005CA0;
 
-#define dice_doukutu_room_9Tex_006C60 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_006C60"
-static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_006C60[] = dice_doukutu_room_9Tex_006C60;
+#define dice_doukutu_room_9Tex_006CA0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_006CA0"
+static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_006CA0[] = dice_doukutu_room_9Tex_006CA0;
 
-#define dice_doukutu_room_9Tex_004460 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_004460"
-static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_004460[] = dice_doukutu_room_9Tex_004460;
+#define dice_doukutu_room_9Tex_0044A0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_0044A0"
+static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_0044A0[] = dice_doukutu_room_9Tex_0044A0;
 
-#define dice_doukutu_room_9Tex_005460 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_005460"
-static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_005460[] = dice_doukutu_room_9Tex_005460;
+#define dice_doukutu_room_9Tex_0054A0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_0054A0"
+static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_0054A0[] = dice_doukutu_room_9Tex_0054A0;
 
-#define dice_doukutu_room_9Tex_006460 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_006460"
-static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_006460[] = dice_doukutu_room_9Tex_006460;
+#define dice_doukutu_room_9Tex_0064A0 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_0064A0"
+static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_0064A0[] = dice_doukutu_room_9Tex_0064A0;
 
-#define dice_doukutu_room_9DL_007640 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9DL_007640"
-static const ALIGN_ASSET(2) char ice_doukutu_room_9DL_007640[] = dice_doukutu_room_9DL_007640;
+#define dice_doukutu_room_9DL_007680 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9DL_007680"
+static const ALIGN_ASSET(2) char ice_doukutu_room_9DL_007680[] = dice_doukutu_room_9DL_007680;
 
-#define dice_doukutu_room_9Tex_007650 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_007650"
-static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_007650[] = dice_doukutu_room_9Tex_007650;
+#define dice_doukutu_room_9Tex_007690 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Tex_007690"
+static const ALIGN_ASSET(2) char ice_doukutu_room_9Tex_007690[] = dice_doukutu_room_9Tex_007690;
 
-#define dice_doukutu_room_9Set_000190DL_004428 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Set_000190DL_004428"
-static const ALIGN_ASSET(2) char ice_doukutu_room_9Set_000190DL_004428[] = dice_doukutu_room_9Set_000190DL_004428;
+#define dice_doukutu_room_9Set_0001D0DL_004468 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Set_0001D0DL_004468"
+static const ALIGN_ASSET(2) char ice_doukutu_room_9Set_0001D0DL_004468[] = dice_doukutu_room_9Set_0001D0DL_004468;
 
-#define dice_doukutu_room_9Set_000190DL_007640 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Set_000190DL_007640"
-static const ALIGN_ASSET(2) char ice_doukutu_room_9Set_000190DL_007640[] = dice_doukutu_room_9Set_000190DL_007640;
+#define dice_doukutu_room_9Set_0001D0DL_007680 "__OTR__scenes/nonmq/ice_doukutu_scene/ice_doukutu_room_9Set_0001D0DL_007680"
+static const ALIGN_ASSET(2) char ice_doukutu_room_9Set_0001D0DL_007680[] = dice_doukutu_room_9Set_0001D0DL_007680;
+
+
+#endif // DUNGEONS_ICE_DOUKUTU_ROOM_9_H

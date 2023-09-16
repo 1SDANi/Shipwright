@@ -1,4 +1,5 @@
-#pragma once
+#ifndef OBJECTS_OBJECT_OWL_H
+#define OBJECTS_OBJECT_OWL_H 1
 
 #include "align_asset_macro.h"
 
@@ -163,3 +164,5 @@ static const ALIGN_ASSET(2) char gOwlPerchingSkelLimbsLimb_010068DL_00F030[] = d
 
 #define dobject_owlTLUT_006DA8 "__OTR__objects/object_owl/object_owlTLUT_006DA8"
 static const ALIGN_ASSET(2) char object_owlTLUT_006DA8[] = dobject_owlTLUT_006DA8;
+
+#endif // OBJECTS_OBJECT_OWL_H

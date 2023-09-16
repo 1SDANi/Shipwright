@@ -1,54 +1,58 @@
-#pragma once
+#ifndef DUNGEONS_HIDAN_ROOM_8_H
+#define DUNGEONS_HIDAN_ROOM_8_H 1
 
 #include "align_asset_macro.h"
 
-#define dHIDAN_room_8DL_003648 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_003648"
-static const ALIGN_ASSET(2) char HIDAN_room_8DL_003648[] = dHIDAN_room_8DL_003648;
+#define dHIDAN_room_8DL_003668 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_003668"
+static const ALIGN_ASSET(2) char HIDAN_room_8DL_003668[] = dHIDAN_room_8DL_003668;
 
-#define dHIDAN_room_8Tex_005AB8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_005AB8"
-static const ALIGN_ASSET(2) char HIDAN_room_8Tex_005AB8[] = dHIDAN_room_8Tex_005AB8;
+#define dHIDAN_room_8Tex_005AD8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_005AD8"
+static const ALIGN_ASSET(2) char HIDAN_room_8Tex_005AD8[] = dHIDAN_room_8Tex_005AD8;
 
-#define dHIDAN_room_8DL_002640 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_002640"
-static const ALIGN_ASSET(2) char HIDAN_room_8DL_002640[] = dHIDAN_room_8DL_002640;
+#define dHIDAN_room_8DL_002660 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_002660"
+static const ALIGN_ASSET(2) char HIDAN_room_8DL_002660[] = dHIDAN_room_8DL_002660;
 
-#define dHIDAN_room_8Tex_0092B8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0092B8"
-static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0092B8[] = dHIDAN_room_8Tex_0092B8;
+#define dHIDAN_room_8Tex_0092D8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0092D8"
+static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0092D8[] = dHIDAN_room_8Tex_0092D8;
 
-#define dHIDAN_room_8DL_0006E0 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_0006E0"
-static const ALIGN_ASSET(2) char HIDAN_room_8DL_0006E0[] = dHIDAN_room_8DL_0006E0;
+#define dHIDAN_room_8DL_000700 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_000700"
+static const ALIGN_ASSET(2) char HIDAN_room_8DL_000700[] = dHIDAN_room_8DL_000700;
 
-#define dHIDAN_room_8Tex_0062B8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0062B8"
-static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0062B8[] = dHIDAN_room_8Tex_0062B8;
+#define dHIDAN_room_8Tex_0062D8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0062D8"
+static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0062D8[] = dHIDAN_room_8Tex_0062D8;
 
-#define dHIDAN_room_8Tex_0086B8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0086B8"
-static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0086B8[] = dHIDAN_room_8Tex_0086B8;
+#define dHIDAN_room_8Tex_0086D8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0086D8"
+static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0086D8[] = dHIDAN_room_8Tex_0086D8;
 
-#define dHIDAN_room_8Tex_0082B8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0082B8"
-static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0082B8[] = dHIDAN_room_8Tex_0082B8;
+#define dHIDAN_room_8Tex_0082D8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0082D8"
+static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0082D8[] = dHIDAN_room_8Tex_0082D8;
 
-#define dHIDAN_room_8DL_001228 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_001228"
-static const ALIGN_ASSET(2) char HIDAN_room_8DL_001228[] = dHIDAN_room_8DL_001228;
+#define dHIDAN_room_8DL_001248 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_001248"
+static const ALIGN_ASSET(2) char HIDAN_room_8DL_001248[] = dHIDAN_room_8DL_001248;
 
-#define dHIDAN_room_8DL_0018E0 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_0018E0"
-static const ALIGN_ASSET(2) char HIDAN_room_8DL_0018E0[] = dHIDAN_room_8DL_0018E0;
+#define dHIDAN_room_8DL_001900 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_001900"
+static const ALIGN_ASSET(2) char HIDAN_room_8DL_001900[] = dHIDAN_room_8DL_001900;
 
-#define dHIDAN_room_8DL_002030 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_002030"
-static const ALIGN_ASSET(2) char HIDAN_room_8DL_002030[] = dHIDAN_room_8DL_002030;
+#define dHIDAN_room_8DL_002050 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_002050"
+static const ALIGN_ASSET(2) char HIDAN_room_8DL_002050[] = dHIDAN_room_8DL_002050;
 
-#define dHIDAN_room_8Tex_008AB8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_008AB8"
-static const ALIGN_ASSET(2) char HIDAN_room_8Tex_008AB8[] = dHIDAN_room_8Tex_008AB8;
+#define dHIDAN_room_8Tex_008AD8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_008AD8"
+static const ALIGN_ASSET(2) char HIDAN_room_8Tex_008AD8[] = dHIDAN_room_8Tex_008AD8;
 
-#define dHIDAN_room_8DL_0047C8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_0047C8"
-static const ALIGN_ASSET(2) char HIDAN_room_8DL_0047C8[] = dHIDAN_room_8DL_0047C8;
+#define dHIDAN_room_8DL_0047E8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8DL_0047E8"
+static const ALIGN_ASSET(2) char HIDAN_room_8DL_0047E8[] = dHIDAN_room_8DL_0047E8;
 
-#define dHIDAN_room_8Tex_0052B8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0052B8"
-static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0052B8[] = dHIDAN_room_8Tex_0052B8;
+#define dHIDAN_room_8Tex_0052D8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0052D8"
+static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0052D8[] = dHIDAN_room_8Tex_0052D8;
 
-#define dHIDAN_room_8Tex_006AB8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_006AB8"
-static const ALIGN_ASSET(2) char HIDAN_room_8Tex_006AB8[] = dHIDAN_room_8Tex_006AB8;
+#define dHIDAN_room_8Tex_006AD8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_006AD8"
+static const ALIGN_ASSET(2) char HIDAN_room_8Tex_006AD8[] = dHIDAN_room_8Tex_006AD8;
 
-#define dHIDAN_room_8Tex_0050B8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0050B8"
-static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0050B8[] = dHIDAN_room_8Tex_0050B8;
+#define dHIDAN_room_8Tex_0050D8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_0050D8"
+static const ALIGN_ASSET(2) char HIDAN_room_8Tex_0050D8[] = dHIDAN_room_8Tex_0050D8;
 
-#define dHIDAN_room_8Tex_007AB8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_007AB8"
-static const ALIGN_ASSET(2) char HIDAN_room_8Tex_007AB8[] = dHIDAN_room_8Tex_007AB8;
+#define dHIDAN_room_8Tex_007AD8 "__OTR__scenes/nonmq/HIDAN_scene/HIDAN_room_8Tex_007AD8"
+static const ALIGN_ASSET(2) char HIDAN_room_8Tex_007AD8[] = dHIDAN_room_8Tex_007AD8;
+
+
+#endif // DUNGEONS_HIDAN_ROOM_8_H

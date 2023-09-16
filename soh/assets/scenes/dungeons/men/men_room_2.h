@@ -1,36 +1,40 @@
-#pragma once
+#ifndef DUNGEONS_MEN_ROOM_2_H
+#define DUNGEONS_MEN_ROOM_2_H 1
 
 #include "align_asset_macro.h"
 
-#define dmen_room_2DL_0004B0 "__OTR__scenes/nonmq/men_scene/men_room_2DL_0004B0"
-static const ALIGN_ASSET(2) char men_room_2DL_0004B0[] = dmen_room_2DL_0004B0;
+#define dmen_room_2DL_000580 "__OTR__scenes/nonmq/men_scene/men_room_2DL_000580"
+static const ALIGN_ASSET(2) char men_room_2DL_000580[] = dmen_room_2DL_000580;
 
-#define dmen_room_2Tex_004378 "__OTR__scenes/nonmq/men_scene/men_room_2Tex_004378"
-static const ALIGN_ASSET(2) char men_room_2Tex_004378[] = dmen_room_2Tex_004378;
+#define dmen_room_2Tex_004448 "__OTR__scenes/nonmq/men_scene/men_room_2Tex_004448"
+static const ALIGN_ASSET(2) char men_room_2Tex_004448[] = dmen_room_2Tex_004448;
 
-#define dmen_room_2DL_001230 "__OTR__scenes/nonmq/men_scene/men_room_2DL_001230"
-static const ALIGN_ASSET(2) char men_room_2DL_001230[] = dmen_room_2DL_001230;
+#define dmen_room_2DL_001300 "__OTR__scenes/nonmq/men_scene/men_room_2DL_001300"
+static const ALIGN_ASSET(2) char men_room_2DL_001300[] = dmen_room_2DL_001300;
 
-#define dmen_room_2DL_000870 "__OTR__scenes/nonmq/men_scene/men_room_2DL_000870"
-static const ALIGN_ASSET(2) char men_room_2DL_000870[] = dmen_room_2DL_000870;
+#define dmen_room_2DL_000940 "__OTR__scenes/nonmq/men_scene/men_room_2DL_000940"
+static const ALIGN_ASSET(2) char men_room_2DL_000940[] = dmen_room_2DL_000940;
 
-#define dmen_room_2Tex_004B78 "__OTR__scenes/nonmq/men_scene/men_room_2Tex_004B78"
-static const ALIGN_ASSET(2) char men_room_2Tex_004B78[] = dmen_room_2Tex_004B78;
+#define dmen_room_2Tex_004C48 "__OTR__scenes/nonmq/men_scene/men_room_2Tex_004C48"
+static const ALIGN_ASSET(2) char men_room_2Tex_004C48[] = dmen_room_2Tex_004C48;
 
-#define dmen_room_2DL_001B60 "__OTR__scenes/nonmq/men_scene/men_room_2DL_001B60"
-static const ALIGN_ASSET(2) char men_room_2DL_001B60[] = dmen_room_2DL_001B60;
+#define dmen_room_2DL_001C30 "__OTR__scenes/nonmq/men_scene/men_room_2DL_001C30"
+static const ALIGN_ASSET(2) char men_room_2DL_001C30[] = dmen_room_2DL_001C30;
 
-#define dmen_room_2DL_002610 "__OTR__scenes/nonmq/men_scene/men_room_2DL_002610"
-static const ALIGN_ASSET(2) char men_room_2DL_002610[] = dmen_room_2DL_002610;
+#define dmen_room_2DL_0026E0 "__OTR__scenes/nonmq/men_scene/men_room_2DL_0026E0"
+static const ALIGN_ASSET(2) char men_room_2DL_0026E0[] = dmen_room_2DL_0026E0;
 
-#define dmen_room_2DL_002B60 "__OTR__scenes/nonmq/men_scene/men_room_2DL_002B60"
-static const ALIGN_ASSET(2) char men_room_2DL_002B60[] = dmen_room_2DL_002B60;
+#define dmen_room_2DL_002C30 "__OTR__scenes/nonmq/men_scene/men_room_2DL_002C30"
+static const ALIGN_ASSET(2) char men_room_2DL_002C30[] = dmen_room_2DL_002C30;
 
-#define dmen_room_2DL_002ED0 "__OTR__scenes/nonmq/men_scene/men_room_2DL_002ED0"
-static const ALIGN_ASSET(2) char men_room_2DL_002ED0[] = dmen_room_2DL_002ED0;
+#define dmen_room_2DL_002FA0 "__OTR__scenes/nonmq/men_scene/men_room_2DL_002FA0"
+static const ALIGN_ASSET(2) char men_room_2DL_002FA0[] = dmen_room_2DL_002FA0;
 
-#define dmen_room_2DL_003858 "__OTR__scenes/nonmq/men_scene/men_room_2DL_003858"
-static const ALIGN_ASSET(2) char men_room_2DL_003858[] = dmen_room_2DL_003858;
+#define dmen_room_2DL_003928 "__OTR__scenes/nonmq/men_scene/men_room_2DL_003928"
+static const ALIGN_ASSET(2) char men_room_2DL_003928[] = dmen_room_2DL_003928;
 
-#define dmen_room_2Tex_003B78 "__OTR__scenes/nonmq/men_scene/men_room_2Tex_003B78"
-static const ALIGN_ASSET(2) char men_room_2Tex_003B78[] = dmen_room_2Tex_003B78;
+#define dmen_room_2Tex_003C48 "__OTR__scenes/nonmq/men_scene/men_room_2Tex_003C48"
+static const ALIGN_ASSET(2) char men_room_2Tex_003C48[] = dmen_room_2Tex_003C48;
+
+
+#endif // DUNGEONS_MEN_ROOM_2_H

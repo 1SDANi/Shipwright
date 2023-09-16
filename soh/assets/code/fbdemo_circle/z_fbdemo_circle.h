@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CODE_Z_FBDEMO_CIRCLE_H
+#define CODE_Z_FBDEMO_CIRCLE_H 1
 
 #include "align_asset_macro.h"
 
@@ -19,3 +20,8 @@ static const ALIGN_ASSET(2) char sCircleWipeVtx[] = dsCircleWipeVtx;
 
 #define dsCircleDList "__OTR__code/z_fbdemo_circle/sCircleDList"
 static const ALIGN_ASSET(2) char sCircleDList[] = dsCircleDList;
+
+#define dsTransCircleVtx "__OTR__code/z_fbdemo_circle/sTransCircleVtx"
+static const ALIGN_ASSET(2) char sTransCircleVtx[] = dsTransCircleVtx;
+
+#endif // CODE_Z_FBDEMO_CIRCLE_H

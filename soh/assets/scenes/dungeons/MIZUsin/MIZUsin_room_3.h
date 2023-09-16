@@ -1,45 +1,49 @@
-#pragma once
+#ifndef DUNGEONS_MIZUSIN_ROOM_3_H
+#define DUNGEONS_MIZUSIN_ROOM_3_H 1
 
 #include "align_asset_macro.h"
 
-#define dMIZUsin_room_3DL_000740 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_000740"
-static const ALIGN_ASSET(2) char MIZUsin_room_3DL_000740[] = dMIZUsin_room_3DL_000740;
+#define dMIZUsin_room_3DL_0007F0 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_0007F0"
+static const ALIGN_ASSET(2) char MIZUsin_room_3DL_0007F0[] = dMIZUsin_room_3DL_0007F0;
 
-#define dMIZUsin_room_3DL_001200 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_001200"
-static const ALIGN_ASSET(2) char MIZUsin_room_3DL_001200[] = dMIZUsin_room_3DL_001200;
+#define dMIZUsin_room_3DL_0012B0 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_0012B0"
+static const ALIGN_ASSET(2) char MIZUsin_room_3DL_0012B0[] = dMIZUsin_room_3DL_0012B0;
 
-#define dMIZUsin_room_3DL_003020 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_003020"
-static const ALIGN_ASSET(2) char MIZUsin_room_3DL_003020[] = dMIZUsin_room_3DL_003020;
+#define dMIZUsin_room_3DL_0030D0 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_0030D0"
+static const ALIGN_ASSET(2) char MIZUsin_room_3DL_0030D0[] = dMIZUsin_room_3DL_0030D0;
 
-#define dMIZUsin_room_3Tex_003708 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_003708"
-static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_003708[] = dMIZUsin_room_3Tex_003708;
+#define dMIZUsin_room_3Tex_0037B8 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_0037B8"
+static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_0037B8[] = dMIZUsin_room_3Tex_0037B8;
 
-#define dMIZUsin_room_3Tex_005708 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_005708"
-static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_005708[] = dMIZUsin_room_3Tex_005708;
+#define dMIZUsin_room_3Tex_0057B8 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_0057B8"
+static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_0057B8[] = dMIZUsin_room_3Tex_0057B8;
 
-#define dMIZUsin_room_3Tex_003F08 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_003F08"
-static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_003F08[] = dMIZUsin_room_3Tex_003F08;
+#define dMIZUsin_room_3Tex_003FB8 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_003FB8"
+static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_003FB8[] = dMIZUsin_room_3Tex_003FB8;
 
-#define dMIZUsin_room_3Tex_004F08 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_004F08"
-static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_004F08[] = dMIZUsin_room_3Tex_004F08;
+#define dMIZUsin_room_3Tex_004FB8 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_004FB8"
+static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_004FB8[] = dMIZUsin_room_3Tex_004FB8;
 
-#define dMIZUsin_room_3Tex_005F08 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_005F08"
-static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_005F08[] = dMIZUsin_room_3Tex_005F08;
+#define dMIZUsin_room_3Tex_005FB8 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_005FB8"
+static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_005FB8[] = dMIZUsin_room_3Tex_005FB8;
 
-#define dMIZUsin_room_3DL_0020E0 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_0020E0"
-static const ALIGN_ASSET(2) char MIZUsin_room_3DL_0020E0[] = dMIZUsin_room_3DL_0020E0;
+#define dMIZUsin_room_3DL_002190 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_002190"
+static const ALIGN_ASSET(2) char MIZUsin_room_3DL_002190[] = dMIZUsin_room_3DL_002190;
 
-#define dMIZUsin_room_3DL_000310 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_000310"
-static const ALIGN_ASSET(2) char MIZUsin_room_3DL_000310[] = dMIZUsin_room_3DL_000310;
+#define dMIZUsin_room_3DL_0003C0 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_0003C0"
+static const ALIGN_ASSET(2) char MIZUsin_room_3DL_0003C0[] = dMIZUsin_room_3DL_0003C0;
 
-#define dMIZUsin_room_3Tex_004708 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_004708"
-static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_004708[] = dMIZUsin_room_3Tex_004708;
+#define dMIZUsin_room_3Tex_0047B8 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3Tex_0047B8"
+static const ALIGN_ASSET(2) char MIZUsin_room_3Tex_0047B8[] = dMIZUsin_room_3Tex_0047B8;
 
-#define dMIZUsin_room_3DL_0015A8 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_0015A8"
-static const ALIGN_ASSET(2) char MIZUsin_room_3DL_0015A8[] = dMIZUsin_room_3DL_0015A8;
+#define dMIZUsin_room_3DL_001658 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_001658"
+static const ALIGN_ASSET(2) char MIZUsin_room_3DL_001658[] = dMIZUsin_room_3DL_001658;
 
-#define dMIZUsin_room_3DL_000A10 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_000A10"
-static const ALIGN_ASSET(2) char MIZUsin_room_3DL_000A10[] = dMIZUsin_room_3DL_000A10;
+#define dMIZUsin_room_3DL_000AC0 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_000AC0"
+static const ALIGN_ASSET(2) char MIZUsin_room_3DL_000AC0[] = dMIZUsin_room_3DL_000AC0;
 
-#define dMIZUsin_room_3DL_001DE8 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_001DE8"
-static const ALIGN_ASSET(2) char MIZUsin_room_3DL_001DE8[] = dMIZUsin_room_3DL_001DE8;
+#define dMIZUsin_room_3DL_001E98 "__OTR__scenes/nonmq/MIZUsin_scene/MIZUsin_room_3DL_001E98"
+static const ALIGN_ASSET(2) char MIZUsin_room_3DL_001E98[] = dMIZUsin_room_3DL_001E98;
+
+
+#endif // DUNGEONS_MIZUSIN_ROOM_3_H

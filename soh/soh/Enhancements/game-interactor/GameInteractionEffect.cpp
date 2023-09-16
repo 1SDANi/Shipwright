@@ -173,7 +173,7 @@ namespace GameInteractionEffect {
     // MARK: - FreezePlayer
     GameInteractionEffectQueryResult FreezePlayer::CanBeApplied() {
         Player* player = GET_PLAYER(gPlayState);
-        if (!GameInteractor::IsSaveLoaded() || GameInteractor::IsGameplayPaused()) {
+        if (!GameInteractor::IsSaveLoaded() || GameInteractor::IsGameplayPaused() || !PlayerGrounded(player)) {
             return GameInteractionEffectQueryResult::TemporarilyNotPossible;
         } else {
             return GameInteractionEffectQueryResult::Possible;
@@ -211,7 +211,8 @@ namespace GameInteractionEffect {
 
     // MARK: - KnockbackPlayer
     GameInteractionEffectQueryResult KnockbackPlayer::CanBeApplied() {
-        if (!GameInteractor::IsSaveLoaded() || GameInteractor::IsGameplayPaused()) {
+        Player* player = GET_PLAYER(gPlayState);
+        if (!GameInteractor::IsSaveLoaded() || GameInteractor::IsGameplayPaused() || player->stateFlags2 & PLAYER_STATE2_CRAWLING) {
             return GameInteractionEffectQueryResult::TemporarilyNotPossible;
         } else {
             return GameInteractionEffectQueryResult::Possible;

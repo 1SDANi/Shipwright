@@ -76,7 +76,7 @@ void BgHakaZou_Init(Actor* thisx, PlayState* play) {
     s32 pad;
     BgHakaZou* this = (BgHakaZou*)thisx;
     bool bombBridge = thisx->params == STA_GIANT_BIRD_STATUE &&
-                        play->sceneNum == SCENE_HAKADAN &&
+                        play->sceneNum == SCENE_SHADOW_TEMPLE &&
                         play->roomCtx.curRoom.num == 21 &&
                         thisx->world.pos.y < -1700;
 
@@ -162,7 +162,7 @@ void func_808828F4(BgHakaZou* this, PlayState* play) {
 
 void BgHakaZou_Wait(BgHakaZou* this, PlayState* play) {
     CollisionHeader* colHeader;
-    bool bombBridge =   this->dyna.actor.params == STA_GIANT_BIRD_STATUE && play->sceneNum == SCENE_HAKADAN && 
+    bool bombBridge = this->dyna.actor.params == STA_GIANT_BIRD_STATUE && play->sceneNum == SCENE_SHADOW_TEMPLE && 
                         play->roomCtx.curRoom.num == 21 && this->dyna.actor.world.pos.y < -1700;
 
     if (Object_IsLoaded(&play->objectCtx, this->requiredObjBankIndex)) {

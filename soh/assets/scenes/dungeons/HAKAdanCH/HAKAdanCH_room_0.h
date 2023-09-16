@@ -1,159 +1,163 @@
-#pragma once
+#ifndef DUNGEONS_HAKADANCH_ROOM_0_H
+#define DUNGEONS_HAKADANCH_ROOM_0_H 1
 
 #include "align_asset_macro.h"
 
-#define dHAKAdanCH_room_0DL_001C00 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_001C00"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_001C00[] = dHAKAdanCH_room_0DL_001C00;
+#define dHAKAdanCH_room_0DL_001D30 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_001D30"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_001D30[] = dHAKAdanCH_room_0DL_001D30;
 
-#define dHAKAdanCH_room_0Tex_0131F0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_0131F0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_0131F0[] = dHAKAdanCH_room_0Tex_0131F0;
+#define dHAKAdanCH_room_0Tex_013320 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_013320"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_013320[] = dHAKAdanCH_room_0Tex_013320;
 
-#define dHAKAdanCH_room_0Tex_0117F0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_0117F0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_0117F0[] = dHAKAdanCH_room_0Tex_0117F0;
+#define dHAKAdanCH_room_0Tex_011920 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_011920"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_011920[] = dHAKAdanCH_room_0Tex_011920;
 
-#define dHAKAdanCH_room_0Tex_010FF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_010FF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_010FF0[] = dHAKAdanCH_room_0Tex_010FF0;
+#define dHAKAdanCH_room_0Tex_011120 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_011120"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_011120[] = dHAKAdanCH_room_0Tex_011120;
 
-#define dHAKAdanCH_room_0Tex_00DDF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00DDF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00DDF0[] = dHAKAdanCH_room_0Tex_00DDF0;
+#define dHAKAdanCH_room_0Tex_00DF20 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00DF20"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00DF20[] = dHAKAdanCH_room_0Tex_00DF20;
 
-#define dHAKAdanCH_room_0Tex_00F7F0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00F7F0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00F7F0[] = dHAKAdanCH_room_0Tex_00F7F0;
+#define dHAKAdanCH_room_0Tex_00F920 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00F920"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00F920[] = dHAKAdanCH_room_0Tex_00F920;
 
-#define dHAKAdanCH_room_0DL_003EE8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_003EE8"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_003EE8[] = dHAKAdanCH_room_0DL_003EE8;
+#define dHAKAdanCH_room_0DL_004018 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_004018"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_004018[] = dHAKAdanCH_room_0DL_004018;
 
-#define dHAKAdanCH_room_0Tex_011DF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_011DF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_011DF0[] = dHAKAdanCH_room_0Tex_011DF0;
+#define dHAKAdanCH_room_0Tex_011F20 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_011F20"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_011F20[] = dHAKAdanCH_room_0Tex_011F20;
 
-#define dHAKAdanCH_room_0Tex_00FFF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00FFF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00FFF0[] = dHAKAdanCH_room_0Tex_00FFF0;
+#define dHAKAdanCH_room_0Tex_010120 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_010120"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_010120[] = dHAKAdanCH_room_0Tex_010120;
 
-#define dHAKAdanCH_room_0DL_004BE8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_004BE8"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_004BE8[] = dHAKAdanCH_room_0DL_004BE8;
+#define dHAKAdanCH_room_0DL_004D18 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_004D18"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_004D18[] = dHAKAdanCH_room_0DL_004D18;
 
-#define dHAKAdanCH_room_0DL_005690 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_005690"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_005690[] = dHAKAdanCH_room_0DL_005690;
+#define dHAKAdanCH_room_0DL_0057C0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0057C0"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0057C0[] = dHAKAdanCH_room_0DL_0057C0;
 
-#define dHAKAdanCH_room_0Tex_00DFF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00DFF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00DFF0[] = dHAKAdanCH_room_0Tex_00DFF0;
+#define dHAKAdanCH_room_0Tex_00E120 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00E120"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00E120[] = dHAKAdanCH_room_0Tex_00E120;
 
-#define dHAKAdanCH_room_0DL_005B00 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_005B00"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_005B00[] = dHAKAdanCH_room_0DL_005B00;
+#define dHAKAdanCH_room_0DL_005C30 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_005C30"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_005C30[] = dHAKAdanCH_room_0DL_005C30;
 
-#define dHAKAdanCH_room_0DL_005ED0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_005ED0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_005ED0[] = dHAKAdanCH_room_0DL_005ED0;
+#define dHAKAdanCH_room_0DL_006000 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_006000"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_006000[] = dHAKAdanCH_room_0DL_006000;
 
-#define dHAKAdanCH_room_0DL_002308 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_002308"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_002308[] = dHAKAdanCH_room_0DL_002308;
+#define dHAKAdanCH_room_0DL_002438 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_002438"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_002438[] = dHAKAdanCH_room_0DL_002438;
 
-#define dHAKAdanCH_room_0DL_00D420 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00D420"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00D420[] = dHAKAdanCH_room_0DL_00D420;
+#define dHAKAdanCH_room_0DL_00D550 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00D550"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00D550[] = dHAKAdanCH_room_0DL_00D550;
 
-#define dHAKAdanCH_room_0DL_001230 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_001230"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_001230[] = dHAKAdanCH_room_0DL_001230;
+#define dHAKAdanCH_room_0DL_001360 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_001360"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_001360[] = dHAKAdanCH_room_0DL_001360;
 
-#define dHAKAdanCH_room_0Tex_0135F0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_0135F0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_0135F0[] = dHAKAdanCH_room_0Tex_0135F0;
+#define dHAKAdanCH_room_0Tex_013720 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_013720"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_013720[] = dHAKAdanCH_room_0Tex_013720;
 
-#define dHAKAdanCH_room_0DL_007880 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_007880"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_007880[] = dHAKAdanCH_room_0DL_007880;
+#define dHAKAdanCH_room_0DL_0079B0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0079B0"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0079B0[] = dHAKAdanCH_room_0DL_0079B0;
 
-#define dHAKAdanCH_room_0DL_008680 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_008680"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_008680[] = dHAKAdanCH_room_0DL_008680;
+#define dHAKAdanCH_room_0DL_0087B0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0087B0"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0087B0[] = dHAKAdanCH_room_0DL_0087B0;
 
-#define dHAKAdanCH_room_0DL_0099A8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0099A8"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0099A8[] = dHAKAdanCH_room_0DL_0099A8;
+#define dHAKAdanCH_room_0DL_009AD8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_009AD8"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_009AD8[] = dHAKAdanCH_room_0DL_009AD8;
 
-#define dHAKAdanCH_room_0DL_00A570 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00A570"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00A570[] = dHAKAdanCH_room_0DL_00A570;
+#define dHAKAdanCH_room_0DL_00A6A0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00A6A0"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00A6A0[] = dHAKAdanCH_room_0DL_00A6A0;
 
-#define dHAKAdanCH_room_0DL_00AAF8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00AAF8"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00AAF8[] = dHAKAdanCH_room_0DL_00AAF8;
+#define dHAKAdanCH_room_0DL_00AC28 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00AC28"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00AC28[] = dHAKAdanCH_room_0DL_00AC28;
 
-#define dHAKAdanCH_room_0DL_00AF30 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00AF30"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00AF30[] = dHAKAdanCH_room_0DL_00AF30;
+#define dHAKAdanCH_room_0DL_00B060 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00B060"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00B060[] = dHAKAdanCH_room_0DL_00B060;
 
-#define dHAKAdanCH_room_0DL_0030F8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0030F8"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0030F8[] = dHAKAdanCH_room_0DL_0030F8;
+#define dHAKAdanCH_room_0DL_003228 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_003228"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_003228[] = dHAKAdanCH_room_0DL_003228;
 
-#define dHAKAdanCH_room_0DL_002AD0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_002AD0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_002AD0[] = dHAKAdanCH_room_0DL_002AD0;
+#define dHAKAdanCH_room_0DL_002C00 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_002C00"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_002C00[] = dHAKAdanCH_room_0DL_002C00;
 
-#define dHAKAdanCH_room_0DL_014300 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_014300"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_014300[] = dHAKAdanCH_room_0DL_014300;
+#define dHAKAdanCH_room_0DL_014430 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_014430"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_014430[] = dHAKAdanCH_room_0DL_014430;
 
-#define dHAKAdanCH_room_0Tex_0149F0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_0149F0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_0149F0[] = dHAKAdanCH_room_0Tex_0149F0;
+#define dHAKAdanCH_room_0Tex_014B20 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_014B20"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_014B20[] = dHAKAdanCH_room_0Tex_014B20;
 
-#define dHAKAdanCH_room_0DL_014738 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_014738"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_014738[] = dHAKAdanCH_room_0DL_014738;
+#define dHAKAdanCH_room_0DL_014868 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_014868"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_014868[] = dHAKAdanCH_room_0DL_014868;
 
-#define dHAKAdanCH_room_0Tex_014DF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_014DF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_014DF0[] = dHAKAdanCH_room_0Tex_014DF0;
+#define dHAKAdanCH_room_0Tex_014F20 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_014F20"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_014F20[] = dHAKAdanCH_room_0Tex_014F20;
 
-#define dHAKAdanCH_room_0DL_014908 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_014908"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_014908[] = dHAKAdanCH_room_0DL_014908;
+#define dHAKAdanCH_room_0DL_014A38 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_014A38"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_014A38[] = dHAKAdanCH_room_0DL_014A38;
 
-#define dHAKAdanCH_room_0DL_006C28 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_006C28"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_006C28[] = dHAKAdanCH_room_0DL_006C28;
+#define dHAKAdanCH_room_0DL_006D58 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_006D58"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_006D58[] = dHAKAdanCH_room_0DL_006D58;
 
-#define dHAKAdanCH_room_0Tex_00D5F0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00D5F0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00D5F0[] = dHAKAdanCH_room_0Tex_00D5F0;
+#define dHAKAdanCH_room_0Tex_00D720 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00D720"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00D720[] = dHAKAdanCH_room_0Tex_00D720;
 
-#define dHAKAdanCH_room_0DL_000680 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_000680"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_000680[] = dHAKAdanCH_room_0DL_000680;
+#define dHAKAdanCH_room_0DL_0007B0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0007B0"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0007B0[] = dHAKAdanCH_room_0DL_0007B0;
 
-#define dHAKAdanCH_room_0DL_0036A8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0036A8"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0036A8[] = dHAKAdanCH_room_0DL_0036A8;
+#define dHAKAdanCH_room_0DL_0037D8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0037D8"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0037D8[] = dHAKAdanCH_room_0DL_0037D8;
 
-#define dHAKAdanCH_room_0DL_0033E8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0033E8"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0033E8[] = dHAKAdanCH_room_0DL_0033E8;
+#define dHAKAdanCH_room_0DL_003518 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_003518"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_003518[] = dHAKAdanCH_room_0DL_003518;
 
-#define dHAKAdanCH_room_0DL_006630 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_006630"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_006630[] = dHAKAdanCH_room_0DL_006630;
+#define dHAKAdanCH_room_0DL_006760 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_006760"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_006760[] = dHAKAdanCH_room_0DL_006760;
 
-#define dHAKAdanCH_room_0Tex_011BF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_011BF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_011BF0[] = dHAKAdanCH_room_0Tex_011BF0;
+#define dHAKAdanCH_room_0Tex_011D20 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_011D20"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_011D20[] = dHAKAdanCH_room_0Tex_011D20;
 
-#define dHAKAdanCH_room_0Tex_012DF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_012DF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_012DF0[] = dHAKAdanCH_room_0Tex_012DF0;
+#define dHAKAdanCH_room_0Tex_012F20 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_012F20"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_012F20[] = dHAKAdanCH_room_0Tex_012F20;
 
-#define dHAKAdanCH_room_0Tex_012FF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_012FF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_012FF0[] = dHAKAdanCH_room_0Tex_012FF0;
+#define dHAKAdanCH_room_0Tex_013120 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_013120"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_013120[] = dHAKAdanCH_room_0Tex_013120;
 
-#define dHAKAdanCH_room_0Tex_013DF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_013DF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_013DF0[] = dHAKAdanCH_room_0Tex_013DF0;
+#define dHAKAdanCH_room_0Tex_013F20 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_013F20"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_013F20[] = dHAKAdanCH_room_0Tex_013F20;
 
-#define dHAKAdanCH_room_0DL_002090 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_002090"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_002090[] = dHAKAdanCH_room_0DL_002090;
+#define dHAKAdanCH_room_0DL_0021C0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0021C0"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0021C0[] = dHAKAdanCH_room_0DL_0021C0;
 
-#define dHAKAdanCH_room_0Tex_00EFF0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00EFF0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00EFF0[] = dHAKAdanCH_room_0Tex_00EFF0;
+#define dHAKAdanCH_room_0Tex_00F120 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_00F120"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_00F120[] = dHAKAdanCH_room_0Tex_00F120;
 
-#define dHAKAdanCH_room_0DL_00B988 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00B988"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00B988[] = dHAKAdanCH_room_0DL_00B988;
+#define dHAKAdanCH_room_0DL_00BAB8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00BAB8"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00BAB8[] = dHAKAdanCH_room_0DL_00BAB8;
 
-#define dHAKAdanCH_room_0Tex_0125F0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_0125F0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_0125F0[] = dHAKAdanCH_room_0Tex_0125F0;
+#define dHAKAdanCH_room_0Tex_012720 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0Tex_012720"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0Tex_012720[] = dHAKAdanCH_room_0Tex_012720;
 
-#define dHAKAdanCH_room_0DL_00C048 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00C048"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00C048[] = dHAKAdanCH_room_0DL_00C048;
+#define dHAKAdanCH_room_0DL_00C178 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00C178"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00C178[] = dHAKAdanCH_room_0DL_00C178;
 
-#define dHAKAdanCH_room_0DL_00C678 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00C678"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00C678[] = dHAKAdanCH_room_0DL_00C678;
+#define dHAKAdanCH_room_0DL_00C7A8 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00C7A8"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00C7A8[] = dHAKAdanCH_room_0DL_00C7A8;
 
-#define dHAKAdanCH_room_0DL_00CD48 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00CD48"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00CD48[] = dHAKAdanCH_room_0DL_00CD48;
+#define dHAKAdanCH_room_0DL_00CE78 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00CE78"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00CE78[] = dHAKAdanCH_room_0DL_00CE78;
 
-#define dHAKAdanCH_room_0DL_00D128 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00D128"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00D128[] = dHAKAdanCH_room_0DL_00D128;
+#define dHAKAdanCH_room_0DL_00D258 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00D258"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00D258[] = dHAKAdanCH_room_0DL_00D258;
 
-#define dHAKAdanCH_room_0DL_0144E0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0144E0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0144E0[] = dHAKAdanCH_room_0DL_0144E0;
+#define dHAKAdanCH_room_0DL_014610 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_014610"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_014610[] = dHAKAdanCH_room_0DL_014610;
 
-#define dHAKAdanCH_room_0DL_00B250 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00B250"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00B250[] = dHAKAdanCH_room_0DL_00B250;
+#define dHAKAdanCH_room_0DL_00B380 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_00B380"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_00B380[] = dHAKAdanCH_room_0DL_00B380;
 
-#define dHAKAdanCH_room_0DL_0024A0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0024A0"
-static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0024A0[] = dHAKAdanCH_room_0DL_0024A0;
+#define dHAKAdanCH_room_0DL_0025D0 "__OTR__scenes/nonmq/HAKAdanCH_scene/HAKAdanCH_room_0DL_0025D0"
+static const ALIGN_ASSET(2) char HAKAdanCH_room_0DL_0025D0[] = dHAKAdanCH_room_0DL_0025D0;
+
+
+#endif // DUNGEONS_HAKADANCH_ROOM_0_H
