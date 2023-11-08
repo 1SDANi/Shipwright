@@ -39,8 +39,8 @@ static const ALIGN_ASSET(2) char gDCLavaFloor8Tex[] = dgDCLavaFloor8Tex;
 #define dgDcOpeningCs "__OTR__scenes/nonmq/ddan_scene/gDcOpeningCs"
 static const ALIGN_ASSET(2) char gDcOpeningCs[] = dgDcOpeningCs;
 
-#define dddan_sceneCollisionHeader_011D40 "__OTR__scenes/nonmq/ddan_scene/ddan_sceneCollisionHeader_011D40"
-static const ALIGN_ASSET(2) char ddan_sceneCollisionHeader_011D40[] = dddan_sceneCollisionHeader_011D40;
+#define dddan_sceneCollisionHeader_011D38 "__OTR__scenes/nonmq/ddan_scene/ddan_sceneCollisionHeader_011D38"
+static const ALIGN_ASSET(2) char ddan_sceneCollisionHeader_011D38[] = dddan_sceneCollisionHeader_011D38;
 
 
 #endif // DUNGEONS_DDAN_SCENE_H

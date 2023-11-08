@@ -100,7 +100,9 @@ void BgGjyoBridge_TriggerCutscene(BgGjyoBridge* this, PlayState* play) {
         switch (bridge) {
             case RO_BRIDGE_VANILLA:
                 if (CHECK_QUEST_ITEM(QUEST_MEDALLION_SPIRIT) && CHECK_QUEST_ITEM(QUEST_MEDALLION_SHADOW) &&
-                    (INV_CONTENT(ITEM_ARROW_LIGHT) == ITEM_ARROW_LIGHT)) {
+						CHECK_QUEST_ITEM(QUEST_MEDALLION_FIRE) && CHECK_QUEST_ITEM(QUEST_MEDALLION_WATER) &&
+						CHECK_QUEST_ITEM(QUEST_MEDALLION_FOREST) &&
+                        (INV_CONTENT(ITEM_ARROW_LIGHT) == ITEM_ARROW_LIGHT)) {
                     this->actionFunc = BgGjyoBridge_SpawnBridge;
                     func_800F595C(NA_BGM_BRIDGE_TO_GANONS);
                 }

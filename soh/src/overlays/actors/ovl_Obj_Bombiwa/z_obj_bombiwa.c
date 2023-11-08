@@ -75,7 +75,7 @@ void ObjBombiwa_InitCollision(Actor* thisx, PlayState* play) {
 void ObjBombiwa_Init(Actor* thisx, PlayState* play) {
     Actor_ProcessInitChain(thisx, sInitChain);
     ObjBombiwa_InitCollision(thisx, play);
-    if ((Flags_GetSwitch(play, thisx->params & 0x3F) != 0)) {
+    if ((Flags_GetSwitch(play, thisx->params & 0x3F) != 0) || (play->sceneNum == 84 && thisx->world.pos.y < 200)) {
         Actor_Kill(thisx);
     } else {
         CollisionCheck_SetInfo(&thisx->colChkInfo, NULL, &sColChkInfoInit);

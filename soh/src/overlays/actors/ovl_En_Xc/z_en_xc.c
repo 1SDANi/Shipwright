@@ -2225,8 +2225,6 @@ void EnXc_InitTempleOfTime(EnXc* this, PlayState* play) {
             } else {
                 GivePlayerRandoRewardSheikSong(this, play, RC_SHEIK_AT_TEMPLE, 0x20, RG_PRELUDE_OF_LIGHT);
             }
-        } else if (!Flags_GetEventChkInf(EVENTCHKINF_LEARNED_PRELUDE_OF_LIGHT)) {
-            func_80B3C9EC(this);
         } else {
             Actor_Kill(&this->actor);
         }

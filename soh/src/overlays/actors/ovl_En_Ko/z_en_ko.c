@@ -287,40 +287,35 @@ s32 EnKo_IsOsAnimeLoaded(EnKo* this, PlayState* play) {
 u16 func_80A96FD0(PlayState* play, Actor* thisx) {
     EnKo* this = (EnKo*)thisx;
     switch (ENKO_TYPE) {
-        case ENKO_TYPE_CHILD_FADO:
-            if (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
-                return 0x10DA;
-            }
             if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
                 return 0x10D9;
             }
-            return (Flags_GetInfTable(INFTABLE_B7)) ? 0x10D8 : 0x10D7;
-        case ENKO_TYPE_CHILD_0:
-            if (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
-                return 0x1025;
+            if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE &&
+                !CHECK_QUEST_ITEM(QUEST_SONG_SARIA)) {
+                return 0x10DA;
             }
-            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
-                return 0x1042;
+            return (gSaveContext.infTable[11] & 0x80) ? 0x10D8 : 0x10D7;
+        case ENKO_TYPE_CHILD_0:
+            if (INV_CONTENT(ITEM_SLINGSHOT) != ITEM_NONE) {
+                return 0x1025;
             }
             return 0x1004;
         case ENKO_TYPE_CHILD_1:
-            if (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
+            if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE &&
+                !CHECK_QUEST_ITEM(QUEST_SONG_SARIA)) {
                 return 0x1023;
             }
-            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
-                return 0x1043;
-            }
-            if (Flags_GetInfTable(INFTABLE_1E)) {
+            if (gSaveContext.infTable[1] & 0x4000) {
                 return 0x1006;
             }
             return 0x1005;
         case ENKO_TYPE_CHILD_2:
-            if (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
+            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
                 return 0x1022;
             }
             return 0x1007;
         case ENKO_TYPE_CHILD_3:
-            if (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
+            if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE) {
                 return 0x1021;
             }
             if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
@@ -331,7 +326,7 @@ u16 func_80A96FD0(PlayState* play, Actor* thisx) {
             }
             return 0x1008;
         case ENKO_TYPE_CHILD_4:
-            if (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
+            if (gSaveContext.eventChkInf[8] & 1) {
                 return 0x1097;
             }
             if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
@@ -342,10 +337,7 @@ u16 func_80A96FD0(PlayState* play, Actor* thisx) {
             }
             return 0x100A;
         case ENKO_TYPE_CHILD_5:
-            if (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
-                return 0x10B0;
-            }
-            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
+            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD) && !(gSaveContext.eventChkInf[8] & 1)) {
                 return 0x1043;
             }
             if (Flags_GetInfTable(INFTABLE_26)) {
@@ -353,13 +345,7 @@ u16 func_80A96FD0(PlayState* play, Actor* thisx) {
             }
             return 0x100C;
         case ENKO_TYPE_CHILD_6:
-            if (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
-                return 0x10B5;
-            }
-            if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
-                return 0x1043;
-            }
-            if (Flags_GetInfTable(INFTABLE_28)) {
+            if (gSaveContext.infTable[2] & 0x100) {
                 return 0x1019;
             }
             return 0x100E;
@@ -586,12 +572,11 @@ s32 EnKo_GetForestQuestState(EnKo* this) {
     s32 result;
 
     if (!LINK_IS_ADULT) {
-        // Obtained Zelda's Letter
-        if (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
-            return ENKO_FQS_CHILD_SARIA;
-        }
         if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
             return ENKO_FQS_CHILD_STONE;
+        }
+        if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE) {
+            return ENKO_FQS_CHILD_SARIA;
         }
         return ENKO_FQS_CHILD_START;
     }
@@ -1077,7 +1062,10 @@ s32 EnKo_GetForestQuestState2(EnKo* this) {
         return CHECK_QUEST_ITEM(QUEST_MEDALLION_FOREST) ? ENKO_FQS_ADULT_SAVED : ENKO_FQS_ADULT_ENEMY;
     }
     if (CHECK_QUEST_ITEM(QUEST_KOKIRI_EMERALD)) {
-        return (Flags_GetEventChkInf(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) ? ENKO_FQS_CHILD_SARIA : ENKO_FQS_CHILD_STONE;
+        return ENKO_FQS_CHILD_STONE;
+    }
+    if (INV_CONTENT(ITEM_OCARINA_FAIRY) != ITEM_NONE) {
+        return ENKO_FQS_CHILD_SARIA;
     }
     return ENKO_FQS_CHILD_START;
 }
